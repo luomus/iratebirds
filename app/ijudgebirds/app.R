@@ -25,6 +25,20 @@ ratings_df <- data.frame(
 
 codes <- subset(auk::ebird_taxonomy, category == "species")[["species_code"]]
 
+info_page <- paste0(
+  "Good question. Well... Basically this is the place to come ",
+  "to judge the appearence of birds guilt free!\n\nHow so? It's like this",
+  "see... As we all know, many birds are under threat from the illegal",
+  "wildlife trade. But it isn't clear to what extent some birds might be more ",
+  "threatened than others and why? What is it that makes a bird appealing? ",
+  "Part of the equation is obviously the birds appearence. But what is it ",
+  "about how a bird looks that makes it appealing?\n\nHard to say, right? And ",
+  "darn hard to quantify! Now that's where you come in. Time to look at some ",
+  "birds and tell us what you think of them on a scale of ", emo::ji("fear"),
+  " to ", emo::ji("smiling_face_with_heart_eyes"),". Come on, you know ",
+  "want to. And it's for a good cause!!"
+)
+
 get_photo_link <- function(codes) {
 
   candidates <- FALSE
@@ -33,21 +47,32 @@ get_photo_link <- function(codes) {
     ratings_df$code <<- sample(codes, 1L)
     res <- httr::RETRY(
       "GET", url = "https://ebird.org/media/catalog.json",
-      query = list(taxonCode = ratings_df$code, mediaType = "p", sort = "rating_rank_desc", count = 20L)
+      query = list(
+        taxonCode = ratings_df$code, mediaType = "p", sort = "rating_rank_desc",
+        count = 20L
+      )
     )
-    stop_for_status(res)
+    httr::stop_for_status(res)
     res <- httr::content(res, "text")
     res <- jsonlite::fromJSON(res, simplifyVector = FALSE)
     res <- res[["results"]]
     res <- res[["content"]]
     candidates <- vapply(
       res,
-      function(x) isTRUE(x[["height"]] / x[["width"]] < .75 && as.numeric(x[["rating"]]) > 3.5),
+      function(x) {
+        isTRUE(
+          x[["height"]] / x[["width"]] < .75 && as.numeric(x[["rating"]]) > 3.5
+        )
+      },
       logical(1L)
     )
   }
 
-  res <- res[[sample(which(candidates), 1L)]]
+
+  ind <-
+    if (length(candidates) > 1L) sample(which(candidates), 1L) else candidates
+
+  res <- res[[ind]]
 
   ratings_df$photo_id        <<- res[["catalogId"]]
   ratings_df$photo_rating    <<- as.numeric(res[["rating"]])
@@ -60,7 +85,9 @@ get_photo_link <- function(codes) {
   ratings_df$lon             <<- res[["longitude"]]
 
   tags$iframe(
-    src         = sprintf("https://macaulaylibrary.org/asset/%s/embed/320", ratings_df$photo_id),
+    src = sprintf(
+      "https://macaulaylibrary.org/asset/%s/embed/320", ratings_df$photo_id
+    ),
     frameborder = 0L,
     width       = 320L,
     height      = 380L
@@ -138,19 +165,7 @@ server <- function(input, output, session) {
     {
       shinyalert::shinyalert(
         "what is this?",
-        paste0(
-          "Good question. Well... Basically this is the place to come ",
-          "to judge the appearence of birds guilt free!\n\nHow so? It's like this see... ",
-          "As we all know, many birds are under threat from the illegal wildlife ",
-          "trade. But it isn't clear to what extent some birds might be more ",
-          "threatened than others and why? What is it that makes a bird appealing? ",
-          "Part of the equation is obviously the birds appearence. But what is it about how a ",
-          "bird looks that makes it appealing?\n\nHard to say, right? And darn hard to ", 
-          "quantify! Now that's where you come in. Time to look at some birds and ",
-          "tell us what you think of them on a scale of ", emo::ji("fear"), " to ",
-          emo::ji("smiling_face_with_heart_eyes"),". Come on, you know ",
-          "want to. And it's for a good cause!!"
-        ),
+        info_page,
         type = "info",
         confirmButtonText = "\u2192",
       )
