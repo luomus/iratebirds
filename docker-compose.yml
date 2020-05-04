@@ -1,0 +1,32 @@
+version: "3.2"
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      - "POSTGRES_USER=${USER}"
+      - "POSTGRES_PASSWORD=${PASSWORD}"
+    volumes:
+      - "./postgres:/var/lib/postgresql/data"
+    ports:
+      - "127.0.0.1:5432:5432"
+  shiny:
+    container_name: shiny
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "USER=${USER}"
+        - "PASSWORD=${PASSWORD}"
+    restart: always
+    links: 
+      - postgres
+    user: "root"
+    ports:
+      - "80:3838"
+    volumes:
+      - "./app:/srv/shiny-server"
+
+
