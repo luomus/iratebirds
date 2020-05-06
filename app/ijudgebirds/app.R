@@ -68,11 +68,10 @@ get_photo_link <- function(codes) {
     )
   }
 
+  candidates <- which(candidates)
+  if (length(candidates) > 1L) candidates <- sample(candidates, 1L)
 
-  ind <-
-    if (length(candidates) > 1L) sample(which(candidates), 1L) else candidates
-
-  res <- res[[ind]]
+  res <- res[[candidates]]
 
   ratings_df$photo_id        <<- res[["catalogId"]]
   ratings_df$photo_rating    <<- as.numeric(res[["rating"]])
