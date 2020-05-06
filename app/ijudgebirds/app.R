@@ -27,8 +27,8 @@ codes <- subset(auk::ebird_taxonomy, category == "species")[["species_code"]]
 
 info_page <- paste0(
   "Good question. Well... Basically this is the place to come ",
-  "to judge the appearence of birds guilt free!\n\nHow so? It's like this",
-  "see... As we all know, many birds are under threat from the illegal",
+  "to judge the appearence of birds guilt free!\n\nHow so? It's like this ",
+  "see... As we all know, many birds are under threat from the illegal ",
   "wildlife trade. But it isn't clear to what extent some birds might be more ",
   "threatened than others and why? What is it that makes a bird appealing? ",
   "Part of the equation is obviously the birds appearence. But what is it ",
