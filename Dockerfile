@@ -17,5 +17,3 @@ RUN install2.r --error -s \
   && echo "PGUSER='${USER}'" >> /usr/local/lib/R/etc/Renviron.site \
   && echo "PGPASSWORD='${PASSWORD}'" >> /usr/local/lib/R/etc/Renviron.site \
   && rm -rf /tmp/downloaded_packages
-
-
