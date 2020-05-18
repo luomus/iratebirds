@@ -1,7 +1,3 @@
----
-pagetitle: ijudgebirds
----
-
 # ijudgebirds
 
 A web app to gauge the "attractiveness"" of birds
