@@ -2,32 +2,30 @@ version: "3.2"
 
 services:
   postgres:
-    container_name: postgres
+    container_name: ijudgebirds-postgres
     image: postgres
     restart: always
     environment:
-      - "POSTGRES_USER=${USER}"
-      - "POSTGRES_PASSWORD=${PASSWORD}"
+      - "POSTGRES_USER=${PGUSER}"
+      - "POSTGRES_PASSWORD=${PGPASSWORD}"
     volumes:
       - "./postgres:/var/lib/postgresql/data"
     ports:
       - "5432:5432"
   shiny:
-    container_name: shiny
+    container_name: ijudgebirds-shiny
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        - "USER=${USER}"
-        - "PASSWORD=${PASSWORD}"
+        - "PGUSER=${PGUSER}"
+        - "PGPASSWORD=${PGPASSWORD}"
     environment:
-      - "VIRTUAL_HOST=${HOST}"
+      - "VIRTUAL_HOST=${HOST}.${DOMAIN}"
       - "VIRTUAL_PORT=80"
-      - "LETSENCRYPT_HOST=${HOST}"
+      - "LETSENCRYPT_HOST=${HOST}.${DOMAIN}"
       - "LETSENCRYPT_EMAIL=${EMAIL}"
     restart: always
-    links: 
-      - postgres
     user: "root"
     ports:
       - "3838"
@@ -35,7 +33,7 @@ services:
       - "./app:/srv/shiny-server"
   nginxproxy:
     image: jwilder/nginx-proxy
-    container_name: nginxproxy
+    container_name: ijudgebirds-nginxproxy
     ports:
       - "80:80"
       - "443:443"
@@ -47,7 +45,7 @@ services:
     restart: always
   letsencrypt-nginx-proxy-companion:
     image: jrcs/letsencrypt-nginx-proxy-companion
-    container_name: letsencrypt-nginx-proxy-companion
+    container_name: ijudgebirds-letsencrypt-nginx-proxy-companion
     environment:
       - NGINX_PROXY_CONTAINER=nginxproxy
     volumes:
