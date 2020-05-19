@@ -1,8 +1,8 @@
 library(shiny)
 library(auk)
-library(emo)
 library(httr)
 library(jsonlite)
+library(RcppTOML)
 library(RPostgres)
 library(shinyalert)
 library(waiter)
@@ -25,19 +25,7 @@ ratings_df <- data.frame(
 
 codes <- subset(auk::ebird_taxonomy, category == "species")[["species_code"]]
 
-info_page <- paste0(
-  "Good question. Well... Basically this is the place to come ",
-  "to judge the appearence of birds guilt free!\n\nHow so? It's like this ",
-  "see... As we all know, many birds are under threat from the illegal ",
-  "wildlife trade. But it isn't clear to what extent some birds might be more ",
-  "threatened than others and why? What is it that makes a bird appealing? ",
-  "Part of the equation is obviously the birds appearence. But what is it ",
-  "about how a bird looks that makes it appealing?\n\nHard to say, right? And ",
-  "darn hard to quantify! Now that's where you come in. Time to look at some ",
-  "birds and tell us what you think of them on a scale of ", emo::ji("fear"),
-  " to ", emo::ji("smiling_face_with_heart_eyes"),". Come on, you know ",
-  "want to. And it's for a good cause!!"
-)
+content <- parseTOML("content.toml")
 
 get_photo_link <- function(codes) {
 
@@ -111,32 +99,32 @@ save_data <- function(data) {
 
 splash_screen <- div(
   div(
-    h2("how"),
-    h2(emo::ji("fire")),
-    h2("that"),
-    h2(paste0(emo::ji("bird"), "?")),
-    h2(emo::ji("shrug"), class = "last-line"),
+    h2(content$landing_page$title[[1]]),
+    h2(content$landing_page$title[[2]]),
+    h2(content$landing_page$title[[3]]),
+    h2(content$landing_page$title[[4]]),
+    h2(content$landing_page$title[[5]], class = "last-line"),
     actionLink("start", "\u2192"),
     class = "splash-main"
   ),
-  actionLink("info_button", emo::ji("information"))
+  actionLink("info_button", content$landing_page$info_button)
 )
 
 ui <- fluidPage(
   theme = "custom.css",
   shinyalert::useShinyalert(),
   waiter::use_waiter(include_js = FALSE),
-  titlePanel(paste0("how ", emo::ji("fire"), " this ", emo::ji("bird"), "?")),
+  titlePanel(content$main_page$title),
   htmlOutput("new_bird"),
   sliderInput(
     "rating",
     div(
       span(
-        paste0(emo::ji("vomit")), "ugly ",
+        content$main_page$slider_labels[[1]],
         class = "left-slider-label"
       ),
       span(
-        paste0(c("smokin' ", rep(emo::ji("pepper"), 3)), collapse = ""),
+        content$main_page$slider_labels[[2]],
         class = "right-slider-label"
       ),
       class = "slider-labels"
@@ -163,8 +151,8 @@ server <- function(input, output, session) {
     input$info_button,
     {
       shinyalert::shinyalert(
-        "what is this?",
-        info_page,
+        content$info_page$title,
+        paste(content$info_page$body, collapse = "\n\n"),
         type = "info",
         confirmButtonText = "\u2192",
       )

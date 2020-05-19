@@ -1,0 +1,20 @@
+[landing_page]
+title = ["how", "🔥", "that", "🐦?", "🤷"]
+info_button = "ℹ️"
+
+[info_page]
+title = "what is this?"
+body = ["""Good question. Well... Basically this is the place to come to judge \
+the appearence of birds guilt free!""",
+"""How so? It's like this see... As we all know, many birds are under threat \
+from the illegal wildlife trade. But it isn't clear to what extent some birds \
+might be more threatened than others and why? What is it that makes a bird \
+appealing? Part of the equation is obviously the birds appearence. But what is \
+it about how a bird looks that makes it appealing?""",
+"""Hard to say, right? And darn hard to quantify! Now that's where you come \
+in. Time to look at some birds and tell us what you think of them on a scale \
+of 😨 to 😍. Come on, you know want to. And it's for a good cause!!"""]
+
+[main_page]
+title = "how 🔥 this 🐦?"
+slider_labels = ["🤮 ugly" , "smokin' 🌶️🌶️🌶️"]
