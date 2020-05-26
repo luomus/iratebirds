@@ -1,0 +1,19 @@
+proxy:
+  port: 8080
+  hide-navbar: true
+  landing-page: /app_direct/ijudgebirds
+  favicon-path: ""
+  authentication: none
+  docker:
+    internal-networking: true
+  specs:
+  - id: ijudgebirds
+    display-name: ijudgebirds
+    description: ijudgebirds
+    container-cmd: ["R", "-e", "shiny::runApp('/app', port = 3838, host = '0.0.0.0')"]
+    container-image: ijudgebirds_shiny_init
+    container-network: ijudgebirds_default
+
+logging:
+  file:
+    shinyproxy.log

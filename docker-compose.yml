@@ -22,20 +22,24 @@ services:
     environment:
       - "VIRTUAL_HOST=localhost/taxon -> :8000/taxon"
     command: "./taxon.R"
-  shiny:
-    container_name: ijudgebirds-shiny
+  shiny_init:
+    container_name: ijudgebirds-shiny-init
     build:
       context: .
       dockerfile: Dockerfile
       args:
         - "PGUSER=${PGUSER}"
         - "PGPASSWORD=${PGPASSWORD}"
+    command: "echo 'Success'"
+  shinyproxy:
+    build: ./shinyproxy
     restart: always
-    user: "root"
+    container_name: ijudgebirds-shinyproxy
     volumes:
-      - "./app:/srv/shiny-server"
+      - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      - "VIRTUAL_HOST=localhost"
+      - "VIRTUAL_HOST=http://localhost -> :8080/app_direct/ijudgebirds/"
+      - "VIRTUAL_HOST_WS=ws://localhost/websocket/ -> :8080/app_direct/ijudgebirds/websocket/"
   nginxproxy:
     image: mesudip/nginx-proxy
     container_name: ijudgebirds-nginxproxy
