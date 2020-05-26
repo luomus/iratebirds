@@ -17,5 +17,5 @@ git clone https://github.com/luomus/ijudgebirds.git
 To run the app on [http://localhost](http://localhost) 
 ```
 cd ijudgebirds
-PGUSER=user PGPASSWORD=password docker-compose up -d
+PGUSER=user PGPASSWORD=password docker-compose up -d --scale taxon=5
 ```
