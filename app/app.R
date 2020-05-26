@@ -34,7 +34,7 @@ get_photo_link <- function(codes) {
   while (!any(candidates)) {
     ratings_df$code <<- sample(codes, 1L)
     res <- httr::RETRY(
-      "GET", url = "https://ebird.org/media/catalog.json",
+      "GET", url = "https://search.macaulaylibrary.org/api/v1/search",
       query = list(
         taxonCode = ratings_df$code, mediaType = "p", sort = "rating_rank_desc",
         count = 20L
@@ -91,10 +91,11 @@ save_data <- function(data) {
     DBI::dbCreateTable(db, "ratings", ratings_df)
 
   }
-  
+
   DBI::dbAppendTable(db, "ratings", ratings_df)
-  
+
   DBI::dbDisconnect(db)
+
 }
 
 splash_screen <- div(
@@ -187,7 +188,7 @@ server <- function(input, output, session) {
 
   observeEvent(
     input$rated,
-    { 
+    {
       ratings_df$rating  <<- input$rating
       ratings_df$time    <<- as.integer(Sys.time())
       save_data(ratings_df)
