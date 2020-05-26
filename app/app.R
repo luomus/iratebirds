@@ -1,9 +1,8 @@
 library(shiny)
-library(auk)
 library(httr)
 library(jsonlite)
 library(RcppTOML)
-library(RPostgres)
+library(RPostgreSQL)
 library(shinyalert)
 library(waiter)
 
@@ -23,8 +22,6 @@ ratings_df <- data.frame(
   rating          = NA_real_
 )
 
-codes <- subset(auk::ebird_taxonomy, category == "species")[["species_code"]]
-
 content <- parseTOML("content.toml")
 
 get_photo_link <- function(codes) {
@@ -32,7 +29,11 @@ get_photo_link <- function(codes) {
   candidates <- FALSE
 
   while (!any(candidates)) {
-    ratings_df$code <<- sample(codes, 1L)
+    code <- httr::RETRY("GET", url = "http://taxon:8000/taxon")
+    httr::stop_for_status(code)
+    code <- httr::content(code, "text")
+    ratings_df$code <<- jsonlite::fromJSON(code, simplifyVector = FALSE)[[1L]]
+
     res <- httr::RETRY(
       "GET", url = "https://search.macaulaylibrary.org/api/v1/search",
       query = list(
@@ -84,18 +85,19 @@ get_photo_link <- function(codes) {
 
 save_data <- function(data) {
 
-  db <- DBI::dbConnect(RPostgres::Postgres())
+  db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
   if (!DBI::dbExistsTable(db, "ratings")) {
 
-    DBI::dbCreateTable(db, "ratings", ratings_df)
+    DBI::dbWriteTable(db, "ratings", ratings_df, row.names = FALSE)
+
+  } else {
+
+    DBI::dbWriteTable(db, "ratings", ratings_df, append = TRUE, row.names = FALSE)
 
   }
 
-  DBI::dbAppendTable(db, "ratings", ratings_df)
-
   DBI::dbDisconnect(db)
-
 }
 
 splash_screen <- div(

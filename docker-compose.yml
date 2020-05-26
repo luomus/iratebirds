@@ -12,6 +12,16 @@ services:
       - "./postgres:/var/lib/postgresql/data"
     ports:
       - "5432:5432"
+  taxon:
+    build:
+      context: ./taxon
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - "./taxon/taxon.R:/taxon.R"
+    environment:
+      - "VIRTUAL_HOST=localhost/taxon -> :8000/taxon"
+    command: "./taxon.R"
   shiny:
     container_name: ijudgebirds-shiny
     build:
@@ -22,35 +32,15 @@ services:
         - "PGPASSWORD=${PGPASSWORD}"
     restart: always
     user: "root"
-    ports:
-      - "3838"
     volumes:
       - "./app:/srv/shiny-server"
     environment:
       - "VIRTUAL_HOST=localhost"
-#      - "VIRTUAL_HOST=${HOST}.${DOMAIN}"
-#      - "LETSENCRYPT_HOST=${HOST}.${DOMAIN}"
-#      - "LETSENCRYPT_EMAIL=${EMAIL}"
   nginxproxy:
-    image: jwilder/nginx-proxy
+    image: mesudip/nginx-proxy
     container_name: ijudgebirds-nginxproxy
     restart: always
     ports:
       - "80:80"
-#      - "443:443"
     volumes:
-     - "/var/run/docker.sock:/tmp/docker.sock:ro"
-#      - certs:/etc/nginx/certs:ro
-#      - vhostd:/etc/nginx/vhost.d
-#      - html:/usr/share/nginx/html
-#  letsencrypt-nginx-proxy-companion:
-#    image: jrcs/letsencrypt-nginx-proxy-companion
-#    container_name: ijudgebirds-letsencrypt-nginx-proxy-companion
-#    environment:
-#      - NGINX_PROXY_CONTAINER=ijudgebirds-nginxproxy
-#    volumes:
-#      - certs:/etc/nginx/certs
-#      - vhostd:/etc/nginx/vhost.d
-#      - html:/usr/share/nginx/html
-#      - /var/run/docker.sock:/var/run/docker.sock:ro
-#    restart: always
+     - "/var/run/docker.sock:/var/run/docker.sock:ro"
