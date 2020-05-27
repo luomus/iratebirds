@@ -20,7 +20,7 @@ services:
     volumes:
       - "./taxon/taxon.R:/taxon.R"
     environment:
-      - "VIRTUAL_HOST=localhost/taxon -> :8000/taxon"
+      - "VIRTUAL_HOST=${HOST}/taxon -> :8000/taxon"
     command: "./taxon.R"
   shiny_init:
     container_name: ijudgebirds-shiny-init
@@ -38,8 +38,8 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      - "VIRTUAL_HOST=http://localhost -> :8080/app_direct/ijudgebirds/"
-      - "VIRTUAL_HOST_WS=ws://localhost/websocket/ -> :8080/app_direct/ijudgebirds/websocket/"
+      - "VIRTUAL_HOST=http://${HOST} -> :8080/app_direct/ijudgebirds/"
+      - "VIRTUAL_HOST_WS=ws://${HOST}/websocket/ -> :8080/app_direct/ijudgebirds/websocket/"
   nginxproxy:
     image: mesudip/nginx-proxy
     container_name: ijudgebirds-nginxproxy
