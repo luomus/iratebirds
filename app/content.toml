@@ -1,5 +1,5 @@
 [landing_page]
-title = ["❤️", "that", "🦜?", "🤷"]
+title = ["🥰️", "that", "🦜?", "🤷"]
 info_button = "ℹ️"
 
 [info_page]
@@ -16,8 +16,9 @@ in. Time to look at some birds and tell us what you think of them on a scale \
 of 😨 to 😍. Come on, you know want to. And it's for a good cause!!"""]
 
 [main_page]
-title = "❤️ this 🦃?"
+title = "🥰️ this 🦅?"
 slider_labels = ["😨️" , "😍️"]
+new_bird = "show me another! \u2192"
 
 [about]
 title = "ijudgebirds"
@@ -66,7 +67,7 @@ question_3 = [
 Don't overthink it. We want your gut feeling. So rate the bird right away \
 and move on to the next bird whenever you have stopped enjoying looking it. \
 """]
-question_3 = [
+question_4 = [
 """ \
 4. I have very particular taste in birds, won't that effect your analysis? \
 """,

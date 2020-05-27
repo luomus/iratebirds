@@ -105,8 +105,7 @@ splash_screen <- div(
     h2(content$landing_page$title[[1]]),
     h2(content$landing_page$title[[2]]),
     h2(content$landing_page$title[[3]]),
-    h2(content$landing_page$title[[4]]),
-    h2(content$landing_page$title[[5]], class = "last-line"),
+    h2(content$landing_page$title[[4]], class = "last-line"),
     actionLink("start", "\u2192"),
     class = "splash-main"
   ),
@@ -114,6 +113,11 @@ splash_screen <- div(
 )
 
 ui <- fluidPage(
+  tags$script("
+    Shiny.addCustomMessageHandler('rating', function(value) {
+    Shiny.setInputValue('rating', value);
+    });
+  "),
   theme = "custom.css",
   shinyalert::useShinyalert(),
   waiter::use_waiter(include_js = FALSE),
@@ -132,12 +136,12 @@ ui <- fluidPage(
       ),
       class = "slider-labels"
     ),
-    value = 0,
+    value = 0L,
     dataFilled="fa fa-heart",
     dataEmpty="fa fa-heart-o",
     dataStart = 0L,
-    dataStop  = 5L,
-    dataFractions  = 2,
+    dataStop  = 10L,
+    dataFractions  = 1L,
   ),
   waiter_show_on_load(splash_screen, color = "#FFFFFF")
 )
@@ -170,20 +174,15 @@ server <- function(input, output, session) {
     once = TRUE
   )
 
-  need_button      <- TRUE
-  need_button_next <- FALSE
+  has_button <- FALSE
 
   observeEvent(
     input$rating,
-    {
-      if (need_button) {
-        insertUI("#rating", "afterEnd", actionButton("rated", "next!"))
-      }
-      need_button <<- FALSE
-      if (need_button_next) {
-        need_button <<- TRUE
-        need_button_next <<- FALSE
-      }
+    if (!has_button && as.integer(input$rating) > 0L) {
+      insertUI(
+        "#rating", "afterEnd", actionLink("rated", content$main_page$new_bird)
+      )
+      has_button <<- TRUE
     },
     ignoreInit = TRUE
   )
@@ -191,11 +190,12 @@ server <- function(input, output, session) {
   observeEvent(
     input$rated,
     {
-      ratings_df$rating  <<- as.integer(as.numeric(input$rating) * 2)
+      ratings_df$rating  <<- as.integer(input$rating)
       ratings_df$time    <<- as.integer(Sys.time())
       save_data(ratings_df)
       removeUI("#rated")
-      need_button_next <<- TRUE
+      has_button <<- FALSE
+      session$sendCustomMessage("rating", "0")
       output$new_bird <- renderUI(get_photo_link(codes))
     },
     ignoreInit = TRUE

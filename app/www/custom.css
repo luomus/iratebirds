@@ -86,20 +86,17 @@ label {
   padding: 0;
 }
 
-.btn {
+#rated {
   font-family: monospace;
-  text-align: center;
   font-weight: 900;
-  width: 320px;
-  padding: 0;
+  text-align: center;
   font-size: 200%;
-  background-color: rgb(230, 230, 230);
 }
 
 .slider-labels {
   font-family: monospace;
+  font-size: 150%;
   text-align: center;
-  font-weight: 900;
 }
 
 .left-slider-label {
@@ -115,8 +112,9 @@ label {
 }
 
 .fa {
-  font-size: 44px;
-  color: red;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 30px;
+  color: rgb(220, 44, 68);
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 5px;
 }
