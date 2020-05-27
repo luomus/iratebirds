@@ -10,7 +10,8 @@ RUN install_packages \
       r-cran-rpostgresql \
       r-cran-shiny
 
-RUN  /usr/lib/R/site-library/littler/examples/install.r RcppTOML shinyalert waiter \
+RUN  /usr/lib/R/site-library/littler/examples/install.r docopt remotes RcppTOML shinyalert waiter \
+  && /usr/lib/R/site-library/littler/examples/installGithub.r stefanwilhelm/ShinyRatingInput \
   && echo "PGHOST='postgres'" >> /usr/lib/R/etc/Renviron.site \
   && echo "PGUSER='${PGUSER}'" >> /usr/lib/R/etc/Renviron.site \
   && echo "PGPASSWORD='${PGPASSWORD}'" >> /usr/lib/R/etc/Renviron.site \

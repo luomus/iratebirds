@@ -119,7 +119,7 @@ ui <- fluidPage(
   waiter::use_waiter(include_js = FALSE),
   titlePanel(content$main_page$title),
   htmlOutput("new_bird"),
-  sliderInput(
+  ShinyRatingInput::ratingInput(
     "rating",
     div(
       span(
@@ -132,12 +132,12 @@ ui <- fluidPage(
       ),
       class = "slider-labels"
     ),
-    width = "320px",
-    min   = 0L,
-    max   = 10L,
-    value = 5,
-    step  = 1,
-    ticks = FALSE
+    value = 0,
+    dataFilled="fa fa-heart",
+    dataEmpty="fa fa-heart-o",
+    dataStart = 0L,
+    dataStop  = 5L,
+    dataFractions  = 2,
   ),
   waiter_show_on_load(splash_screen, color = "#FFFFFF")
 )
@@ -191,10 +191,9 @@ server <- function(input, output, session) {
   observeEvent(
     input$rated,
     {
-      ratings_df$rating  <<- input$rating
+      ratings_df$rating  <<- as.integer(as.numeric(input$rating) * 2)
       ratings_df$time    <<- as.integer(Sys.time())
       save_data(ratings_df)
-      updateSliderInput(session, inputId = "rating", value = 5L)
       removeUI("#rated")
       need_button_next <<- TRUE
       output$new_bird <- renderUI(get_photo_link(codes))

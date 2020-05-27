@@ -114,11 +114,9 @@ label {
   margin-bottom: 0;
 }
 
-.irs {
-  margin-bottom: 8px;
-}
-
-.irs-bar, .irs-bar-edge, .irs-single {
-  background-color: rgb(0, 0, 0);
-  border-color: rgb(0, 0, 0);
+.fa {
+  font-size: 44px;
+  color: red;
+  padding-left: 10px;
+  padding-right: 10px;
 }
