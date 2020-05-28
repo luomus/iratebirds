@@ -101,15 +101,12 @@ save_data <- function(data) {
 }
 
 splash_screen <- div(
-  div(
-    h2(content$landing_page$title[[1]]),
-    h2(content$landing_page$title[[2]]),
-    h2(content$landing_page$title[[3]]),
-    h2(content$landing_page$title[[4]], class = "last-line"),
-    actionLink("start", "\u2192"),
-    class = "splash-main"
-  ),
-  actionLink("info_button", content$landing_page$info_button)
+  h2(content$landing_page$title[[1]]),
+  h2(content$landing_page$title[[2]]),
+  h2(content$landing_page$title[[3]]),
+  h2(content$landing_page$title[[4]], class = "last-line"),
+  actionLink("start", "\u2192"),
+  class = "splash-main"
 )
 
 unrated <- div(
@@ -126,7 +123,18 @@ ui <- fluidPage(
   theme = "custom.css",
   shinyalert::useShinyalert(),
   waiter::use_waiter(include_js = FALSE),
-  titlePanel(content$main_page$title),
+  titlePanel(
+    div(
+      span(content$main_page$title, class = "title"),
+      span(
+        actionLink("about_link", content$landing_page$info_button),
+        actionLink("faq_link", content$faq$title),
+        class = "about-faq"
+      ),
+      class = "title-about-faq"
+    ),
+    content$main_page$title
+  ),
   htmlOutput("new_bird"),
   ShinyRatingInput::ratingInput(
     "rating",
@@ -161,7 +169,7 @@ server <- function(input, output, session) {
   output$new_bird <- renderUI(get_photo_link(codes))
 
   observeEvent(
-    input$info_button,
+    input$start,
     {
       shinyalert::shinyalert(
         content$info_page$title,
@@ -175,9 +183,27 @@ server <- function(input, output, session) {
   )
 
   observeEvent(
-    input$start,
-    waiter::waiter_hide(),
-    once = TRUE
+    input$about_link,
+    {
+      shinyalert::shinyalert(
+        content$about$title,
+        paste(content$about$body, collapse = "\n\n"),
+        type = "info",
+        confirmButtonText = "\u2192",
+      )
+    }
+  )
+
+  observeEvent(
+    input$faq_link,
+    {
+      shinyalert::shinyalert(
+        content$faq$title,
+        paste(content$faq$question_1, collapse = "\n\n"),
+        type = "info",
+        confirmButtonText = "\u2192",
+      )
+    }
   )
 
   has_button <- FALSE

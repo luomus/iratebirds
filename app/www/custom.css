@@ -48,6 +48,10 @@
   font-family: monospace !important;
 }
 
+.sweet-alert h2 {
+  margin-bottom: 10px;
+}
+
 .sweet-alert p {
   text-align: justify !important;
   margin: 0 10px 0 10px !important;
@@ -79,6 +83,25 @@ h2 {
   text-align: center;
   font-weight: 900;
   font-size: 220%;
+}
+
+.title {
+  float: left;
+}
+
+.about-faq {
+  float: right;
+  font-size: 50%;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+#about_link {
+  margin-right: -5px;
+}
+
+#faq_link {
+  padding-left: 2px;
 }
 
 label {
