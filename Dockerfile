@@ -4,14 +4,17 @@ ARG PGUSER
 ARG PGPASSWORD
 
 RUN install_packages \
-      r-base-dev \
+      r-cran-digest \
       r-cran-httr \
-      r-cran-rmarkdown \
+      r-cran-magrittr \
+      r-cran-r6 \
+      r-cran-remotes \
       r-cran-rpostgresql \
-      r-cran-shiny
+      r-cran-shiny \
+      r-cran-yaml
 
-RUN  /usr/lib/R/site-library/littler/examples/install.r docopt remotes RcppTOML shinyalert waiter \
-  && /usr/lib/R/site-library/littler/examples/installGithub.r stefanwilhelm/ShinyRatingInput \
+RUN  /usr/lib/R/site-library/littler/examples/install.r shinyalert waiter \
+  && R -e "remotes::install_github('stefanwilhelm/ShinyRatingInput', dependencies = FALSE, upgrade = 'never')" \
   && echo "PGHOST='postgres'" >> /usr/lib/R/etc/Renviron.site \
   && echo "PGUSER='${PGUSER}'" >> /usr/lib/R/etc/Renviron.site \
   && echo "PGPASSWORD='${PGPASSWORD}'" >> /usr/lib/R/etc/Renviron.site \

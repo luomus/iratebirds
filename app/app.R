@@ -1,7 +1,7 @@
 library(shiny)
 library(httr)
 library(jsonlite)
-library(RcppTOML)
+library(yaml)
 library(RPostgreSQL)
 library(shinyalert)
 library(waiter)
@@ -22,7 +22,7 @@ ratings_df <- data.frame(
   rating          = NA_real_
 )
 
-content <- parseTOML("content.toml")
+content <- yaml::yaml.load_file("content.yml")
 
 get_photo_link <- function(codes) {
 
@@ -113,7 +113,7 @@ splash_screen <- div(
 )
 
 unrated <- div(
-  span("rate the appearance of this bird", id = "unrated"),
+  span(content$main_page$this_bird, id = "unrated"),
   id = "unrated-container"
 )
 
