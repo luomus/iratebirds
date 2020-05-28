@@ -5,4 +5,4 @@ RUN wget https://www.shinyproxy.io/downloads/shinyproxy-2.3.0.jar -O /opt/shinyp
 COPY application.yml /opt/shinyproxy/application.yml
 
 WORKDIR /opt/shinyproxy/
-CMD ["java", "-jar", "/opt/shinyproxy/shinyproxy.jar"]
+CMD ["java", "-Xmx300m", "-jar", "/opt/shinyproxy/shinyproxy.jar"]
