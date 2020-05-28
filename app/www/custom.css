@@ -86,12 +86,27 @@ label {
   padding: 0;
 }
 
+#rated-container, #unrated-container {
+  width: 320px;
+  text-align: center;
+}
+
 #rated {
   font-family: monospace;
   font-weight: 900;
-  text-align: center;
   font-size: 200%;
+  text-decoration: none;
+  text-align: center;
 }
+
+#unrated {
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+
 
 .slider-labels {
   font-family: monospace;

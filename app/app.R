@@ -112,6 +112,11 @@ splash_screen <- div(
   actionLink("info_button", content$landing_page$info_button)
 )
 
+unrated <- div(
+  span("rate the appearance of this bird", id = "unrated"),
+  id = "unrated-container"
+)
+
 ui <- fluidPage(
   tags$script("
     Shiny.addCustomMessageHandler('rating', function(value) {
@@ -143,6 +148,7 @@ ui <- fluidPage(
     dataStop  = 10L,
     dataFractions  = 1L,
   ),
+  unrated,
   waiter_show_on_load(splash_screen, color = "#FFFFFF")
 )
 
@@ -179,8 +185,13 @@ server <- function(input, output, session) {
   observeEvent(
     input$rating,
     if (!has_button && as.integer(input$rating) > 0L) {
+      removeUI("#unrated-container")
       insertUI(
-        "#rating", "afterEnd", actionLink("rated", content$main_page$new_bird)
+        "#rating", "afterEnd",
+        div(
+          actionLink("rated", content$main_page$new_bird),
+          id = "rated-container"
+        )
       )
       has_button <<- TRUE
     },
@@ -193,7 +204,8 @@ server <- function(input, output, session) {
       ratings_df$rating  <<- as.integer(input$rating)
       ratings_df$time    <<- as.integer(Sys.time())
       save_data(ratings_df)
-      removeUI("#rated")
+      removeUI("#rated-container")
+      insertUI("#rating", "afterEnd", unrated)
       has_button <<- FALSE
       session$sendCustomMessage("rating", "0")
       output$new_bird <- renderUI(get_photo_link(codes))
