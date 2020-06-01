@@ -16,6 +16,6 @@ git clone https://github.com/luomus/iratebirds.git
 ## Run
 To run the app on [http://localhost](http://localhost) 
 ```
-cd irateebirds
+cd iratebirds
 HOST=localhost PGUSER=user PGPASSWORD=password docker-compose up -d --scale taxon=5
 ```
