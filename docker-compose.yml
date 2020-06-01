@@ -2,7 +2,6 @@ version: "3.2"
 
 services:
   postgres:
-    container_name: iratebirds-postgres
     image: postgres
     restart: always
     environment:
@@ -19,32 +18,24 @@ services:
     restart: always
     volumes:
       - "./taxon/taxon.R:/taxon.R"
-    environment:
-      - "VIRTUAL_HOST=${HOST}/taxon -> :8000/taxon"
     command: "./taxon.R"
-  shiny_init:
-    container_name: iratebirds-shiny-init
+  shiny:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         - "PGUSER=${PGUSER}"
         - "PGPASSWORD=${PGPASSWORD}"
-    command: "echo 'Success'"
-  shinyproxy:
-    build: ./shinyproxy
     restart: always
-    container_name: iratebirds-shinyproxy
+    user: "root"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./app:/srv/shiny-server"
     environment:
-      - "VIRTUAL_HOST=http://${HOST} -> :8080/app_direct/iratebirds/"
-      - "VIRTUAL_HOST_WS=ws://${HOST}/websocket/ -> :8080/app_direct/iratebirds/websocket/"
+       - "VIRTUAL_HOST=${HOST}"
   nginxproxy:
-    image: mesudip/nginx-proxy
-    container_name: iratebirds-nginxproxy
+    image: jwilder/nginx-proxy
     restart: always
     ports:
       - "80:80"
     volumes:
-     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"

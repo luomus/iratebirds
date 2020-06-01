@@ -4,6 +4,8 @@ ARG PGUSER
 ARG PGPASSWORD
 
 RUN install_packages \
+      gdebi-core \
+      lsb-release \
       r-cran-digest \
       r-cran-httr \
       r-cran-magrittr \
@@ -11,7 +13,17 @@ RUN install_packages \
       r-cran-remotes \
       r-cran-rpostgresql \
       r-cran-shiny \
-      r-cran-yaml
+      r-cran-yaml \
+      wget \
+      xtail
+
+RUN  wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt" \
+  && VERSION=$(cat version.txt) \
+  && wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb \
+  && gdebi -n ss-latest.deb \
+  && rm -f version.txt ss-latest.deb \
+  && . /etc/environment \
+  && chown shiny:shiny /var/lib/shiny-server
 
 RUN  /usr/lib/R/site-library/littler/examples/install.r shinyalert waiter \
   && R -e "remotes::install_github('stefanwilhelm/ShinyRatingInput', dependencies = FALSE, upgrade = 'never')" \
@@ -22,8 +34,8 @@ RUN  /usr/lib/R/site-library/littler/examples/install.r shinyalert waiter \
 
 EXPOSE 3838
 
-RUN mkdir app
+COPY shiny-server.sh /usr/bin/shiny-server.sh
 
-COPY app /app
+COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 
-CMD ["R", "-e", "shiny::runApp('/app', port = 3838, host = '0.0.0.0')"]
+CMD ["/usr/bin/shiny-server.sh"]
