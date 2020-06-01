@@ -1,4 +1,4 @@
-# ijudgebirds
+# iratebirds
 
 A web app to gauge the "attractiveness" of birds.
 
@@ -10,12 +10,12 @@ A web app to gauge the "attractiveness" of birds.
 
 ## Install
 ```
-git clone https://github.com/luomus/ijudgebirds.git
+git clone https://github.com/luomus/iratebirds.git
 ```
 
 ## Run
 To run the app on [http://localhost](http://localhost) 
 ```
-cd ijudgebirds
+cd irateebirds
 HOST=localhost PGUSER=user PGPASSWORD=password docker-compose up -d --scale taxon=5
 ```

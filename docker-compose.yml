@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   postgres:
-    container_name: ijudgebirds-postgres
+    container_name: iratebirds-postgres
     image: postgres
     restart: always
     environment:
@@ -23,7 +23,7 @@ services:
       - "VIRTUAL_HOST=${HOST}/taxon -> :8000/taxon"
     command: "./taxon.R"
   shiny_init:
-    container_name: ijudgebirds-shiny-init
+    container_name: iratebirds-shiny-init
     build:
       context: .
       dockerfile: Dockerfile
@@ -34,15 +34,15 @@ services:
   shinyproxy:
     build: ./shinyproxy
     restart: always
-    container_name: ijudgebirds-shinyproxy
+    container_name: iratebirds-shinyproxy
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      - "VIRTUAL_HOST=http://${HOST} -> :8080/app_direct/ijudgebirds/"
-      - "VIRTUAL_HOST_WS=ws://${HOST}/websocket/ -> :8080/app_direct/ijudgebirds/websocket/"
+      - "VIRTUAL_HOST=http://${HOST} -> :8080/app_direct/iratebirds/"
+      - "VIRTUAL_HOST_WS=ws://${HOST}/websocket/ -> :8080/app_direct/iratebirds/websocket/"
   nginxproxy:
     image: mesudip/nginx-proxy
-    container_name: ijudgebirds-nginxproxy
+    container_name: iratebirds-nginxproxy
     restart: always
     ports:
       - "80:80"
