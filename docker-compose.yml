@@ -21,7 +21,7 @@ services:
     command: "./taxon.R"
   shiny:
     build:
-      context: .
+      context: ./shiny
       dockerfile: Dockerfile
       args:
         - "PGUSER=${PGUSER}"
@@ -32,6 +32,10 @@ services:
       - "./app:/srv/shiny-server"
     environment:
        - "VIRTUAL_HOST=${HOST}"
+    deploy:
+      resources:
+        limits:
+          memory: "500M"
   nginxproxy:
     image: jwilder/nginx-proxy
     restart: always

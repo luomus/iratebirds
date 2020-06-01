@@ -6,6 +6,9 @@ library(RPostgreSQL)
 library(shinyalert)
 library(waiter)
 
+library(future)
+plan(multisession, workers = 4L)
+
 ratings_df <- data.frame(
   photo_id        = NA_character_,
   photo_rating    = NA_real_,
@@ -166,7 +169,7 @@ server <- function(input, output, session) {
 
   waiter::waiter_show(splash_screen, color = "#FFFFFF")
 
-  output$new_bird <- renderUI(get_photo_link(codes))
+  output$new_bird <- renderUI(future::future(get_photo_link(codes)))
 
   observeEvent(
     input$start,
@@ -234,7 +237,7 @@ server <- function(input, output, session) {
       insertUI("#rating", "afterEnd", unrated)
       has_button <<- FALSE
       session$sendCustomMessage("rating", "0")
-      output$new_bird <- renderUI(get_photo_link(codes))
+      output$new_bird <- renderUI(future::future(get_photo_link(codes)))
     },
     ignoreInit = TRUE
   )

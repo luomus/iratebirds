@@ -7,6 +7,7 @@ RUN install_packages \
       gdebi-core \
       lsb-release \
       r-cran-digest \
+      r-cran-future \
       r-cran-httr \
       r-cran-magrittr \
       r-cran-r6 \
