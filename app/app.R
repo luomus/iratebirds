@@ -104,7 +104,7 @@ ui <- fluidPage(
     src = "https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
   ),
   shinyjs::useShinyjs(),
-  shinyjs::extendShinyjs("www/cookies.js"),
+  shinyjs::extendShinyjs("www/custom.js"),
   waiter::use_waiter(include_js = FALSE),
   titlePanel(
     div(
@@ -235,7 +235,8 @@ server <- function(input, output, session) {
       removeUI("#rated-container")
       insertUI("#rating", "afterEnd", unrated)
       has_button <<- FALSE
-      session$sendCustomMessage("rating", "0")
+      session$sendInputMessage("rating", list(value = 0L))
+      js$reset_hearts(0L)
       current_photo <<- future::future(get_photo_link())
       output$new_bird <- renderUI(current_photo)
 
