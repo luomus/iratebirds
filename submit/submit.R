@@ -11,17 +11,18 @@
 #* @param lon
 #* @param time
 #* @param session
+#* @param user
 #* @param rating
 #* @get /submit
 
 function(
   photo_id, photo_rating, n_photo_ratings, code, common_name, sci_name, sex,
-  age, lat, lon, time, session, rating
+  age, lat, lon, time, session, user, rating
 ) {
 
   ratings_df <- data.frame(
     photo_id, photo_rating, n_photo_ratings, code, common_name, sci_name, sex,
-    age, lat, lon, time, session, rating
+    age, lat, lon, time, session, user, rating
   )
 
   db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())

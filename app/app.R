@@ -4,6 +4,8 @@ library(jsonlite)
 library(yaml)
 library(shinyalert)
 library(waiter)
+library(V8)
+library(shinyjs)
 
 library(promises)
 library(future)
@@ -98,6 +100,11 @@ ui <- fluidPage(
   "),
   theme = "custom.css",
   shinyalert::useShinyalert(),
+  tags$script(
+    src = "https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
+  ),
+  shinyjs::useShinyjs(),
+  shinyjs::extendShinyjs("www/cookies.js"),
   waiter::use_waiter(include_js = FALSE),
   titlePanel(
     div(
@@ -139,6 +146,8 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   waiter::waiter_show(splash_screen, color = "#FFFFFF")
+
+  observe(js$cookie(session$token))
 
   current_photo <- future::future(get_photo_link())
   output$new_bird <- renderUI(current_photo)
@@ -212,6 +221,7 @@ server <- function(input, output, session) {
           submission$rating  <- as.integer(current_rating)
           submission$time    <- as.integer(Sys.time())
           submission$session <- session$token
+          submission$user    <- input$jscookie
           future::future(
             httr::RETRY(
               "GET",

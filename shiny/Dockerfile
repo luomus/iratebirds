@@ -10,6 +10,8 @@ RUN install_packages \
       r-cran-r6 \
       r-cran-remotes \
       r-cran-shiny \
+      r-cran-shinyjs \
+      r-cran-v8 \
       r-cran-yaml \
       wget \
       xtail

@@ -15,6 +15,7 @@ if (!DBI::dbExistsTable(db, "ratings")) {
     lon             = numeric(0L),
     time            = integer(0L),
     session         = character(0L),
+    user            = character(0L),
     rating          = numeric(0L)
   )
 
