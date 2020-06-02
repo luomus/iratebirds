@@ -19,13 +19,29 @@ services:
     volumes:
       - "./taxon/taxon.R:/taxon.R"
     command: "./taxon.R"
+    deploy:
+      resources:
+        limits:
+          memory: "100M"
+  submit:
+    build:
+      context: ./submit
+      dockerfile: Dockerfile
+      args:
+      - "PGUSER=${PGUSER}"
+      - "PGPASSWORD=${PGPASSWORD}"
+    restart: always
+    volumes:
+      - "./submit/submit.R:/submit.R"
+    command: "./submit.R"
+    deploy:
+      resources:
+        limits:
+          memory: "100M"
   shiny:
     build:
       context: ./shiny
       dockerfile: Dockerfile
-      args:
-        - "PGUSER=${PGUSER}"
-        - "PGPASSWORD=${PGPASSWORD}"
     restart: always
     user: "root"
     volumes:

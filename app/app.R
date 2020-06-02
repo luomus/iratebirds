@@ -2,45 +2,31 @@ library(shiny)
 library(httr)
 library(jsonlite)
 library(yaml)
-library(RPostgreSQL)
 library(shinyalert)
 library(waiter)
 
+library(promises)
 library(future)
 plan(multisession, workers = 4L)
 
-ratings_df <- data.frame(
-  photo_id        = NA_character_,
-  photo_rating    = NA_real_,
-  n_photo_ratings = NA_integer_,
-  code            = NA_character_,
-  common_name     = NA_character_,
-  sci_name        = NA_character_,
-  sex             = NA_character_,
-  age             = NA_character_,
-  lat             = NA_real_,
-  lon             = NA_real_,
-  time            = NA_integer_,
-  session         = NA_character_,
-  rating          = NA_real_
-)
-
 content <- yaml::yaml.load_file("content.yml")
 
-get_photo_link <- function(codes) {
+get_photo_link <- function() {
+  metadata <- list()
 
   candidates <- FALSE
 
   while (!any(candidates)) {
-    code <- httr::RETRY("GET", url = "http://taxon:8000/taxon")
-    httr::stop_for_status(code)
-    code <- httr::content(code, "text")
-    ratings_df$code <<- jsonlite::fromJSON(code, simplifyVector = FALSE)[[1L]]
+    metadata$code <- httr::RETRY("GET", url = "http://taxon:8000/taxon")
+    httr::stop_for_status(metadata$code)
+    metadata$code <- httr::content(metadata$code, "text")
+    metadata$code <-
+      jsonlite::fromJSON(metadata$code, simplifyVector = FALSE)[[1L]]
 
     res <- httr::RETRY(
       "GET", url = "https://search.macaulaylibrary.org/api/v1/search",
       query = list(
-        taxonCode = ratings_df$code, mediaType = "p", sort = "rating_rank_desc",
+        taxonCode = metadata$code, mediaType = "p", sort = "rating_rank_desc",
         count = 20L
       )
     )
@@ -65,42 +51,29 @@ get_photo_link <- function(codes) {
 
   res <- res[[candidates]]
 
-  ratings_df$photo_id        <<- res[["catalogId"]]
-  ratings_df$photo_rating    <<- as.numeric(res[["rating"]])
-  ratings_df$n_photo_ratings <<- as.integer(res[["ratingCount"]])
-  ratings_df$common_name     <<- res[["commonName"]]
-  ratings_df$sci_name        <<- res[["sciName"]]
-  ratings_df$sex             <<- res[["sex"]]
-  ratings_df$age             <<- res[["age"]]
-  ratings_df$lat             <<- res[["latitude"]]
-  ratings_df$lon             <<- res[["longitude"]]
+  metadata$photo_id        <- res[["catalogId"]]
+  metadata$photo_rating    <- as.numeric(res[["rating"]])
+  metadata$n_photo_ratings <- as.integer(res[["ratingCount"]])
+  metadata$common_name     <- res[["commonName"]]
+  metadata$sci_name        <- res[["sciName"]]
+  metadata$sex             <- res[["sex"]]
+  metadata$age             <- res[["age"]]
+  metadata$lat             <- res[["latitude"]]
+  metadata$lon             <- res[["longitude"]]
 
-  tags$iframe(
+  output <- tags$iframe(
     src = sprintf(
-      "https://macaulaylibrary.org/asset/%s/embed/320", ratings_df$photo_id
+      "https://macaulaylibrary.org/asset/%s/embed/320", metadata$photo_id
     ),
     frameborder = 0L,
     width       = 320L,
     height      = 380L
   )
 
-}
+  attr(output, "metadata") <- metadata
 
-save_data <- function(data) {
+  output
 
-  db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
-
-  if (!DBI::dbExistsTable(db, "ratings")) {
-
-    DBI::dbWriteTable(db, "ratings", ratings_df, row.names = FALSE)
-
-  } else {
-
-    DBI::dbWriteTable(db, "ratings", ratings_df, append = TRUE, row.names = FALSE)
-
-  }
-
-  DBI::dbDisconnect(db)
 }
 
 splash_screen <- div(
@@ -165,11 +138,10 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
 
-  ratings_df$session <<- session$token
-
   waiter::waiter_show(splash_screen, color = "#FFFFFF")
 
-  output$new_bird <- renderUI(future::future(get_photo_link(codes)))
+  current_photo <- future::future(get_photo_link())
+  output$new_bird <- renderUI(current_photo)
 
   observeEvent(
     input$start,
@@ -230,14 +202,33 @@ server <- function(input, output, session) {
   observeEvent(
     input$rated,
     {
-      ratings_df$rating  <<- as.integer(input$rating)
-      ratings_df$time    <<- as.integer(Sys.time())
-      save_data(ratings_df)
+
+      current_rating <- input$rating
+
+      promises::then(
+        current_photo,
+        function(x) {
+          submission         <- attr(x, "metadata")
+          submission$rating  <- as.integer(current_rating)
+          submission$time    <- as.integer(Sys.time())
+          submission$session <- session$token
+          future::future(
+            httr::RETRY(
+              "GET",
+              url   = "http://submit:8000/submit",
+              query = submission
+            )
+          )
+        }
+      )
+
       removeUI("#rated-container")
       insertUI("#rating", "afterEnd", unrated)
       has_button <<- FALSE
       session$sendCustomMessage("rating", "0")
-      output$new_bird <- renderUI(future::future(get_photo_link(codes)))
+      current_photo <<- future::future(get_photo_link())
+      output$new_bird <- renderUI(current_photo)
+
     },
     ignoreInit = TRUE
   )
