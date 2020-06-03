@@ -3,7 +3,7 @@ shinyjs.cookie = function(params) {
   if (typeof cookie !== "undefined") {
     Shiny.onInputChange("jscookie", cookie);
   } else {
-    Cookies.set("id", escape(params));
+    Cookies.set("id", escape(params), { expires: 1825 });
     Shiny.onInputChange("jscookie", params);
   }
 };
