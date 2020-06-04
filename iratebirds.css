@@ -1,0 +1,10 @@
+body, html {
+  height: 100%;
+  font-size: 25px;
+  font-family: Monospace;
+}
+
+#start {
+  font-size: 200%;
+  text-decoration: none;
+}
