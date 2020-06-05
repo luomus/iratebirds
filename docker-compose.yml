@@ -70,10 +70,10 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     environment:
       - "NGINX_PROXY_CONTAINER=iratebirds_nginxproxy_1"
+    volumes_from:
+      - "nginxproxy"
     volumes:
-      - "certs:/etc/nginx/certs"
-      - "vhostd:/etc/nginx/vhost.d"
-      - "html:/usr/share/nginx/html"
+      - "certs:/etc/nginx/certs:rw"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     restart: always
 
