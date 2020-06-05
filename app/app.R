@@ -1,7 +1,6 @@
 library(shiny)
 library(httr)
 library(jsonlite)
-library(yaml)
 library(shinyalert)
 library(waiter)
 library(V8)
@@ -11,7 +10,7 @@ library(promises)
 library(future)
 plan(multisession, workers = 4L)
 
-content <- yaml::yaml.load_file("content.yml")
+content <- jsonlite::read_json("content/fi.json")
 
 get_photo_link <- function() {
   metadata <- list()

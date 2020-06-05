@@ -50,12 +50,13 @@
 
 .sweet-alert h2 {
   margin-bottom: 10px;
+  font-size: 25px !important;
 }
 
 .sweet-alert p {
-  text-align: justify !important;
+  text-align: left !important;
   margin: 0 10px 0 10px !important;
-  font-size: 100% !important;
+  font-size: 90% !important;
 }
 
 .confirm {
@@ -117,7 +118,7 @@ label {
 #rated {
   font-family: monospace;
   font-weight: 900;
-  font-size: 200%;
+  font-size: 150%;
   text-decoration: none;
   text-align: center;
 }
