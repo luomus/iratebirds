@@ -56,6 +56,7 @@ services:
           memory: "500M"
   nginxproxy:
     image: jwilder/nginx-proxy
+    container_name: iratebirds_nginxproxy_1
     restart: always
     ports:
       - "80:80"
@@ -68,7 +69,7 @@ services:
   letsencrypt-nginx-proxy-companion:
     image: jrcs/letsencrypt-nginx-proxy-companion
     environment:
-      - "NGINX_PROXY_CONTAINER=nginxproxy"
+      - "NGINX_PROXY_CONTAINER=iratebirds_nginxproxy_1"
     volumes:
       - "certs:/etc/nginx/certs"
       - "vhostd:/etc/nginx/vhost.d"
@@ -80,4 +81,3 @@ volumes:
   certs:
   html:
   vhostd:
-
