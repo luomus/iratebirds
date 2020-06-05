@@ -48,6 +48,8 @@ services:
       - "./app:/srv/shiny-server"
     environment:
        - "VIRTUAL_HOST=${HOST}"
+       - "LETSENCRYPT_HOST=${HOST}"
+       - "LETSENCRYPT_EMAIL=${EMAIL}"
     deploy:
       resources:
         limits:
@@ -57,5 +59,25 @@ services:
     restart: always
     ports:
       - "80:80"
+      - "443:443"
     volumes:
+      - "certs:/etc/nginx/certs:ro"
+      - "vhostd:/etc/nginx/vhost.d"
+      - "html:/usr/share/nginx/html"
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    environment:
+      - "NGINX_PROXY_CONTAINER=nginxproxy"
+    volumes:
+      - "certs:/etc/nginx/certs"
+      - "vhostd:/etc/nginx/vhost.d"
+      - "html:/usr/share/nginx/html"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    restart: always
+
+  volumes:
+    certs:
+    html:
+    vhostd:
+
