@@ -115,7 +115,7 @@ ui <- fluidPage(
       ),
       class = "title-about-faq"
     ),
-    content$main_page$title
+    content$main_page$window_title
   ),
   htmlOutput("new_bird"),
   ShinyRatingInput::ratingInput(
