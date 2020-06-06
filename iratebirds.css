@@ -4,6 +4,10 @@ body, html {
   font-family: Monospace;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 #start {
   font-size: 200%;
   text-decoration: none;
