@@ -1,7 +1,7 @@
-var landing_page = new Vue({
-  el: '#landing_page',
+var landing = new Vue({
+  el: '#landing',
   data: {
-    "landing_page": {
+    "landing": {
       "title": Array(5).fill("")
     }
   },
@@ -9,7 +9,7 @@ var landing_page = new Vue({
     fetch("content/en.json")
       .then(r => r.json())
       .then(content => {
-        this.landing_page = content.landing_page;
+        this.landing = content.landing;
       });
   }
 });

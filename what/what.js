@@ -1,7 +1,7 @@
-var what_page = new Vue({
-  el: '#what_page',
+var what = new Vue({
+  el: '#what',
   data: {
-    "what_page": {
+    "what": {
       "title": Array(1).fill(""),
       "body": Array(4).fill("")
     }
@@ -10,7 +10,7 @@ var what_page = new Vue({
     fetch("../content/en.json")
       .then(r => r.json())
       .then(content => {
-        this.what_page = content.what_page;
+        this.what = content.what;
       });
   }
 });

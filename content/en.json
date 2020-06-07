@@ -1,8 +1,8 @@
 {
-  "landing_page": {
+  "landing": {
     "title": ["🥰", "that", "🦜?", "🤷", "→"]
   },
-  "what_page": {
+  "what": {
     "title": ["what is this?"],
     "body": ["Good question. Well... Basically this is the place to come to judge the appearance of birds guilt free!", "How so? It's like this see... As we all know, many birds are under threat from the illegal wildlife trade. But it isn't clear to what extent some birds might be more threatened than others and why? What is it that makes a bird appealing? Part of the equation is obviously the bird's appearance. But what is it about how a bird looks that makes it attractive?", "Hard to say, right? And darn hard to quantify! Now that's where you come in. Time to look at some birds and tell us what you think of them on a scale of 😨️ to 😍️. Come on, you know you want to. And it's for a good cause!!", "→"]
   },
