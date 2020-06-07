@@ -1,0 +1,18 @@
+body, html {
+  height: 100%;
+  font-size: 16px;
+  font-family: Monospace;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+p {
+  font-size: 80%;
+}
+
+#go {
+  font-size: 500%;
+  text-decoration: none;
+}
