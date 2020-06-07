@@ -4,7 +4,7 @@ var landing_page = new Vue({
     title: ["", "", "", "", ""]
   },
   created: function () {
-    fetch("/content/en.json")
+    fetch("content/en.json")
       .then(r => r.json())
       .then(content => {
         this.title=content.landing_page.title;
