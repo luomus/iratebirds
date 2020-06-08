@@ -17,10 +17,9 @@
     "question_3": ["3. How long should I take to rate the birds?", "Don't overthink it. We want your gut feeling. So rate the bird right away and move on to the next bird whenever you have stopped enjoying looking it."],
     "question_4": ["4. I have a very particular taste in birds. Won't that effect your analysis?", "We want to know what everyone's tastes in birds are. We are all different and we all like different things. Just like birds!"]
   },
-  "main_page": {
-    "window_title": ["iratebirds"],
+  "go": {
     "title": ["🥰 this 🦅?"],
-    "slider_labels": ["😨️️", "😍️️"],
+    "labels": ["😨️️", "😍️️"],
     "this_bird": ["please rate the appearance of this bird"],
     "new_bird": ["show me another! →"]
   }

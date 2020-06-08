@@ -1,0 +1,42 @@
+body, html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+figcaption {
+  font-size: 1.2rem;
+}
+
+.caption-head {
+  font-size: 1.2rem;
+  letter-spacing: -.03rem;
+}
+
+.common-name {
+  font-size: 1.4rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li:not(:last-child) {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: rgba(0, 0, 0, 0.2);
+  margin-right: .64rem;
+  padding-right: .96rem;
+}
+
+.cornell-logo {
+  height: 2rem;
+  width: 7.42812rem;
+}
+
+.labels {
+  font-size: 2rem;
+}
