@@ -37,8 +37,8 @@
                   <li><time v-bind:datetime="photo.datetime" v-cloak> {{ photo.display_date }}</time></li>
                 </ul>
                 <ul class="list-group list-group-horizontal align-items-center">
-                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.asset_url">Macaulay Library {{ photo.asset_name }}</a></li>
-                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.checklist_url">eBird&nbsp;{{ photo.checklist_name }}</a></li>
+                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.asset_url" v-cloak>Macaulay Library {{ photo.asset_name }}</a></li>
+                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.checklist_url" v-cloak>eBird&nbsp;{{ photo.checklist_name }}</a></li>
                   <li class="d-inline-block">
                     <a target="_blank" rel="noopener" href="http://birds.cornell.edu/" class="MediaCredit-logoLab">
                       <svg class="cornell-logo" viewBox="0 0 360 68" role="img" aria-labelledby="clo-short-logo-title">
