@@ -19,12 +19,14 @@ services:
     volumes:
       - "./taxon/taxon.R:/taxon.R"
     command: "./taxon.R"
+    environment:
+      - "VIRTUAL_HOST=api.${HOST}"
+      - "LETSENCRYPT_HOST=api.${HOST}"
+      - "LETSENCRYPT_EMAIL=${EMAIL}"
     deploy:
       resources:
         limits:
           memory: "100M"
-    ports:
-      - "8000:8000"
   submit:
     build:
       context: ./submit
