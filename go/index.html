@@ -63,8 +63,16 @@
         </figure>
       </div>
       <div class="col-sm d-flex flex-column justify-content-center">
-        <div class="labels mb-2"><span class="float-left" v-cloak>{{ go.labels[0] }}</span><span class="float-right" v-cloak>{{ go.labels[1] }}</span></div>
-        <div class="d-flex justify-content-center"><heart-rating :max-rating="10" :show-rating="false" :item-size="18" inactive-color="#ffffff" active-color="#dc2c44" border-color="#dc2c44" v-model="rating"></heart-rating></div>
+        <div class="labels mb-2">
+          <span class="float-left" v-cloak>{{ go.labels[0] }}</span><span class="float-right" v-cloak>{{ go.labels[1] }}</span>
+        </div>
+        <div class="d-flex justify-content-center mb-2">
+          <heart-rating :max-rating="10" :show-rating="false" :item-size="18" inactive-color="#ffffff" active-color="#dc2c44" border-color="#dc2c44" v-model="rating"></heart-rating>
+        </div>
+        <div class="prompt d-flex justify-content-center">
+          <p class="text-monospace" v-show="rating < 1" v-cloak> {{ go.this_bird[0] }} </p>
+          <p class="text-monospace" v-show="rating > 1"><a @click="rated" href="#" v-cloak>{{ go.new_bird[0] }}</a></p>
+        </div>
       </div>
     </div>
   </div>

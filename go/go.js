@@ -21,13 +21,24 @@ var go = new Vue({
       "asset_name": "ML165879411",
       "checklist_url": "https://ebird.org/view/checklist/S57701827",
       "checklist_name": "S57701827"
-    }
+    },
+    "candidates": null
   },
   created: function () {
     fetch("../content/en.json")
-      .then(r => r.json())
+      .then(content => content.json())
       .then(content => {
         this.go = content.go;
       });
+  },
+  methods: {
+    rated() {
+      this.rating = 0;
+      fetch("https://search.macaulaylibrary.org/api/v1/search?taxonCode=comros&mediaType=p&sort=rating_rank_desc&count=20")
+        .then(query => query.json())
+        .then(query => {
+          this.candidates = query.results.content;
+        });
+    }
   }
 });

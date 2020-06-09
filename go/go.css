@@ -40,3 +40,7 @@ li:not(:last-child) {
 .labels {
   font-size: 2rem;
 }
+
+.prompt {
+  font-size: 1.2rem;
+}
