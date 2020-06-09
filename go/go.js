@@ -7,6 +7,7 @@ var go = new Vue({
       "this_bird": Array(1).fill(""),
       "new_bird": Array(1).fill("")
     },
+    "code": null,
     "rating": 0,
     "photo": {
       "url": "https://test.cdn.download.ams.birds.cornell.edu/api/v1/asset/165879411/640",
@@ -29,6 +30,11 @@ var go = new Vue({
       .then(content => content.json())
       .then(content => {
         this.go = content.go;
+      });
+    fetch("https://api.iratebirds.app/taxon")
+      .then(res => res.json())
+      .then(res => {
+        this.code = res[0];
       });
   },
   methods: {
