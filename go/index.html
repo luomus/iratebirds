@@ -24,21 +24,21 @@
     <div class="row justify-content-center">
       <div class="col-sm">
         <figure>
-          <img class="img-fluid" src="https://test.cdn.download.ams.birds.cornell.edu/api/v1/asset/165879411/640">
+          <img class="img-fluid" v-bind:src="photo.url">
           <figcaption class="mt-2">
             <div>
               <h1 class="caption-head mb-1">
-                <a href="https://ebird.org/species/comros" target="_blank" rel="noopener"><span class="common-name font-weight-bold" dir="auto">Common Rosefinch</span></a>
-                <span class="font-italic font-weight-normal ml-2">Carpodacus erythrinus</span>
+                <a v-bind:href="photo.sp_url" target="_blank" rel="noopener"><span class="common-name font-weight-bold" dir="auto" v-cloak>{{ photo.sp_common_name }}</span></a>
+                <span class="font-italic font-weight-normal ml-2" v-cloak>{{ photo.sp_scientific_name }}</span>
               </h1>
-              <div class="mb-1"><span>©&nbsp;Will Morris</span></div>
+              <div class="mb-1" v-cloak><span>©&nbsp;{{ photo.copyright_holder }}</span></div>
                 <ul class="list-group list-group-horizontal mb-1">
-                  <li><span>Uusimaa, Finland</span></li>
-                  <li><time datetime="2019-06-26T08:56:00">26 Jun 2019</time></li>
+                  <li><span v-cloak>{{ photo.location}}</span></li>
+                  <li><time v-bind:datetime="photo.datetime" v-cloak> {{ photo.display_date }}</time></li>
                 </ul>
                 <ul class="list-group list-group-horizontal align-items-center">
-                  <li class="d-inline-block"><a target="_blank" rel="noopener" href="https://macaulaylibrary.org/asset/165879411">Macaulay Library ML165879411</a></li>
-                  <li class="d-inline-block"><a target="_blank" rel="noopener" href="https://ebird.org/view/checklist/S57701827">eBird&nbsp;S57701827</a></li>
+                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.asset_url">Macaulay Library {{ photo.asset_name }}</a></li>
+                  <li class="d-inline-block"><a target="_blank" rel="noopener" v-bind:href="photo.checklist_url">eBird&nbsp;{{ photo.checklist_name }}</a></li>
                   <li class="d-inline-block">
                     <a target="_blank" rel="noopener" href="http://birds.cornell.edu/" class="MediaCredit-logoLab">
                       <svg class="cornell-logo" viewBox="0 0 360 68" role="img" aria-labelledby="clo-short-logo-title">
@@ -64,7 +64,7 @@
       </div>
       <div class="col-sm d-flex flex-column justify-content-center">
         <div class="labels mb-2"><span class="float-left" v-cloak>{{ go.labels[0] }}</span><span class="float-right" v-cloak>{{ go.labels[1] }}</span></div>
-        <div class="d-flex justify-content-center"><heart-rating :max-rating="10" :show-rating="false" :item-size="18" inactive-color="#ffffff" active-color="#dc2c44" v-model="rating"></heart-rating></div>
+        <div class="d-flex justify-content-center"><heart-rating :max-rating="10" :show-rating="false" :item-size="18" inactive-color="#ffffff" active-color="#dc2c44" border-color="#dc2c44" v-model="rating"></heart-rating></div>
       </div>
     </div>
   </div>
