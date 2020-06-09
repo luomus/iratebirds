@@ -1,7 +1,6 @@
 {
   "landing_page": {
-    "title": ["🥰", "that", "🦜?", "🤷"],
-    "info_button": ["ℹ️"]
+    "title": ["🥰", "that", "🦜?", "🤷"]
   },
   "info_page": {
     "title": ["what is this?"],
