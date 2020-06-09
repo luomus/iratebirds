@@ -24,7 +24,7 @@ services:
         limits:
           memory: "100M"
     ports:
-      "8000:8000"
+      - "8000:8000"
   submit:
     build:
       context: ./submit
