@@ -1,47 +1,65 @@
 body, html {
   height: 100%;
-  font-size: 25px;
+  font-size: 80px;
   font-family: Monospace;
+  margin: 0;
+  font-weight: 900;
 }
 
 [v-cloak] {
   display: none;
 }
 
-#what {
-  font-size: 200%;
-  text-decoration: none;
+#landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%
 }
 
-.landing-left {
+#landing > div:first-child { 
   text-align: right;
+  width: 50%;
+  margin-right: .25rem;
+
 }
-.landing-right {
+
+#landing > div:last-child {
   text-align: left;
+  width: 50%;
+  margin-left: .25rem;
 }
-.landing-top {
-  padding-right: 25px;
-}
-.landing-bottom {
-  padding-left: 25px;
+
+#landing > div > div {
+  display: inline-block;
+  text-align: center;
 }
 
 @media (max-width: 575px) {
-  .landing-left {
+
+  #landing {
+    flex-wrap: wrap;
+  }
+
+  #landing > div:first-child {
+    align-self: flex-end;
     text-align: center;
+    width: 100%;
+    margin-right: 0rem;
+    margin-bottom: .25rem;
   }
-  .landing-right {
+
+  #landing > div:last-child {
+    align-self: flex-start;
     text-align: center;
+    width: 100%;
+    margin-left: 0rem;
+    margin-top: .25rem;
   }
-  .landing-top {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-right: 0;
-    padding-bottom: 25px;
-  }
-  .landing-bottom {
-    padding-left: 0;
-    padding-top: 25px;
-  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.8rem;
 }
