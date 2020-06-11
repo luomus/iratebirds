@@ -1,6 +1,6 @@
 @font-face {
   font-family: "emojisubset";
-  src: url("NotoColorEmojiSubset.woff") format("woff");
+  src: url("../NotoColorEmojiSubset.woff") format("woff");
 }
 
 body, html {
