@@ -40,7 +40,7 @@ var go = new Vue({
   methods: {
     rated() {
       this.rating = 0;
-      fetch("https://search.macaulaylibrary.org/api/v1/search?taxonCode=comros&mediaType=p&sort=rating_rank_desc&count=20")
+      fetch("")
         .then(query => query.json())
         .then(query => {
           this.candidates = query.results.content;
