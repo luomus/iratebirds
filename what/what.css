@@ -1,12 +1,15 @@
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+
 @font-face {
-  font-family: "emojisubset";
-  src: url("../NotoColorEmojiSubset.woff") format("woff");
+  font-family: "color emoji";
+  src: url("/NotoColorEmojiSubset.woff2") format("woff2"),
+       url("/NotoColorEmojiSubset.woff") format("woff");
 }
 
 body, html {
   height: 100%;
   font-size: 3vmin;
-  font-family: noto color emoji, "emojisubset", Monospace;
+  font-family: "Source Code Pro", monospace, "color emoji", "noto color emoji";
   text-align: center;
   margin: 0;
 }
