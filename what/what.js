@@ -8,7 +8,7 @@ var what = new Vue({
   },
   created: function () {
     fetch("../content/en.json")
-      .then(r => r.json())
+      .then(content => content.json())
       .then(content => {
         this.what = content.what;
       });

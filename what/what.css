@@ -1,18 +1,44 @@
+@font-face {
+  font-family: "emojisubset";
+  src: url("NotoColorEmojiSubset.woff") format("woff");
+}
+
 body, html {
   height: 100%;
-  font-size: 16px;
-  font-family: Monospace;
+  font-size: 3vmin;
+  font-family: noto color emoji, "emojisubset", Monospace;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-height: 1000px) {
+  body, html {
+    font-size: 30px;
+  }
+}
+
+#what {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#what > div {
+  max-width: 800px;
+  margin: 0 2rem;
+}
+
+p {
+  text-align: left;
 }
 
 [v-cloak] {
   display: none;
 }
 
-p {
-  font-size: 80%;
-}
-
-#go {
-  font-size: 500%;
+a {
   text-decoration: none;
+  font-size: 5rem;
 }
