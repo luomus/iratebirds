@@ -172,9 +172,20 @@ server <- function(input, output, session) {
     {
       shinyalert::shinyalert(
         content$about$title,
-        paste(content$about$body, collapse = "\n\n"),
-        type = "info",
-        confirmButtonText = "\u2192",
+        paste(
+          paste0(content$about$body, collapse = "<br><br>"),
+          paste0(
+            '<a href="',
+            sprintf(content$survey$url[[1L]], input$jscookie),
+            '">',
+            content$about$survey,
+            '</a>'
+          ),
+          sep = "<br><br>"
+        ),
+        "info",
+        html = TRUE,
+        confirmButtonText = content$about$return
       )
     }
   )
@@ -184,9 +195,9 @@ server <- function(input, output, session) {
     {
       shinyalert::shinyalert(
         content$faq$title,
-        paste(content$faq$question_1, collapse = "\n\n"),
+        paste(unlist(content$faq$questions), collapse = "\n\n"),
         type = "info",
-        confirmButtonText = "\u2192",
+        confirmButtonText =  content$faq$return
       )
     }
   )
