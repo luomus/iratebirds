@@ -9,14 +9,19 @@
   "about": {
     "icon": ["ℹ️"],
     "title": ["iratebirds"],
-    "body": ["Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.", "Työtä on tukenut Koneen säätiö.", "Valokuvat: the Macualay Library, Cornell Lab of Ornithology."]
+    "body": ["Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.", "Työtä on tukenut Koneen säätiö.", "Valokuvat: the Macualay Library, Cornell Lab of Ornithology."],
+    "survey": ["Jos haluat osallistua tutkimusta tukevaan vapaaehtoiseen lisäkyselyyn, klikkaa tästä!"],
+    "return": ["↺"]
   },
   "faq": {
     "title": ["FAQ"],
-    "question_1": ["1. Mitä tarkoitamme lintujen ulkonäöllä ja viehättävyydellä?", "Emme tarkoituksella ole määritelleet tätä tarkasti. Sinun tulee päättää itse jokaisen linnun kohdalla. Jos lintu herättää sinussa positiivisia tai negatiivisia tunteita, jotka eivät liity sen ulkonäköön yritä pitää nuo ajatukset erillään nyt tekemästäsi arvioinnista. Keskity vain ulkonäköön."],
-    "question_2": ["2. Arvostelenko valokuvaa, lintuyksilöä vai lintulajia?", "Haluamme tietää, mitä ajattelet lintuyksilöstä (tai linnuista, jos kuvassa on niitä enemmän kuin yksi). Älä huolehdi siitä näyttäytyykö lintu kuvassa edukseen vai ei. Arvostele ulkonäön perusteella se, mitä näet. Arvioi kuvan lintuyksilöä tai -yksilöitä. Jos satut tuntemaan lajin, ja tiedät, että kyseisen lajin tyypillinen yksilö olisi paljon kauniimpi kuin kuvan lintu, yritä olla huomioimatta tietoasi."],
-    "question_3": ["3. Kuinka kauan lintujen arvioimisessa saa kestää?", "Älä mieti liikaa. Haluamme tietää ensimmäisen intuitiivisen ajatuksesi. Arvioi linnun ulkonäkö saman tien ja siirry seuraavaan lintuun, heti kun olet katsonut jo arvioimaasi kuvaa tarpeeksesi."],
-    "question_4": ["4. Minulla on hyvin omanlaiseni maku lintujen ulkonäön suhteen. Vaikuttaako se jotenkin tuloksiinne?", "Haluamme tietää erilaisten ihmisten todellisia arvioita lintujen ulkonäöstä. Vastaa siis rehellisesti. Olemme kaikki erilaisia ja pidämme erilaisista asioista! Ihan niin kuin linnutkin!"]
+    "questions": {
+      "1": ["1. Mitä tarkoitamme lintujen ulkonäöllä ja viehättävyydellä?", "Emme tarkoituksella ole määritelleet tätä tarkasti. Sinun tulee päättää itse jokaisen linnun kohdalla. Jos lintu herättää sinussa positiivisia tai negatiivisia tunteita, jotka eivät liity sen ulkonäköön yritä pitää nuo ajatukset erillään nyt tekemästäsi arvioinnista. Keskity vain ulkonäköön."],
+      "2": ["2. Arvostelenko valokuvaa, lintuyksilöä vai lintulajia?", "Haluamme tietää, mitä ajattelet lintuyksilöstä (tai linnuista, jos kuvassa on niitä enemmän kuin yksi). Älä huolehdi siitä näyttäytyykö lintu kuvassa edukseen vai ei. Arvostele ulkonäön perusteella se, mitä näet. Arvioi kuvan lintuyksilöä tai -yksilöitä. Jos satut tuntemaan lajin, ja tiedät, että kyseisen lajin tyypillinen yksilö olisi paljon kauniimpi kuin kuvan lintu, yritä olla huomioimatta tietoasi."],
+      "3": ["3. Kuinka kauan lintujen arvioimisessa saa kestää?", "Älä mieti liikaa. Haluamme tietää ensimmäisen intuitiivisen ajatuksesi. Arvioi linnun ulkonäkö saman tien ja siirry seuraavaan lintuun, heti kun olet katsonut jo arvioimaasi kuvaa tarpeeksesi."],
+      "4": ["4. Minulla on hyvin omanlaiseni maku lintujen ulkonäön suhteen. Vaikuttaako se jotenkin tuloksiinne?", "Haluamme tietää erilaisten ihmisten todellisia arvioita lintujen ulkonäöstä. Vastaa siis rehellisesti. Olemme kaikki erilaisia ja pidämme erilaisista asioista! Ihan niin kuin linnutkin!"]
+    },
+    "return": ["↺"]
   },
   "go": {
     "window_title": ["iratebirds"],
