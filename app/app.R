@@ -1,14 +1,14 @@
-library(shiny)
+library(future)
 library(httr)
 library(jsonlite)
-library(shinyalert)
-library(waiter)
-library(V8)
-library(shinyjs)
-
 library(promises)
-library(future)
-plan(multisession, workers = 4L)
+library(shiny)
+library(shinyalert)
+library(shinyjs)
+library(ShinyRatingInput)
+library(waiter)
+
+future::plan(multisession, workers = 4L)
 
 content <- jsonlite::read_json("content/fi.json")
 
@@ -28,7 +28,7 @@ get_photo_link <- function() {
       "GET", url = "https://search.macaulaylibrary.org/api/v1/search",
       query = list(
         taxonCode = metadata$code, mediaType = "p", sort = "rating_rank_desc",
-        count = 20L
+        count = 20L, clientapp = "BAR"
       )
     )
     httr::stop_for_status(res)
@@ -78,16 +78,16 @@ get_photo_link <- function() {
 }
 
 splash_screen <- div(
-  h2(content$landing_page$title[[1]]),
-  h2(content$landing_page$title[[2]]),
-  h2(content$landing_page$title[[3]]),
-  h2(content$landing_page$title[[4]], class = "last-line"),
-  actionLink("start", "\u2192"),
+  h2(content$landing$title[[1]]),
+  h2(content$landing$title[[2]]),
+  h2(content$landing$title[[3]]),
+  h2(content$landing$title[[4]], class = "last-line"),
+  actionLink("start", content$landing$title[[5]]),
   class = "splash-main"
 )
 
 unrated <- div(
-  span(content$main_page$this_bird, id = "unrated"),
+  span(content$go$this_bird, id = "unrated"),
   id = "unrated-container"
 )
 
@@ -103,30 +103,32 @@ ui <- fluidPage(
     src = "https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
   ),
   shinyjs::useShinyjs(),
-  shinyjs::extendShinyjs("www/custom.js"),
+  shinyjs::extendShinyjs(
+    "www/custom.js", functions = c("cookie", "reset_hearts")
+  ),
   waiter::use_waiter(include_js = FALSE),
   titlePanel(
     div(
-      span(content$main_page$title, class = "title"),
+      span(content$go$title, class = "title"),
       span(
-        actionLink("about_link", content$landing_page$info_button),
+        actionLink("about_link", content$about$icon),
         actionLink("faq_link", content$faq$title),
         class = "about-faq"
       ),
       class = "title-about-faq"
     ),
-    content$main_page$window_title
+    content$go$window_title
   ),
   htmlOutput("new_bird"),
   ShinyRatingInput::ratingInput(
     "rating",
     div(
       span(
-        content$main_page$slider_labels[[1]],
+        content$go$slider_labels[[1]],
         class = "left-slider-label"
       ),
       span(
-        content$main_page$slider_labels[[2]],
+        content$go$slider_labels[[2]],
         class = "right-slider-label"
       ),
       class = "slider-labels"
@@ -155,8 +157,8 @@ server <- function(input, output, session) {
     input$start,
     {
       shinyalert::shinyalert(
-        content$info_page$title,
-        paste(content$info_page$body, collapse = "\n\n"),
+        content$what$title,
+        paste(content$what$body, collapse = "\n\n"),
         type = "info",
         confirmButtonText = "\u2192",
       )
@@ -198,7 +200,7 @@ server <- function(input, output, session) {
       insertUI(
         "#rating", "afterEnd",
         div(
-          actionLink("rated", content$main_page$new_bird),
+          actionLink("rated", content$go$new_bird),
           id = "rated-container"
         )
       )
