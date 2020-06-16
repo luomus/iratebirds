@@ -1,12 +1,13 @@
 {
-  "landing_page": {
-    "title": ["🥰", "tuosta", "🦜?", "🤷"]
+  "landing": {
+    "title": ["🥰", "tuosta", "🦜?", "🤷", "→"]
   },
-  "info_page": {
+  "what": {
     "title": ["mikä tämä sivusto on?"],
     "body": ["Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.", "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?", "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨️ - 😍️. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!"]
   },
   "about": {
+    "icon": ["ℹ️"],
     "title": ["iratebirds"],
     "body": ["Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.", "Työtä on tukenut Koneen säätiö.", "Valokuvat: the Macualay Library, Cornell Lab of Ornithology."]
   },
@@ -17,11 +18,14 @@
     "question_3": ["3. Kuinka kauan lintujen arvioimisessa saa kestää?", "Älä mieti liikaa. Haluamme tietää ensimmäisen intuitiivisen ajatuksesi. Arvioi linnun ulkonäkö saman tien ja siirry seuraavaan lintuun, heti kun olet katsonut jo arvioimaasi kuvaa tarpeeksesi."],
     "question_4": ["4. Minulla on hyvin omanlaiseni maku lintujen ulkonäön suhteen. Vaikuttaako se jotenkin tuloksiinne?", "Haluamme tietää erilaisten ihmisten todellisia arvioita lintujen ulkonäöstä. Vastaa siis rehellisesti. Olemme kaikki erilaisia ja pidämme erilaisista asioista! Ihan niin kuin linnutkin!"]
   },
-  "main_page": {
+  "go": {
     "window_title": ["iratebirds"],
     "title": ["🥰 tästä 🦅?"],
-    "slider_labels": ["😨️️", "😍️️"],
+    "labels": ["😨️️", "😍️️"],
     "this_bird": ["arvioi tämän linnun ulkonäköä, kiitos!"],
     "new_bird": ["näytä minulle seuraava! →"]
+  },
+  "survey": {
+    "url": ["https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%s"]
   }
 }
