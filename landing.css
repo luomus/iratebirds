@@ -1,15 +1,9 @@
 @import url(//fonts.googleapis.com/css?family=Source+Code+Pro:900);
 
-@font-face {
-  font-family: "color emoji";
-  src: url("/NotoColorEmojiSubset.woff2") format("woff2"),
-       url("/NotoColorEmojiSubset.woff") format("woff");
-}
-
 body, html {
   height: 100%;
   font-size: 15vmin;
-  font-family: "Source Code Pro", monospace, "color emoji", "noto color emoji";
+  font-family: "Source Code Pro", monospace;
   margin: 0;
   font-weight: 900;
 }
