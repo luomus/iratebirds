@@ -3,15 +3,7 @@ FROM bitnami/minideb
 RUN install_packages \
       gdebi-core \
       lsb-release \
-      r-cran-digest \
-      r-cran-future \
-      r-cran-httr \
-      r-cran-magrittr \
-      r-cran-r6 \
-      r-cran-remotes \
-      r-cran-shiny \
-      r-cran-shinyjs \
-      r-cran-v8 \
+      r-base-core \
       wget \
       xtail
 
@@ -23,7 +15,8 @@ RUN  wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION
   && . /etc/environment \
   && chown shiny:shiny /var/lib/shiny-server
 
-RUN  /usr/lib/R/site-library/littler/examples/install.r shinyalert waiter \
+RUN  echo "options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest'))" >> /usr/lib/R/etc/Rprofile.site \
+  && R -e "install.packages(c('future', 'httr', 'promises', 'remotes', 'shinyalert', 'shinyjs', 'waiter'))" \
   && R -e "remotes::install_github('stefanwilhelm/ShinyRatingInput', dependencies = FALSE, upgrade = 'never')" \
   && rm -rf /tmp/downloaded_packages
 
