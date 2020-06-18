@@ -99,7 +99,7 @@ ui <- fluidPage(
   shinyjs::extendShinyjs(
     "www/custom.js",
     functions = c(
-      "cookie", "reset_hearts"
+      "cookie", "set_lang_cookie", "get_lang_cookie", "reset_hearts"
     )
   ),
   waiter::use_waiter(include_js = FALSE),
@@ -122,41 +122,75 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
 
+  observe(js$get_lang_cookie())
   observe(js$cookie(session$token))
 
-  chosen_lang <- reactive(content(input$lang_selector))
+  chosen_lang <- reactive(content(input$jslang_cookie))
 
-  output$splash<- renderUI({
-    splash <- content(default_lang)$landing$title
+  output$splash <- renderUI(
     div(
-      h2(splash[[1L]], id = "splash-line1"),
-      h2(splash[[2L]], id = "splash-line2"),
-      h2(splash[[3L]], id = "splash-line3"),
-      h2(splash[[4L]], id = "splash-line4"),
-      actionLink("start", splash[[5L]]),
-      div(
-        selectInput(
-          "lang_selector", "🌍", available_lang,
-          selected = names(which(available_lang == default_lang)),
-          width = "120px"
-        ),
-      id = "lang-select"
-      ),
-      class = "splash-main"
+      div(id = "splash-position"),
+      div(id = "splash-main"),
+      class = "splash-container"
     )
-  })
+  )
 
   observeEvent(
-    input$lang_selector,
-    {
-      removeUI("#splash-line2")
+    input$jslang_cookie,
+    if (!is.null(input$jslang_cookie) && input$jslang_cookie != "") {
+      removeUI("#splash-main")
       insertUI(
-        "#splash-line1", "afterEnd",
-        h2(chosen_lang()$landing$title[[2L]], id = "splash-line2")
+        "#splash-position", "afterEnd",
+        {
+          splash <- content(input$jslang_cookie)$landing$title
+          div(
+            h2(splash[[1L]], id = "splash-line1"),
+            h2(splash[[2L]], id = "splash-line2"),
+            h2(splash[[3L]], id = "splash-line3"),
+            h2(splash[[4L]], id = "splash-line4"),
+            actionLink("start", splash[[5L]]),
+            div(
+              selectInput(
+                "lang_selector", "🌍", available_lang,
+                selected = input$jslang_cookie, width = "120px"
+              ),
+              id = "lang-select"
+            ),
+          id = "splash-main"
+          )
+        }
+      )
+      observeEvent(
+        input$lang_selector,
+        if (!is.null(input$lang_selector) && input$lang_selector != "") {
+          cat(file = stderr(), "Lang selector is:", input$lang_selector, "\n")
+          removeUI("#splash-line2")
+          insertUI(
+            "#splash-line1", "afterEnd",
+            h2(content(input$lang_selector)$landing$title[[2L]], id = "splash-line2")
+          )
+        }
+      )
+      observeEvent(
+        input$start,
+        {
+          shinyalert::shinyalert(
+            content(input$lang_selector)$what$title,
+            paste(content(input$lang_selector)$what$body, collapse = "\n\n"),
+            type = "info",
+            confirmButtonText = content(input$lang_selector)$what$go,
+          )
+          js$set_lang_cookie(input$lang_selector)
+          waiter::waiter_hide()
+        },
+        ignoreInit = TRUE,
+        once = TRUE
       )
     },
-    ignoreInit = TRUE
+    ignoreInit = TRUE,
+    once = TRUE
   )
+
 
   output$go_title <- renderUI(
     div(
@@ -169,6 +203,7 @@ server <- function(input, output, session) {
       class = "title-about-faq"
     )
   )
+
   output$rating_labels <- renderUI(
     div(
       span(chosen_lang()$go$labels[[1L]], class = "left-rating-label"),
@@ -187,19 +222,6 @@ server <- function(input, output, session) {
 
   current_photo <- future::future(get_photo_link())
   output$new_bird <- renderUI(current_photo)
-
-  observeEvent(
-    input$start,
-    {
-      shinyalert::shinyalert(
-        chosen_lang()$what$title,
-        paste(chosen_lang()$what$body, collapse = "\n\n"),
-        type = "info",
-        confirmButtonText = chosen_lang()$what$go,
-      )
-      waiter::waiter_hide()
-    }
-  )
 
   observeEvent(
     input$about_link,
