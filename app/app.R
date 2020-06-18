@@ -122,7 +122,7 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
 
-  observe(js$get_lang_cookie())
+  observe(js$get_lang_cookie(default_lang))
   observe(js$cookie(session$token))
 
   chosen_lang <- reactive(content(input$jslang_cookie))
@@ -163,7 +163,6 @@ server <- function(input, output, session) {
       observeEvent(
         input$lang_selector,
         if (!is.null(input$lang_selector) && input$lang_selector != "") {
-          cat(file = stderr(), "Lang selector is:", input$lang_selector, "\n")
           removeUI("#splash-line2")
           insertUI(
             "#splash-line1", "afterEnd",

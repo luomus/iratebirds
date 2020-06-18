@@ -12,6 +12,9 @@ shinyjs.get_lang_cookie = function(params) {
   var lang_cookie = Cookies.get("lang");
   if (typeof lang_cookie !== "undefined") {
     Shiny.onInputChange("jslang_cookie", lang_cookie);
+  } else {
+    Cookies.set("lang", escape(params), { expires: 1825 });
+    Shiny.onInputChange("jslang_cookie", params);
   }
 };
 
