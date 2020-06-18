@@ -10,7 +10,13 @@ library(waiter)
 
 future::plan(multisession, workers = 4L)
 
-content <- jsonlite::read_json("content/fi.json")
+default_lang   <- "fi"
+available_lang <- list(Suomi = "fi", English = "en")
+
+content <- function(x) {
+  if (is.null(x)) x <- default_lang
+  jsonlite::read_json(sprintf("content/%s.json", x[[1L]]))
+}
 
 get_photo_link <- function() {
   metadata <- list()
@@ -20,7 +26,8 @@ get_photo_link <- function() {
   while (!any(candidates)) {
     metadata$code <- httr::RETRY("GET", url = "http://taxon:8000/taxon")
     httr::stop_for_status(metadata$code)
-    metadata$code <- httr::content(metadata$code, "text")
+    metadata$code <-
+      httr::content(metadata$code, "text", encoding = "UTF-8")
     metadata$code <-
       jsonlite::fromJSON(metadata$code, simplifyVector = FALSE)[[1L]]
 
@@ -77,20 +84,6 @@ get_photo_link <- function() {
 
 }
 
-splash_screen <- div(
-  h2(content$landing$title[[1]]),
-  h2(content$landing$title[[2]]),
-  h2(content$landing$title[[3]]),
-  h2(content$landing$title[[4]], class = "last-line"),
-  actionLink("start", content$landing$title[[5]]),
-  class = "splash-main"
-)
-
-unrated <- div(
-  span(content$go$this_bird, id = "unrated"),
-  id = "unrated-container"
-)
-
 ui <- fluidPage(
   tags$script("
     Shiny.addCustomMessageHandler('rating', function(value) {
@@ -104,35 +97,17 @@ ui <- fluidPage(
   ),
   shinyjs::useShinyjs(),
   shinyjs::extendShinyjs(
-    "www/custom.js", functions = c("cookie", "reset_hearts")
+    "www/custom.js",
+    functions = c(
+      "cookie", "reset_hearts"
+    )
   ),
   waiter::use_waiter(include_js = FALSE),
-  titlePanel(
-    div(
-      span(content$go$title, class = "title"),
-      span(
-        actionLink("about_link", content$about$icon),
-        actionLink("faq_link", content$faq$title),
-        class = "about-faq"
-      ),
-      class = "title-about-faq"
-    ),
-    content$go$window_title
-  ),
+  titlePanel(htmlOutput("go_title"), "iratebirds"),
   htmlOutput("new_bird"),
   ShinyRatingInput::ratingInput(
     "rating",
-    div(
-      span(
-        content$go$slider_labels[[1]],
-        class = "left-slider-label"
-      ),
-      span(
-        content$go$slider_labels[[2]],
-        class = "right-slider-label"
-      ),
-      class = "slider-labels"
-    ),
+    htmlOutput("rating_labels"),
     value = 0L,
     dataFilled="fa fa-heart",
     dataEmpty="fa fa-heart-o",
@@ -140,15 +115,75 @@ ui <- fluidPage(
     dataStop  = 10L,
     dataFractions  = 1L,
   ),
-  unrated,
-  waiter_show_on_load(splash_screen, color = "#FFFFFF")
+  div(id = "rating_space"),
+  htmlOutput("unrated"),
+  waiter::waiter_show_on_load(htmlOutput("splash"), color = "#FFFFFF")
 )
 
 server <- function(input, output, session) {
 
-  waiter::waiter_show(splash_screen, color = "#FFFFFF")
-
   observe(js$cookie(session$token))
+
+  chosen_lang <- reactive(content(input$lang_selector))
+
+  output$splash<- renderUI({
+    splash <- content(default_lang)$landing$title
+    div(
+      h2(splash[[1L]], id = "splash-line1"),
+      h2(splash[[2L]], id = "splash-line2"),
+      h2(splash[[3L]], id = "splash-line3"),
+      h2(splash[[4L]], id = "splash-line4"),
+      actionLink("start", splash[[5L]]),
+      div(
+        selectInput(
+          "lang_selector", "🌍", available_lang,
+          selected = names(which(available_lang == default_lang)),
+          width = "120px"
+        ),
+      id = "lang-select"
+      ),
+      class = "splash-main"
+    )
+  })
+
+  observeEvent(
+    input$lang_selector,
+    {
+      removeUI("#splash-line2")
+      insertUI(
+        "#splash-line1", "afterEnd",
+        h2(chosen_lang()$landing$title[[2L]], id = "splash-line2")
+      )
+    },
+    ignoreInit = TRUE
+  )
+
+  output$go_title <- renderUI(
+    div(
+      span(chosen_lang()$go$title[[1L]], class = "title"),
+      span(
+        actionLink("about_link", chosen_lang()$about$icon),
+        actionLink("faq_link", chosen_lang()$faq$title),
+        class = "about-faq"
+      ),
+      class = "title-about-faq"
+    )
+  )
+  output$rating_labels <- renderUI(
+    div(
+      span(chosen_lang()$go$labels[[1L]], class = "left-rating-label"),
+      span(chosen_lang()$go$labels[[2L]], class = "right-rating-label"),
+      class = "rating-labels"
+    )
+  )
+
+  unrated <- function() {
+    div(
+      span(chosen_lang()$go$this_bird, id = "unrated"), id = "unrated-container"
+    )
+  }
+
+  output$unrated <- renderUI(unrated())
 
   current_photo <- future::future(get_photo_link())
   output$new_bird <- renderUI(current_photo)
@@ -157,35 +192,34 @@ server <- function(input, output, session) {
     input$start,
     {
       shinyalert::shinyalert(
-        content$what$title,
-        paste(content$what$body, collapse = "\n\n"),
+        chosen_lang()$what$title,
+        paste(chosen_lang()$what$body, collapse = "\n\n"),
         type = "info",
-        confirmButtonText = "\u2192",
+        confirmButtonText = chosen_lang()$what$go,
       )
       waiter::waiter_hide()
-    },
-    once = TRUE
+    }
   )
 
   observeEvent(
     input$about_link,
     {
       shinyalert::shinyalert(
-        content$about$title,
+        chosen_lang()$about$title,
         paste(
-          paste0(content$about$body, collapse = "<br><br>"),
+          paste0(chosen_lang()$about$body, collapse = "<br><br>"),
           paste0(
             '<a href="',
-            sprintf(content$survey$url[[1L]], input$jscookie),
+            sprintf(chosen_lang()$survey$url[[1L]], input$jscookie),
             '">',
-            content$about$survey,
+            chosen_lang()$about$survey,
             '</a>'
           ),
           sep = "<br><br>"
         ),
         "info",
         html = TRUE,
-        confirmButtonText = content$about$return
+        confirmButtonText = chosen_lang()$about$return
       )
     }
   )
@@ -194,10 +228,10 @@ server <- function(input, output, session) {
     input$faq_link,
     {
       shinyalert::shinyalert(
-        content$faq$title,
-        paste(unlist(content$faq$questions), collapse = "\n\n"),
+        chosen_lang()$faq$title,
+        paste(unlist(chosen_lang()$faq$questions), collapse = "\n\n"),
         type = "info",
-        confirmButtonText =  content$faq$return
+        confirmButtonText = chosen_lang()$faq$return
       )
     }
   )
@@ -209,9 +243,9 @@ server <- function(input, output, session) {
     if (!has_button && as.integer(input$rating) > 0L) {
       removeUI("#unrated-container")
       insertUI(
-        "#rating", "afterEnd",
+        "#rating_space", "afterEnd",
         div(
-          actionLink("rated", content$go$new_bird),
+          actionLink("rated", chosen_lang()$go$new_bird),
           id = "rated-container"
         )
       )
@@ -245,7 +279,7 @@ server <- function(input, output, session) {
       )
 
       removeUI("#rated-container")
-      insertUI("#rating", "afterEnd", unrated)
+      insertUI("#rating_space", "afterEnd", unrated())
       has_button <<- FALSE
       session$sendInputMessage("rating", list(value = 0L))
       js$reset_hearts(0L)

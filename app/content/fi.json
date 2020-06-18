@@ -4,7 +4,8 @@
   },
   "what": {
     "title": ["mikä tämä sivusto on?"],
-    "body": ["Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.", "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?", "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨️ - 😍️. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!"]
+    "body": ["Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.", "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?", "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨️ - 😍️. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!"],
+    "go": ["→"]
   },
   "about": {
     "icon": ["ℹ️"],
@@ -24,7 +25,6 @@
     "return": ["↺"]
   },
   "go": {
-    "window_title": ["iratebirds"],
     "title": ["🥰 tästä 🦅?"],
     "labels": ["😨️️", "😍️️"],
     "this_bird": ["arvioi tämän linnun ulkonäköä, kiitos!"],

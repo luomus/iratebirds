@@ -20,8 +20,16 @@
   font-size: 200%;
 }
 
-.splash-main .last-line {
+#splash-line4 {
   margin-top: 30px;
+}
+
+#lang-select {
+  margin-top: 20px;
+  font-size: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #info_button {
@@ -65,7 +73,6 @@
   margin: 0 35px;
   display: inline-block;
 }
-
 
 .confirm {
   color: rgb(51, 122, 183) !important;
@@ -141,21 +148,23 @@ label {
   font-size: 90%;
   text-decoration: none;
   text-align: center;
-  padding-top: 20px;
 }
 
+#rating_space {
+  height: 10px;
+}
 
-.slider-labels {
+.rating-labels {
   font-family: monospace;
   font-size: 150%;
   text-align: center;
 }
 
-.left-slider-label {
+.left-rating-label {
   float: left;
 }
 
-.right-slider-label {
+.right-rating-label {
   float: right;
 }
 
