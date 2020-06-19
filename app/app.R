@@ -232,7 +232,7 @@ server <- function(input, output, session) {
           paste0(
             '<a href="',
             sprintf(chosen_lang()$survey$url[[1L]], input$jscookie),
-            '">',
+            '" target="_blank">',
             chosen_lang()$about$survey,
             '</a>'
           ),
