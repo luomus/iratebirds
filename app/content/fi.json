@@ -11,7 +11,6 @@
     "icon": ["ℹ️"],
     "title": ["iratebirds"],
     "body": ["Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.", "Työtä on tukenut Koneen säätiö.", "Valokuvat: the Macualay Library, Cornell Lab of Ornithology."],
-    "survey": ["Jos haluat osallistua tutkimusta tukevaan vapaaehtoiseen lisäkyselyyn, klikkaa tästä!"],
     "return": ["↺"]
   },
   "faq": {
@@ -31,6 +30,9 @@
     "new_bird": ["näytä minulle seuraava! →"]
   },
   "survey": {
-    "url": ["https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%s"]
+    "title": ["🥺 🙏 💕"],
+    "request": ["Jos haluat osallistua tutkimusta tukevaan vapaaehtoiseen lisäkyselyyn, klikkaa tästä!"],
+    "url": ["https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%s"],
+    "return": ["Ei kiitos ↺"]
   }
 }

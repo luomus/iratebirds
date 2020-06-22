@@ -11,7 +11,6 @@
     "icon": ["ℹ️"],
     "title": ["iratebirds"],
     "body": ["Developed by the Biodiversity Informatics Unit and Helsinki Lab of Ornithology at the Finnish Museum of Natural History - LUOMUS, University of Helsinki.", "Supported by Koneen säätiö.", "Photos from the Macualay Library, Cornell Lab of Ornithology."],
-    "survey": ["Click here to take our voluntary user survey!"],
     "return": ["↺"]
   },
   "faq": {
@@ -31,6 +30,9 @@
     "new_bird": ["show me another! →"]
   },
   "survey": {
-    "url": ["https://docs.google.com/forms/d/e/1FAIpQLSdmPvZw2bQiMK94nrZ8iMQCLjtZjv6p1hLsGWxNcx2v1Svmcw/viewform?usp=pp_url&entry.1380368101=%s"]
+    "title": ["🥺 🙏 💕️"],
+    "request": ["Click here to take our voluntary user survey!"],
+    "url": ["https://docs.google.com/forms/d/e/1FAIpQLSdmPvZw2bQiMK94nrZ8iMQCLjtZjv6p1hLsGWxNcx2v1Svmcw/viewform?usp=pp_url&entry.1380368101=%s"],
+    "return": ["No thanks ↺"]
   }
 }

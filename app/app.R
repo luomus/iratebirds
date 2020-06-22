@@ -217,6 +217,16 @@ server <- function(input, output, session) {
     )
   }
 
+  survey_prompt <- function() {
+    paste0(
+      '<a class="survey-prompt-link", href="',
+      sprintf(chosen_lang()$survey$url[[1L]], input$jscookie),
+      '" target="_blank">',
+      chosen_lang()$survey$request,
+      '</a>'
+    )
+  }
+
   output$unrated <- renderUI(unrated())
 
   current_photo <- future::future(get_photo_link())
@@ -229,13 +239,7 @@ server <- function(input, output, session) {
         chosen_lang()$about$title,
         paste(
           paste0(chosen_lang()$about$body, collapse = "<br><br>"),
-          paste0(
-            '<a href="',
-            sprintf(chosen_lang()$survey$url[[1L]], input$jscookie),
-            '" target="_blank">',
-            chosen_lang()$about$survey,
-            '</a>'
-          ),
+          survey_prompt(),
           sep = "<br><br>"
         ),
         "info",
@@ -258,6 +262,8 @@ server <- function(input, output, session) {
   )
 
   has_button <- FALSE
+  cntr <- 0L
+  survey_prompt_happened <- FALSE
 
   observeEvent(
     input$rating,
@@ -306,6 +312,24 @@ server <- function(input, output, session) {
       js$reset_hearts(0L)
       current_photo <<- future::future(get_photo_link())
       output$new_bird <- renderUI(current_photo)
+
+      cntr <<- cntr + 1L
+
+      if (!survey_prompt_happened && cntr > 5L && runif(1L) < .1) {
+        shinyalert::shinyalert(
+          paste0(
+            '<span id="survey-prompt-title">', chosen_lang()$survey$title,
+            '</span>'
+          ),
+          survey_prompt(),
+          type = "info",
+          html = TRUE,
+          confirmButtonText = chosen_lang()$survey$return,
+          className = "survey-prompt"
+        )
+
+        survey_prompt_happened <<- TRUE
+      }
 
     },
     ignoreInit = TRUE
