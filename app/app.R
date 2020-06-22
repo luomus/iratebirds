@@ -311,7 +311,7 @@ server <- function(input, output, session) {
 
       cntr <<- cntr + 1L
 
-      if (!survey_prompt_happened && cntr > 1L && runif(1L) < 1L) {
+      if (!survey_prompt_happened && cntr > 5L && runif(1L) < .1) {
         shinyalert::shinyalert(
           paste0(
             '<span id="survey-prompt-title">', chosen_lang()$survey$title,
