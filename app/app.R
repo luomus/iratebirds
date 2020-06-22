@@ -217,16 +217,6 @@ server <- function(input, output, session) {
     )
   }
 
-  survey_prompt <- function() {
-    paste0(
-      '<a class="survey-prompt-link", href="',
-      sprintf(chosen_lang()$survey$url[[1L]], input$jscookie),
-      '" target="_blank">',
-      chosen_lang()$survey$request,
-      '</a>'
-    )
-  }
-
   output$unrated <- renderUI(unrated())
 
   current_photo <- future::future(get_photo_link())
@@ -239,7 +229,13 @@ server <- function(input, output, session) {
         chosen_lang()$about$title,
         paste(
           paste0(chosen_lang()$about$body, collapse = "<br><br>"),
-          survey_prompt(),
+          paste0(
+            '<a class="survey-prompt-link", href="',
+            chosen_lang()$survey$url, input$jscookie,
+            '" target="_blank">',
+            chosen_lang()$about$survey_request,
+            '</a>'
+          ),
           sep = "<br><br>"
         ),
         "info",
@@ -315,17 +311,26 @@ server <- function(input, output, session) {
 
       cntr <<- cntr + 1L
 
-      if (!survey_prompt_happened && cntr > 5L && runif(1L) < .1) {
+      if (!survey_prompt_happened && cntr > 1L && runif(1L) < 1L) {
         shinyalert::shinyalert(
           paste0(
             '<span id="survey-prompt-title">', chosen_lang()$survey$title,
             '</span>'
           ),
-          survey_prompt(),
+          paste0(
+            '<span id="survey-prompt-request">', chosen_lang()$survey$request,
+            '</span>'
+          ),
           type = "info",
           html = TRUE,
-          confirmButtonText = chosen_lang()$survey$return,
-          className = "survey-prompt"
+          showCancelButton = TRUE,
+          confirmButtonText = chosen_lang()$survey$confirm,
+          cancelButtonText = chosen_lang()$survey$cancel,
+          className = "survey-prompt",
+          callbackJS = sprintf(
+            "function(x) { if (x) { window.open('%s%s'); } }",
+            chosen_lang()$survey$url, input$jscookie
+          )
         )
 
         survey_prompt_happened <<- TRUE

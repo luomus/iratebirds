@@ -72,8 +72,17 @@
   font-size: 150% !important;
 }
 
-.survey-prompt .sa-button-container {
-  font-size: 30% !important;
+.survey-prompt p {
+  text-align: center !important;
+}
+
+.survey-prompt .confirm {
+  font-size: 17px !important;
+}
+
+#survey-prompt-request {
+  font-size: 150%;
+  margin: 20px;
 }
 
 #survey-prompt-title {
@@ -87,12 +96,16 @@
   text-align: center;
 }
 
-.confirm {
+.confirm, .cancel {
   color: rgb(51, 122, 183) !important;
   background-color: rgb(255, 255, 255) !important;
   margin: 0 !important;
-  font-size: 500% !important;
   line-height: 40px !important;
+  box-shadow: none !important;
+}
+
+.confirm {
+  font-size: 50px !important;
 }
 
 .container-fluid {
