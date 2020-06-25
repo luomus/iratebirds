@@ -1,10 +1,10 @@
 {
   "landing": {
-    "title": ["🥰", "tuosta", "🦜?", "🤷", "→"]
+    "title": ["🥰", "tuosta", "🦜", "?", "🤷", "→"]
   },
   "what": {
     "title": ["mikä tämä sivusto on?"],
-    "body": ["Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.", "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?", "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨️ - 😍️. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!"],
+    "body": ["Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.", "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?", "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla ", "😨", " - ", "😍", ". Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!"],
     "go": ["→"]
   },
   "about": {
@@ -25,13 +25,13 @@
     "return": ["↺"]
   },
   "go": {
-    "title": ["🥰 tästä 🦅?"],
+    "title": ["🥰", " tästä ", "🐦", "?"],
     "labels": ["😨️️", "😍️️"],
     "this_bird": ["arvioi tämän linnun ulkonäköä, kiitos!"],
     "new_bird": ["näytä minulle seuraava! →"]
   },
   "survey": {
-    "title": ["🥺 🙏 💕"],
+    "title": ["🥺", "🙏", "💕"],
     "request": ["Auta meitä ymmärtämään lintujen houkuttelevuutta harkitse vapaaehtoisen käyttäjäkyselymme tekemistä."],
     "url": ["https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101="],
     "confirm": ["OK →"],

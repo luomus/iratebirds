@@ -6,6 +6,7 @@ library(shiny)
 library(shinyalert)
 library(shinyjs)
 library(ShinyRatingInput)
+library(stringi)
 library(waiter)
 
 future::plan(multisession, workers = 4L)
@@ -16,6 +17,20 @@ available_lang <- list(Suomi = "fi", English = "en")
 content <- function(x) {
   if (is.null(x)) x <- default_lang
   jsonlite::read_json(sprintf("content/%s.json", x[[1L]]))
+}
+
+twemoji <- function(x) {
+  codepoint <- stringi::stri_escape_unicode(x)
+  codepoint <- tolower(codepoint)
+  codepoint <- strsplit(codepoint, "\\\\u")[[1L]][[2L]]
+  codepoint <- as.hexmode(codepoint)
+  htmltools::img(
+    class = "emoji",
+    draggable = "false",
+    alt = x,
+    src = sprintf("https://twemoji.maxcdn.com/svg/%s.svg", codepoint),
+    .noWS = "outside"
+  )
 }
 
 get_photo_link <- function() {
@@ -144,14 +159,14 @@ server <- function(input, output, session) {
         {
           splash <- content(input$jslang_cookie)$landing$title
           div(
-            h2(splash[[1L]], id = "splash-line1"),
+            h2(twemoji(splash[[1L]]), id = "splash-line1"),
             h2(splash[[2L]], id = "splash-line2"),
-            h2(splash[[3L]], id = "splash-line3"),
-            h2(splash[[4L]], id = "splash-line4"),
-            actionLink("start", splash[[5L]]),
+            h2(twemoji(splash[[3L]]), splash[[4L]],  id = "splash-line3"),
+            h2(twemoji(splash[[5L]]), id = "splash-line4"),
+            actionLink("start", splash[[6L]]),
             div(
               selectInput(
-                "lang_selector", "🌍", available_lang,
+                "lang_selector", twemoji("🌍"), available_lang,
                 selected = input$jslang_cookie, width = "120px"
               ),
               id = "lang-select"
@@ -166,17 +181,27 @@ server <- function(input, output, session) {
           removeUI("#splash-line2")
           insertUI(
             "#splash-line1", "afterEnd",
-            h2(content(input$lang_selector)$landing$title[[2L]], id = "splash-line2")
+            h2(
+              content(input$lang_selector)$landing$title[[2L]],
+              id = "splash-line2"
+            )
           )
         }
       )
       observeEvent(
         input$start,
         {
+          body <- content(input$lang_selector)$what$body
+          body[[4L]] <- as.character(twemoji(body[[4L]]))
+          body[[6L]] <- as.character(twemoji(body[[6L]]))
           shinyalert::shinyalert(
             content(input$lang_selector)$what$title,
-            paste(content(input$lang_selector)$what$body, collapse = "\n\n"),
+            paste0(
+              body[[1L]], "<br><br>", body[[2L]], "<br><br>",
+              paste0(body[3:7], collapse = "")
+            ),
             type = "info",
+            html = TRUE,
             confirmButtonText = content(input$lang_selector)$what$go,
           )
           js$set_lang_cookie(input$lang_selector)
@@ -193,9 +218,15 @@ server <- function(input, output, session) {
 
   output$go_title <- renderUI(
     div(
-      span(chosen_lang()$go$title[[1L]], class = "title"),
       span(
-        actionLink("about_link", chosen_lang()$about$icon),
+        twemoji(chosen_lang()$go$title[[1L]]),
+        chosen_lang()$go$title[[2L]],
+        twemoji(chosen_lang()$go$title[[3L]]),
+        chosen_lang()$go$title[[4L]],
+        class = "title"
+      ),
+      span(
+        actionLink("about_link", twemoji(chosen_lang()$about$icon)),
         actionLink("faq_link", chosen_lang()$faq$title),
         class = "about-faq"
       ),
@@ -205,8 +236,12 @@ server <- function(input, output, session) {
 
   output$rating_labels <- renderUI(
     div(
-      span(chosen_lang()$go$labels[[1L]], class = "left-rating-label"),
-      span(chosen_lang()$go$labels[[2L]], class = "right-rating-label"),
+      span(
+        twemoji(chosen_lang()$go$labels[[1L]]), class = "left-rating-label"
+      ),
+      span(
+        twemoji(chosen_lang()$go$labels[[2L]]), class = "right-rating-label"
+      ),
       class = "rating-labels"
     )
   )
@@ -226,7 +261,7 @@ server <- function(input, output, session) {
     input$about_link,
     {
       shinyalert::shinyalert(
-        chosen_lang()$about$title,
+        chosen_lang()$about$title[[1L]],
         paste(
           paste0(chosen_lang()$about$body, collapse = "<br><br>"),
           paste0(
@@ -314,7 +349,10 @@ server <- function(input, output, session) {
       if (!survey_prompt_happened && cntr > 5L && runif(1L) < .1) {
         shinyalert::shinyalert(
           paste0(
-            '<span id="survey-prompt-title">', chosen_lang()$survey$title,
+            '<span id="survey-prompt-title">',
+            twemoji(chosen_lang()$survey$title[[1L]]),
+            twemoji(chosen_lang()$survey$title[[2L]]),
+            twemoji(chosen_lang()$survey$title[[3L]]),
             '</span>'
           ),
           paste0(
@@ -339,7 +377,6 @@ server <- function(input, output, session) {
     },
     ignoreInit = TRUE
   )
-
 }
 
 shinyApp(ui = ui, server = server)

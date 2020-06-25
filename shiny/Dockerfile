@@ -4,6 +4,7 @@ RUN install_packages \
       gdebi-core \
       lsb-release \
       r-base-core \
+      r-cran-stringi \
       wget \
       xtail
 
