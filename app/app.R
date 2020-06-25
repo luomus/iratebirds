@@ -28,7 +28,7 @@ twemoji <- function(x) {
     class = "emoji",
     draggable = "false",
     alt = x,
-    src = sprintf("https://twemoji.maxcdn.com/svg/%s.svg", codepoint),
+    src = sprintf("https://twemoji.maxcdn.com/v/latest/svg/%s.svg", codepoint),
     .noWS = "outside"
   )
 }
