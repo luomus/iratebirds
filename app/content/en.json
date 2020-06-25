@@ -25,13 +25,13 @@
     "return": ["↺"]
   },
   "go": {
-    "title": ["🥰 ", " this ", "🐦", "?"],
+    "title": ["🥰", " this ", "🐦", "?"],
     "labels": ["😨️️", "😍️️"],
     "this_bird": ["please rate the appearance of this bird"],
     "new_bird": ["show me another! →"]
   },
   "survey": {
-    "title": ["🥺", "", "💕️"],
+    "title": ["🥺", "🙏", "💕️"],
     "request": ["To help us understand bird attractiveness please consider taking our voluntary user survey"],
     "url": ["https://docs.google.com/forms/d/e/1FAIpQLSdmPvZw2bQiMK94nrZ8iMQCLjtZjv6p1hLsGWxNcx2v1Svmcw/viewform?usp=pp_url&entry.1380368101="],
     "confirm": ["OK →"],
