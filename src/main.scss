@@ -1,0 +1,139 @@
+// variables
+$spacer: 5px;
+$font-size: 14px;
+
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  background-color: #e0e0e0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #2c75c9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+#app {
+  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-size: $font-size;
+  color: #333;
+  background-color: #fafafa;
+  max-width: 400px;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  top: $spacer * 5;
+  transform: translate(-50%, 0);
+  min-height: calc(100% -  #{($spacer * 5) * 2});
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.text-xl {
+  font-weight: 900;
+  font-size: $font-size * 3;
+}
+
+.text-lg {
+  font-weight: normal;
+  font-size: $font-size * 1.5;
+}
+
+.text-sm {
+  font-weight: 300;
+  font-size: $font-size * 0.9;
+}
+
+.list-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.list-divided {
+  li {
+    border-right: 1px solid;
+    padding-right: .6rem;
+    margin-right: .4rem;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.spacer-lg {
+  padding: $spacer * 5;
+}
+
+.spacer-sm {
+  padding: $spacer;
+}
+
+.cornell-logo {
+  height: $font-size + 3;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-start {
+  justify-content: start;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.fill-space {
+  flex-grow: 1;
+}
+
+.sci-name {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.species-name {
+  font-size: $font-size;
+  font-weight: 900;
+  margin: 0;
+}

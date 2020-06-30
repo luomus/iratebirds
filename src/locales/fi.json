@@ -1,0 +1,41 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "tuosta",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "mikä tämä sivusto on?",
+    "body1": "Hyvä kysymys. No... Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.",
+    "body2": "Miksi ihmeessä? Kuten tiedämme, monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?",
+    "body3": "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨️ - 😍️. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyvä!!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "body1": "Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.",
+    "body2": "Työtä on tukenut Koneen säätiö.",
+    "body3": "Valokuvat: the Macualay Library, Cornell Lab of Ornithology."
+  },
+  "faq": {
+    "title": ["FAQ"],
+    "question_1": ["1. Mitä tarkoitamme lintujen ulkonäöllä ja viehättävyydellä?", "Emme tarkoituksella ole määritelleet tätä tarkasti. Sinun tulee päättää itse jokaisen linnun kohdalla. Jos lintu herättää sinussa positiivisia tai negatiivisia tunteita, jotka eivät liity sen ulkonäköön yritä pitää nuo ajatukset erillään nyt tekemästäsi arvioinnista. Keskity vain ulkonäköön."],
+    "question_2": ["2. Arvostelenko valokuvaa, lintuyksilöä vai lintulajia?", "Haluamme tietää, mitä ajattelet lintuyksilöstä (tai linnuista, jos kuvassa on niitä enemmän kuin yksi). Älä huolehdi siitä näyttäytyykö lintu kuvassa edukseen vai ei. Arvostele ulkonäön perusteella se, mitä näet. Arvioi kuvan lintuyksilöä tai -yksilöitä. Jos satut tuntemaan lajin, ja tiedät, että kyseisen lajin tyypillinen yksilö olisi paljon kauniimpi kuin kuvan lintu, yritä olla huomioimatta tietoasi."],
+    "question_3": ["3. Kuinka kauan lintujen arvioimisessa saa kestää?", "Älä mieti liikaa. Haluamme tietää ensimmäisen intuitiivisen ajatuksesi. Arvioi linnun ulkonäkö saman tien ja siirry seuraavaan lintuun, heti kun olet katsonut jo arvioimaasi kuvaa tarpeeksesi."],
+    "question_4": ["4. Minulla on hyvin omanlaiseni maku lintujen ulkonäön suhteen. Vaikuttaako se jotenkin tuloksiinne?", "Haluamme tietää erilaisten ihmisten todellisia arvioita lintujen ulkonäöstä. Vastaa siis rehellisesti. Olemme kaikki erilaisia ja pidämme erilaisista asioista! Ihan niin kuin linnutkin!"]
+  },
+  "go": {
+    "title": "🥰 tästä 🦅?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "arvioi tämän linnun ulkonäköä, kiitos!",
+    "new_bird": "näytä minulle seuraava! →"
+  },
+  "survey": {
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%s"
+  }
+}

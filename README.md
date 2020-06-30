@@ -1,18 +1,24 @@
 # iratebirds
 
-A web app to gauge the "attractiveness" of birds.
-
-# Requirements
-
-* `git`
-* `docker`
-* `docker-compose`
-
-## Install
+## Project setup
 ```
-git clone https://github.com/luomus/iratebirds.git
+npm install
 ```
 
-## Run
-Open `index.html` in a browser.
+### Compiles and hot-reloads for development
 ```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
