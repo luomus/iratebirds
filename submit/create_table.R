@@ -1,23 +1,22 @@
+cnames <- c("sex", "catalogId", "age", "locationLine2", "location", "isInternalUser", 
+"licenseType", "thumbnailUrl", "previewUrl", "largeUrl", "mediaUrl", 
+"subjectData.speciesCode", "subjectData.sciName", "subjectData.comName", 
+"subjectData.ageSexCounts.age", "subjectData.ageSexCounts.sex", 
+"subjectData.ageSexCounts.count", "subjectData.ageSexCounts.localizedString", 
+"subjectData.ageSexCounts.localizedAgeString", "subjectData.ageSexCounts.localizedSexString", 
+"userId", "latitude", "longitude", "rating", "userDisplayName", 
+"assetId", "sciName", "speciesCode", "exifData.mime_type", "exifData.width", 
+"exifData.create_dt", "exifData.height", "reportAs", "mediaDownloadUrl", 
+"eBirdChecklistId", "valid", "specimenUrl", "userProfileUrl", 
+"ebirdSpeciesUrl", "assetState", "locationLine1", "obsDttm", 
+"collected", "eBirdChecklistUrl", "ratingCount", "width", "height", 
+"mediaType", "commonName", "source", "iratebirds_userId", "iratebirds_rating", "iratebirds_uiLang")
+
+ratings_df <- as.data.frame(sapply(cnames, function(x) character()))
+
 db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
 if (!DBI::dbExistsTable(db, "ratings")) {
-
-  ratings_df <- data.frame(
-    photo_id        = character(0L),
-    photo_rating    = numeric(0L),
-    n_photo_ratings = integer(0L),
-    code            = character(0L),
-    common_name     = character(0L),
-    sci_name        = character(0L),
-    sex             = character(0L),
-    age             = character(0L),
-    lat             = numeric(0L),
-    lon             = numeric(0L),
-    time            = integer(0L),
-    session         = character(0L),
-    user            = character(0L),
-    rating          = numeric(0L)
-  )
 
   DBI::dbWriteTable(db, "ratings", ratings_df, row.names = FALSE)
 

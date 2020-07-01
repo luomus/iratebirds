@@ -1,33 +1,21 @@
+#* @filter cors
+cors <- function(res) {
+  res$setHeader("Access-Control-Allow-Origin", "*")
+  plumber::forward()
+}
+
 #* Send data to the database
-#* @param photo_id
-#* @param photo_rating
-#* @param n_photo_ratings
-#* @param code
-#* @param common_name
-#* @param sci_name
-#* @param sex
-#* @param age
-#* @param lat
-#* @param lon
-#* @param time
-#* @param session
-#* @param user
-#* @param rating
-#* @get /submit
+#* @post /submit
+function(req) {
 
-function(
-  photo_id, photo_rating, n_photo_ratings, code, common_name, sci_name, sex,
-  age, lat, lon, time, session, user, rating
-) {
-
-  ratings_df <- data.frame(
-    photo_id, photo_rating, n_photo_ratings, code, common_name, sci_name, sex,
-    age, lat, lon, time, session, user, rating
-  )
+  new_data <- jsonlite::fromJSON(req$postBody, simplifyVector = FALSE)
+  new_data <- as.data.frame(rbind(unlist(new_data)))
+  new_data <- new_data[intersect(names(new_data), names(ratings_df))]
+  new_data <- merge(ratings_df, new_data, all.y = TRUE)
 
   db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
-  DBI::dbWriteTable(db, "ratings", ratings_df, append = TRUE, row.names = FALSE)
+  DBI::dbWriteTable(db, "ratings", new_data, append = TRUE, row.names = FALSE)
 
   DBI::dbDisconnect(db)
 

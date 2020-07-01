@@ -38,26 +38,14 @@ services:
     volumes:
       - "./submit/submit.R:/submit.R"
     command: "./submit.R"
+    environment:
+      - "VIRTUAL_HOST=db.${HOST}"
+      - "LETSENCRYPT_HOST=db.${HOST}"
+      - "LETSENCRYPT_EMAIL=${EMAIL}"
     deploy:
       resources:
         limits:
           memory: "100M"
-  shiny:
-    build:
-      context: ./shiny
-      dockerfile: Dockerfile
-    restart: always
-    user: "root"
-    volumes:
-      - "./app:/srv/shiny-server"
-    environment:
-       - "VIRTUAL_HOST=${HOST}"
-       - "LETSENCRYPT_HOST=${HOST}"
-       - "LETSENCRYPT_EMAIL=${EMAIL}"
-    deploy:
-      resources:
-        limits:
-          memory: "500M"
   nginxproxy:
     image: jwilder/nginx-proxy
     container_name: iratebirds_nginxproxy_1
