@@ -29,7 +29,8 @@ const routes: Array<RouteConfig> = [
         path: 'go',
         name: 'Go',
         component: Go
-      },
+      }
+      /*
       {
         path: 'faq',
         name: 'Faq',
@@ -40,6 +41,7 @@ const routes: Array<RouteConfig> = [
         name: 'About',
         component: About
       }
+       */
     ]
   }
 ]

@@ -4,8 +4,8 @@
       <h1 class="font-weight-bolder text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
       <div class="about-links">
-        <router-link :to="'../' + $i18n.locale + '/about'" v-html="$t('about.icon')"></router-link>
-        <router-link :to="'../' + $i18n.locale + '/faq'">{{ $t("faq.title") }}</router-link>
+        <a @click="showAbout()" v-html="$t('about.icon')"></a>&nbsp;
+        <a @click="showFaq()">{{ $t("faq.title") }}</a>
       </div>
     </div>
     <Photo :photo="photo"></Photo>
@@ -28,9 +28,9 @@
 </template>
 
 <script>
+import { HeartRating } from 'vue-rate-it'
 import Photo from '../components/Photo.vue'
 import RatingService from '@/service/rating.service'
-import { HeartRating } from 'vue-rate-it'
 
 export default {
   name: 'Go',
@@ -46,6 +46,12 @@ export default {
     }
   },
   methods: {
+    showFaq () {
+      this.$modal.show('faq')
+    },
+    showAbout () {
+      this.$modal.show('about')
+    },
     next () {
       RatingService.getNextPhoto()
         .then(photo => {

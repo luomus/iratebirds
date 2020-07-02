@@ -12,6 +12,12 @@ html, body {
 
 body {
   background-color: #fafafa;
+  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-size: $font-size;
+  color: #333;
 }
 
 img {
@@ -38,12 +44,6 @@ h1 {
 }
 
 #app {
-  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  font-size: $font-size;
-  color: #333;
   background-color: #fafafa;
   max-width: 400px;
   width: 100vw;

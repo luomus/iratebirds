@@ -16,7 +16,7 @@
       <a :href="$t('survey.url')">{{ $t('about.survey_request') }}</a>
     </div>
     <div class="text-xl spacer-lg">
-      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body4") }}</router-link>
+      <a @click="$modal.hide('about')">{{ $t("what.body4") }}</a>
     </div>
   </div>
 </template>

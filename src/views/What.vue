@@ -11,3 +11,11 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  created () {
+    localStorage.seenWhat = true
+  }
+}
+</script>

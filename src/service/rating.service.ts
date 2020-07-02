@@ -30,6 +30,10 @@ class RatingService {
     this.fetchPicture()
       .then(photo => {
         this.next = photo
+        if ('previewUrl' in photo) {
+          const image = new Image()
+          image.src = (photo as any).previewUrl
+        }
       })
   }
 

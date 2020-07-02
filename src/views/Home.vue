@@ -29,6 +29,9 @@ export default {
   components: { LangSelect },
   methods: {
     nextPage () {
+      if (localStorage.seenWhat) {
+        return this.$i18n.locale + '/go'
+      }
       return this.$i18n.locale + '/what'
     }
   }
