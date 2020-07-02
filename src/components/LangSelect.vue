@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       langs: Object.keys(this.$i18n.messages),
-      locale: ''
+      locale: this.$i18n.fallbackLocale
     }
   },
   mounted () {
@@ -30,8 +30,10 @@ export default {
   },
   watch: {
     locale (newLocale) {
-      this.$i18n.locale = newLocale
-      localStorage.lang = newLocale
+      if (newLocale) {
+        this.$i18n.locale = newLocale
+        localStorage.lang = newLocale
+      }
     }
   }
 }
