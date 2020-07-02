@@ -3,6 +3,7 @@
     <div class="d-flex flex-row">
       <h1 class="font-weight-bolder text-monospace">{{ $t("go.title") }}</h1>
       <div class="fill-space"></div>
+      <router-link :to="'../' + $i18n.locale + '/about'">{{ $t("about.icon") }}</router-link>
       <router-link :to="'../' + $i18n.locale + '/faq'">{{ $t("faq.title") }}</router-link>
     </div>
     <Photo :photo="photo"></Photo>
@@ -56,7 +57,6 @@ export default {
     }
   },
   created () {
-    this.$i18n.locale = this.$route.params.lang
     this.next()
   },
   mounted () {

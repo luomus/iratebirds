@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import About from '../views/About.vue'
 import Home from '../views/Home.vue'
 import What from '../views/What.vue'
-import Go from '../views/Go.vue'
+import Lang from '../views/Lang.vue'
 import Faq from '../views/Faq.vue'
+import Go from '../views/Go.vue'
 
 Vue.use(VueRouter)
 
@@ -14,19 +16,31 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: '/:lang/what',
-    name: 'What',
-    component: What
-  },
-  {
-    path: '/:lang/go',
-    name: 'Go',
-    component: Go
-  },
-  {
-    path: '/:lang/faq',
-    name: 'Faq',
-    component: Faq
+    path: '/:lang',
+    name: 'Lang',
+    component: Lang,
+    children: [
+      {
+        path: 'what',
+        name: 'What',
+        component: What
+      },
+      {
+        path: 'go',
+        name: 'Go',
+        component: Go
+      },
+      {
+        path: 'faq',
+        name: 'Faq',
+        component: Faq
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: About
+      }
+    ]
   }
 ]
 
