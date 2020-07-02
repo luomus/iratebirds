@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import What from '../views/What.vue'
 import Go from '../views/Go.vue'
+import Faq from '../views/Faq.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes: Array<RouteConfig> = [
     path: '/:lang/go',
     name: 'Go',
     component: Go
+  },
+  {
+    path: '/:lang/faq',
+    name: 'Faq',
+    component: Faq
   }
 ]
 

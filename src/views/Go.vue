@@ -1,6 +1,10 @@
 <template>
   <div class="justify-content-center">
-    <h1 class="font-weight-bolder text-monospace">{{ $t("go.title") }}</h1>
+    <div class="d-flex flex-row">
+      <h1 class="font-weight-bolder text-monospace">{{ $t("go.title") }}</h1>
+      <div class="fill-space"></div>
+      <router-link :to="'../' + $i18n.locale + '/faq'">{{ $t("faq.title") }}</router-link>
+    </div>
     <Photo :photo="photo"></Photo>
     <div class="d-flex justify-content-center">
       <div class="d-flex flex-row text-lg spacer-sm">
