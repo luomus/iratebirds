@@ -8,7 +8,20 @@
     </div>
     <div class="fill-space"></div>
     <div class="text-xl spacer-lg">
-      <a id="go" href="../go">{{ $t("what.body4") }}</a>
+      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body4") }}</router-link>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  created () {
+    this.$i18n.locale = this.$route.params.lang
+  },
+  methods: {
+    nextPage () {
+      return this.$i18n.locale + '/what'
+    }
+  }
+}
+</script>

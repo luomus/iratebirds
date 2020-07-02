@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
+import What from '../views/What.vue'
+import Go from '../views/Go.vue'
 
 Vue.use(VueRouter)
 
@@ -11,14 +13,14 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: '/what',
+    path: '/:lang/what',
     name: 'What',
-    component: () => import('../views/What.vue')
+    component: What
   },
   {
-    path: '/go',
+    path: '/:lang/go',
     name: 'Go',
-    component: () => import('../views/Go.vue')
+    component: Go
   }
 ]
 

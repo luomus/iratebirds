@@ -22,6 +22,7 @@
 
 <script>
 import Photo from '../components/Photo.vue'
+import RatingService from '@/service/rating.service'
 import { HeartRating } from 'vue-rate-it'
 
 export default {
@@ -30,7 +31,7 @@ export default {
     Photo,
     HeartRating
   },
-  data: function () {
+  data () {
     return {
       rating: 0,
       photo: null,
@@ -38,31 +39,27 @@ export default {
     }
   },
   methods: {
-    next: function () {
-      fetch('https://api.iratebirds.app/taxon')
-        .then(res => res.json())
-        .then(res => res[0])
-        .then(code => fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&sort=rating_rank_desc&count=1`))
-        .then(res => res.json())
-        .then(res => res.results.content[0])
+    next () {
+      RatingService.getNextPhoto()
         .then(photo => {
           this.photo = photo
           this.rating = 0
         })
     },
-    calculateHeartSize: function () {
+    calculateHeartSize () {
       const el = document.querySelector('#rating')
       this.heartSize = (el.getBoundingClientRect().width - 50) / 10
     }
   },
-  created: function () {
+  created () {
+    this.$i18n.locale = this.$route.params.lang
     this.next()
   },
-  mounted: function () {
+  mounted () {
     window.addEventListener('resize', this.calculateHeartSize)
     this.calculateHeartSize()
   },
-  beforeDestroy: function () {
+  beforeDestroy () {
     window.removeEventListener('resize', this.calculateHeartSize)
   }
 }

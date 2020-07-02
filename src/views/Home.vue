@@ -7,7 +7,23 @@
     </span>
     <span>
       {{ $t("landing.line4") }}<br>
-      <a href="what">{{ $t("landing.line5") }}</a>
+      <router-link :to="nextPage()">{{ $t("landing.line5") }}</router-link>
+    </span>
+    <span>
+      <LangSelect></LangSelect>
     </span>
   </div>
 </template>
+
+<script>
+import LangSelect from '@/components/LangSelect'
+
+export default {
+  components: { LangSelect },
+  methods: {
+    nextPage () {
+      return this.$i18n.locale + '/what'
+    }
+  }
+}
+</script>
