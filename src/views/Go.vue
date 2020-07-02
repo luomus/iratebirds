@@ -21,7 +21,7 @@
       </div>
       <div class="d-flex justify-content-center">
         <p class="text-monospace" v-show="rating < 1"> {{ $t("go.this_bird") }} </p>
-        <p class="text-monospace" v-show="rating > 1"><a href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
+        <p class="text-monospace" v-show="rating > 0"><a href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
       </div>
     </div>
   </div>
@@ -53,6 +53,18 @@ export default {
       this.$modal.show('about')
     },
     next () {
+      if (!localStorage.user) {
+        const s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+        localStorage.user = Array(32).fill('').map(() => s.charAt(Math.floor(Math.random() * s.length))).join('')
+      }
+      RatingService.rate({
+        ...this.photo,
+        /* eslint-disable @typescript-eslint/camelcase */
+        iratebirds_lang: this.$i18n.locale,
+        iratebirds_rating: this.rating,
+        iratebirds_userId: localStorage.user
+        /* eslint-enable @typescript-eslint/camelcase */
+      })
       RatingService.getNextPhoto()
         .then(photo => {
           this.photo = photo
