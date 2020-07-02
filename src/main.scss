@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-  background-color: #e0e0e0;
+  background-color: #fafafa;
 }
 
 img {
@@ -27,6 +27,14 @@ a {
 figure {
   display: block;
   margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 #app {
@@ -154,4 +162,10 @@ figure {
   width: 100%;
   height: 30vh;
   min-height: 200px;
+}
+
+.about-links {
+  margin-block-start: 2em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }

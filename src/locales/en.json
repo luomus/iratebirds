@@ -1,4 +1,5 @@
 {
+  "lang": "\uD83C\uDF0E",
   "landing": {
     "line1": "🥰",
     "line2": "that",
@@ -36,7 +37,7 @@
       "question": "3. How long should I take to rate the birds?",
       "answer": "Don't overthink it. We want your gut feeling. So rate the bird right away and move on to the next bird whenever you have stopped enjoying looking it."
     },
-    "q4": { 
+    "q4": {
       "question": "4. I have a very particular taste in birds. Won't that effect your analysis?",
       "answer": "We want to know what everyone's tastes in birds are. We are all different and we all like different things. Just like birds!"
     }

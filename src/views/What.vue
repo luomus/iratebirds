@@ -6,7 +6,6 @@
       <p>{{ $t("what.body2") }}</p>
       <p>{{ $t("what.body3") }}</p>
     </div>
-    <div class="fill-space"></div>
     <div class="text-xl spacer-lg">
       <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body4") }}</router-link>
     </div>

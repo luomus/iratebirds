@@ -1,17 +1,24 @@
 <template>
-  <div class="text-xl">
-    <span>
-      {{ $t("landing.line1") }}<br>
-      {{ $t("landing.line2") }}<br>
-      {{ $t("landing.line3") }}
-    </span>
-    <span>
-      {{ $t("landing.line4") }}<br>
-      <router-link :to="nextPage()">{{ $t("landing.line5") }}</router-link>
-    </span>
-    <span>
+  <div>
+    <div class="text-xl">
+      <div class="spacer-lg">
+        <p>
+          {{ $t("landing.line1") }}<br>
+          {{ $t("landing.line2") }}<br>
+          {{ $t("landing.line3") }}
+        </p>
+        {{ $t("landing.line4") }}<br>
+      </div>
+      <div class="spacer-lg">
+        <router-link :to="nextPage()">{{ $t("landing.line5") }}</router-link>
+      </div>
+    </div>
+    <div class="d-flex flex-row spacer-lg">
+      <div class="fill-space"></div>
+      <div>{{ $t("lang") }}</div>
       <LangSelect></LangSelect>
-    </span>
+      <div class="fill-space"></div>
+    </div>
   </div>
 </template>
 
