@@ -5,6 +5,8 @@ interface Rating {
   [key: string]: any;
 }
 
+const API_BASE = process.env.API_BASE || 'https://api.iratebirds.app'
+
 class RatingService {
   private next: object | undefined;
 
@@ -13,7 +15,12 @@ class RatingService {
   }
 
   rate (rating: Rating) {
-    // TODO send rating to server
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(rating)
+    }
+    fetch(`${API_BASE}/submit`, requestOptions)
   }
 
   getNextPhoto (): Promise<object> {
@@ -38,7 +45,7 @@ class RatingService {
   }
 
   private fetchPicture (): Promise<object> {
-    return fetch('https://api.iratebirds.app/taxon')
+    return fetch(`${API_BASE}/taxon`)
       .then(res => res.json())
       .then(res => res[0])
       .then(code => fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&sort=rating_rank_desc&count=1`))
