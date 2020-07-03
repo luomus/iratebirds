@@ -13,10 +13,22 @@
       </p>
     </div>
     <div class="text-sm spacer-lg">
-      <a :href="$t('survey.url')">{{ $t('about.survey_request') }}</a>
+      <a :href="surveyUrl()">{{ $t('about.survey_request') }}</a>
     </div>
     <div class="text-xl spacer-lg">
       <a @click="$modal.hide('about')">{{ $t("what.body4") }}</a>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    surveyUrl () {
+      if (localStorage.seenWhat) {
+        return this.$t('survey.url').replace('%userId%', localStorage.user)
+      }
+    }
+  }
+}
+</script>

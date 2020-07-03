@@ -58,7 +58,7 @@
       "char3": "💕️"
     },
     "request": "To help us understand bird attractiveness please consider taking our voluntary user survey",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdmPvZw2bQiMK94nrZ8iMQCLjtZjv6p1hLsGWxNcx2v1Svmcw/viewform?usp=pp_url&entry.1380368101=%s",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdmPvZw2bQiMK94nrZ8iMQCLjtZjv6p1hLsGWxNcx2v1Svmcw/viewform?usp=pp_url&entry.1380368101=%userId%",
     "confirm": "OK →",
     "cancel": "No thanks ↺"
   }

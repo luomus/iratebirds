@@ -57,7 +57,7 @@
       "char3": "💕️"
     },
     "request": "Auta meitä ymmärtämään lintujen houkuttelevuutta harkitse vapaaehtoisen käyttäjäkyselymme tekemistä.",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%s",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfOyGFnfGn4TQ8XChn_-9M9oG4BfxyS1yrOJhV8LTHgUcsEqA/viewform?usp=pp_url&entry.1380368101=%userId%",
     "confirm": "OK →",
     "cancel": "Ei kiitos ↺"
   }
