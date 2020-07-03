@@ -1,17 +1,18 @@
 const emojis: {[key: string]: string} = {
-  ℹ: '2139',
-  '🥰': '1f970',
-  '🦜': '1f99c',
-  '🤷': '1f937',
-  '🐦': '1f426',
-  '😨️️': '1f628',
-  '😍️️️️': '1f60d',
-  '🥺️️️️': '1f97a',
-  '🙏️️️️': '1f64f',
-  '💕️️️️️': '1f495'
+  \u2139: '2139',
+  '\uD83E\uDD70': '1f970',
+  '\uD83E\uDD9C': '1f99c',
+  '\uD83E\uDD37': '1f937',
+  '\uD83D\uDC26': '1f426',
+  '\uD83E\uDD85': '1f426',
+  '\uD83D\uDE28': '1f628',
+  '\uD83D\uDE0D': '1f60d',
+  '\uD83E\uDD7A': '1f97a',
+  '\uD83D\uDE4F': '1f64f',
+  '\uD83D\uDC95': '1f495'
 }
 
-const emojiRegExp = new RegExp(Object.keys(emojis).join('|'), 'u')
+const emojiRegExp = new RegExp(Object.keys(emojis).join('|'), 'ug')
 
 export default class EmojiFormatter {
   interpolate (message: string) {
