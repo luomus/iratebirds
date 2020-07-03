@@ -4,6 +4,10 @@ cors <- function(res) {
   plumber::forward()
 }
 
+#* Return a random taxon code
+#* @get /taxon
+function() sample(taxa, 1L)
+
 #* Send data to the database
 #* @post /submit
 function(req) {

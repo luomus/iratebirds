@@ -11,14 +11,21 @@ services:
       - "./postgres:/var/lib/postgresql/data"
     ports:
       - "5432:5432"
-  taxon:
+    deploy:
+      resources:
+        limits:
+          memory: "200M"
+  api:
     build:
-      context: ./taxon
+      context: ./api
       dockerfile: Dockerfile
+      args:
+        - "PGUSER=${PGUSER}"
+        - "PGPASSWORD=${PGPASSWORD}"
     restart: always
     volumes:
-      - "./taxon/taxon.R:/taxon.R"
-    command: "./taxon.R"
+      - "./api/api.R:/api.R"
+    command: "./api.R"
     environment:
       - "VIRTUAL_HOST=api.${HOST}"
       - "LETSENCRYPT_HOST=api.${HOST}"
@@ -26,26 +33,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: "100M"
-  submit:
-    build:
-      context: ./submit
-      dockerfile: Dockerfile
-      args:
-      - "PGUSER=${PGUSER}"
-      - "PGPASSWORD=${PGPASSWORD}"
-    restart: always
-    volumes:
-      - "./submit/submit.R:/submit.R"
-    command: "./submit.R"
-    environment:
-      - "VIRTUAL_HOST=db.${HOST}"
-      - "LETSENCRYPT_HOST=db.${HOST}"
-      - "LETSENCRYPT_EMAIL=${EMAIL}"
-    deploy:
-      resources:
-        limits:
-          memory: "100M"
+          memory: "400M"
   nginxproxy:
     image: jwilder/nginx-proxy
     container_name: iratebirds_nginxproxy_1
@@ -58,6 +46,10 @@ services:
       - "vhostd:/etc/nginx/vhost.d"
       - "html:/usr/share/nginx/html"
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
+    deploy:
+      resources:
+        limits:
+          memory: "100M"
   letsencrypt-nginx-proxy-companion:
     image: jrcs/letsencrypt-nginx-proxy-companion
     environment:
@@ -68,6 +60,10 @@ services:
       - "html:/usr/share/nginx/html"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: "100M"
 
 volumes:
   certs:
