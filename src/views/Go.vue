@@ -1,7 +1,7 @@
 <template>
   <div class="justify-content-center">
     <div class="d-flex flex-row">
-      <h1 class="font-weight-bolder text-monospace" v-html="$t('go.title')"></h1>
+      <h1 class="text-bold text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
       <div class="about-links">
         <a @click="showAbout()" v-html="$t('about.icon')"></a>&nbsp;
@@ -19,9 +19,9 @@
         <heart-rating :max-rating="10" :show-rating="false" :item-size="heartSize" inactive-color="#ffffff"
                       active-color="#dc2c44" border-color="#dc2c44" v-model="rating" @></heart-rating>
       </div>
-      <div class="d-flex justify-content-center">
-        <p class="text-monospace" v-show="rating < 1"> {{ $t("go.this_bird") }} </p>
-        <p class="text-monospace" v-show="rating > 0"><a href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
+      <div class="text-bold text-monospace d-flex justify-content-center font-weight-bolder">
+        <p v-show="rating === 0"> {{ $t("go.this_bird") }} </p>
+        <p v-show="rating > 0"><a href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
       </div>
     </div>
   </div>
