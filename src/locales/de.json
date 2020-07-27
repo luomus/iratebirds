@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "das",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "was ist das?",
+    "body1": "Gute Frage. Nun… Hier ist der Ort, an dem das Aussehen der Vögel ohne Gewissensbisse beurteilt werden kann!",
+    "body2": "Wie das? Schau, es ist folgendermassen… Wie wir alle wissen, sind viele Vögel durch den illegalen Tierhandel bedroht. Aber es ist nicht klar, welche Arten stärker davon betroffen sind und weshalb. Was macht eine Vogelart interessant? Einen Teil der Gleichung macht sicherlich das Aussehen der Vögel aus. Aber was ist es genau das eine Vogelart äusserlich attraktiv macht?",
+    "body3": "Schwierig zu sagen, nicht wahr? Und verflixt schwierig zu quantifizieren! Nun dies ist der Punkt, wo du ins Spiel kommst. Es ist Zeit dir einige Vögel anzusehen und uns auf einer Skala von 😨️️ bis 😍 mitzuteilen was du über die Vögel denkst. Komm schon, du willst das tun. Und es ist für eine gute Sache!!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Entwickelt von Biodiversity Informatics Unit und Helsinki Lab of Ornithology am Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Unterstützt von Koneen säätiö.",
+    "body3": "Fotos von der Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Klick hier, um bei unserer freiwilligen Teilnehmerumfrage mitzumachen",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Was meinst du genau mit dem Aussehen/ der Attraktivität von Vogelarten?",
+      "answer": "Wir halten dies bewusst vage formuliert. Es ist allein deine Entscheidung, was einen Vogel attraktiv macht. Aber versuche, dies auf das Aussehen des Vogels zu beschränken. Wenn du andere Gefühle über eine gewisse Vogelart hast, die nicht wirklich mit dessen Aussehen zu tun haben, versuche diese auszublenden und dich hierfür nur auf das Äussere des Vogels zu konzentrieren."
+    },
+    "q2": {
+      "question": "2. Beurteile ich das Foto, den Vogel, oder die Vogelart?",
+      "answer": "Wir möchten wissen, was du über den Vogel denkst (oder die Vögel, falls auf dem Foto mehr als einer abgebildet ist). Natürlich kann die Qualität des Fotos einen Vogel besser oder schlechter aussehen lassen. Aber mach dir darüber keine Gedanken, sondern beurteile nur was du gerade vor dir siehst. Beurteile denjenigen Vogel (oder diejenigen Vögel) auf dem Foto. Wenn du die Art kennst und weisst, dass die Vogelart normalerweise viel schöner aussieht als auf dem Foto, versuche dies für den Moment zu vergessen."
+    },
+    "q3": {
+      "question": "3. Wie lange soll ich mir Zeit nehmen, um die Vögel zu bewerten?",
+      "answer": "Mach dir nicht zu viele Gedanken. Bewerte den Vogel aus dem ersten Gefühl heraus und fahre mit dem nächsten Vogel weiter, sobald du dich lange genug am Foto erfreut hast."
+    },
+    "q4": {
+      "question": "4. Ich habe eine besondere Meinung über Vögel. Wird das eure Auswertung nicht beeinflussen?",
+      "answer": "Wir möchten alle verschiedenen Meinungen über Vögel kennenlernen. Wir sind alle verschieden und mögen unterschiedliche Dinge. So auch Vögel!"
+    }
+  },
+  "go": {
+    "title": "🥰 das 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "bitte beurteile das Aussehen dieses Vogels",
+    "new_bird": "zeig mir den nächsten! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Hilf uns noch mehr über die Attraktivität von Vögeln herauszufinden, indem du an der freiwilligen Teilnehmerumfrage teilnimmst.",
+    "url": "",
+    "confirm": "OK →",
+    "cancel": "Nein danke ↺"
+  }
+}
