@@ -1,4 +1,5 @@
 {
+  "lang": "🌍",
   "landing": {
     "line1": "🥰",
     "line2": "das",
@@ -57,7 +58,7 @@
       "char3": "💕️"
     },
     "request": "Hilf uns noch mehr über die Attraktivität von Vögeln herauszufinden, indem du an der freiwilligen Teilnehmerumfrage teilnimmst.",
-    "url": "",
+    "url": "https://docs.google.com/forms/d/e/164lKtC7YgapKTZiPBK8DXMbtXETaZSLPNRMWQx82dsU/viewform?usp=pp_url&entry.1380368101=%userId%",
     "confirm": "OK →",
     "cancel": "Nein danke ↺"
   }
