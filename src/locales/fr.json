@@ -1,0 +1,65 @@
+{
+  "lang": "🌍",
+  "landing": {
+    "line1": "🥰",
+    "line2": "cet",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "qu’est-ce que c’est ?",
+    "body1": "Bonne question. Eh bien, basiquement c’est l’endroit où l’on peut juger de l’apparence des oiseaux sans se sentir coupable !",
+    "body2": "Comment ça? Comme nous le savons tous, de nombreux oiseaux sont menacés par le commerce illégal d'espèces sauvages. Mais il n'est pas clair dans quelle mesure certains oiseaux pourraient être plus menacés que d'autres et pourquoi? Qu'est-ce qui rend un oiseau attrayant? Une partie de l'équation est évidemment l'apparence de l'oiseau. Mais qu'est-ce qui est attrayant dans l'apparence d'un oiseau?",
+    "body3": "Difficile à dire, non? Et sacrément difficile à quantifier! C'est là que vous entrez en jeu. Il est temps de regarder certains oiseaux et de nous dire ce que vous en pensez sur une échelle de 😨️️ à 😍. Allez, tu sais que tu veux. Et c'est pour une bonne cause !!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Développé par Biodiversity Informatics Unit et Helsinki Lab of Ornithology au Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Supporté par Koneen säätiö.",
+    "body3": "Photo provenant de Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Cliquez ici pour répondre à notre enquête volontaire.",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Que voulez-vous vraiment dire par apparence / attractivité ?",
+      "answer": "Nous sommes délibérément vagues à ce sujet. C'est vraiment à vous de décider ce qui rend un oiseau attrayant. Mais essayez de garder à l’esprit ce à quoi il ressemble. Si vous avez d'autres sentiments à propos d'un oiseau en particulier qui n'ont rien à voir avec son apparence, positifs ou négatifs, essayez de le garder à l'écart pour le moment et concentrez-vous simplement sur son apparence physique."
+    },
+    "q2": {
+      "question": "2. Est-ce que je note la photo, l’oiseau ou l’espèce d’oiseau ?",
+      "answer": "Nous voulons savoir ce que vous pensez de l'oiseau (ou des oiseaux si la photo en contient plus d'un). Bien sûr, parfois, une photo donne à un oiseau une apparence pire ou meilleure qu'elle ne l'est. Ne vous inquiétez pas pour cela et évaluez simplement ce que vous voyez devant vous. Notez l'oiseau (ou les oiseaux) en particulier sur la photo. Si vous connaissez l'espèce et que vous savez que les oiseaux de cette espèce sont généralement beaucoup plus beaux que l'oiseau sur la photo, essayez de l'oublier pour le moment."
+    },
+    "q3": {
+      "question": "3. Combien de temps devrais-je prendre pour noter les oiseaux ?",
+      "answer": "N'y pensez pas trop. Nous voulons votre instinct. Alors évaluez l'oiseau tout de suite et passez à l'oiseau suivant chaque fois que vous avez cessé de le regarder."
+    },
+    "q4": {
+      "question": "4. J'ai un goût très particulier pour les oiseaux. Cela n'affectera-t-il pas votre analyse ?",
+      "answer": "Nous voulons savoir quels sont les goûts de chacun chez les oiseaux. Nous sommes tous différents et nous aimons tous des choses différentes. Tout comme les oiseaux !"
+    }
+  },
+  "go": {
+    "title": "🥰 cet 🐦 ?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "veuillez évaluer l’apparence de cet oiseau",
+    "new_bird": "montrer moi un autre ! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Pour nous aider à comprendre l'attrait des oiseaux, veuillez envisager de répondre à notre enquête volontaire auprès des utilisateurs.",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSca4xeJIpvygEnc3DGbtpY5NbBVUhHTxVJuoLn1o7bCDFu0Lg/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "Ok  →",
+    "cancel": "Non merci ↺"
+  }
+}
