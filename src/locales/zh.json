@@ -43,7 +43,7 @@
     }
   },
   "go": {
-    "title": "🥰 这 🐦?",
+    "title": "🥰这🐦?",
     "labels": {
       "hate": "😨️️",
       "love": "😍️️"
@@ -58,7 +58,7 @@
       "char3": "💕️"
     },
     "request": "为了帮助我们了解鸟类的 魅力值，请 加入 调查 吧",
-    "url": "",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfLpogE-Ta2kLhNGzpzwdQI1icbH1cfn604NC4mQStr5RuHVQ/viewform?usp=pp_url&entry.1380368101=%userId%",
     "confirm": "好的 →",
     "cancel": "不用了 ↺"
   }
