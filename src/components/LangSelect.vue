@@ -1,5 +1,5 @@
 <template>
-  <div class="locale-changer">
+  <div class="locale-changer text-monospace">
     <select v-model="locale">
       <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ lang }}</option>
     </select>
