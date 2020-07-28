@@ -23,6 +23,7 @@ function(req) {
   new_data <- as.data.frame(rbind(unlist(new_data)))
   new_data <- new_data[intersect(names(new_data), names(ratings_df))]
   new_data <- merge(ratings_df, new_data, all.y = TRUE)
+  new_data$iratebirds_timestamp <- as.character(Sys.time())
 
   db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 

@@ -10,7 +10,8 @@ cnames <- c("sex", "catalogId", "age", "locationLine2", "location", "isInternalU
 "eBirdChecklistId", "valid", "specimenUrl", "userProfileUrl", 
 "ebirdSpeciesUrl", "assetState", "locationLine1", "obsDttm", 
 "collected", "eBirdChecklistUrl", "ratingCount", "width", "height", 
-"mediaType", "commonName", "source", "iratebirds_userId", "iratebirds_rating", "iratebirds_lang")
+"mediaType", "commonName", "source", "iratebirds_userId", "iratebirds_rating", "iratebirds_lang",
+"iratebirds_timestamp")
 
 ratings_df <- as.data.frame(sapply(cnames, function(x) character()))
 
