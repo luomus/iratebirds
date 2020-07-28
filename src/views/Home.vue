@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="text-xl spacer-lg">
+    <div class="text-xl text-monospace spacer-lg">
       <div>
-        <p class="text-monospace">
+        <p>
           <span v-html="$t('landing.line1')"></span><br>
           <span v-html="$t('landing.line2')"></span><br>
           <span v-html="$t('landing.line3')"></span>
