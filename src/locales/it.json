@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "quello",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "cos’e’ questo?",
+    "body1": "Ottima domanda. Beh… praticamente questo e’ il sito dove puoi giudicare gli uccelli senza rimorsi!",
+    "body2": "Come? E’ cosi’, guarda… Come tutti sappiamo, molte specie di uccelli sono in pericolo per via del commercio illegale. Ma non e’ chiaro perche’ alcune specie siano piu’ minacciate di altre, e perche’? cos’ e’ che determina l´appeal di un uccello? parte della risposta e´ovviamente nel suo aspetto. Ma cosa lega l´aspetto all appeal di un uccello?",
+    "body3": "Difficile a dirsi, vero? E ancora piu’ difficile da quantificare! A questo punto e’ dove entri in gioco tu. E’ tempo di guardare qualche foto di uccelli e di dirci cosa ne pensi su una scala da 😨️️  a 😍. Dai, lo sai che vuoi provare. Ed e´per una giusta causa!!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Sviluppato dalla Biodiversity Informatics Unit e dall’ Helsinki Lab of Ornithology al Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Col support di Koneen säätiö.",
+    "body3": "Foto dalla Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Clicca qui per prendere parte ad un questionario volontario.",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Cosa intendi veramente per apparenza/attrattivita’?",
+      "answer": "Siamo deliberatamente vaghi su questo. Sta a te decidere cosa determina l´attrattivita’ di un uccello. Cerca di mantenerti su come l´uccello appare. Se hai altre impressioni, positive o negative, che non sono legate a come un particolare uccello appare, prova a tenerle da parte e a focalizzare l’ attenzione sull’ aspetto fisico."
+    },
+    "q2": {
+      "question": "2. Sto giudicando la foto, l´uccello, o la specie di uccello?",
+      "answer": "Vogliamo sapere cosa ne pensi del particolare uccello (o uccelli se la foto ne contiene piu’ di uno). Certo, a volte la foto fa apparire l´uccello meglio o peggio di come e’ realmente. Non ti preoccupare di questo e semplicemente giudica cosa vedi dinanzi a te. Giudica semplicemente l’ uccello (o uccelli) nella foto. Se hai familiarita’ con la specie e sai che tipicamente individui di quella specie sono molto piu’ belli di quello nella foto, cerca di dimenticare questo aspetto al momento di giudicare."
+    },
+    "q3": {
+      "question": "3. Quanto tempo devo usare per giudicare l’ uccello’?",
+      "answer": "Non pensarci troppo. Vogliamo il tuo parere immediato. Giudica l´uccello immediatamente e passa al prossimo quando hai finito di ammirare la foto."
+    },
+    "q4": {
+      "question": "4. Ho un gusto speciale per gli uccelli. Puo’ questo influenzare la vostra ricerca?",
+      "answer": "Vogiamo sapere il gusto speciale per gli uccelli di ognuno di voi. Siamo tutti diversi e ci piacciono cose differenti. Proprio come gli uccelli!"
+    }
+  },
+  "go": {
+    "title": "🥰 questo 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "gentilmente giudica l´apparenza di questo uccello",
+    "new_bird": "mostramene un’ altro! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Per aiutarci a conoscere meglio l´attrattivita’ degli uccelli, puoi completare un sondaggio utente",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfs1nhmMN_wp-BqVthdVkAakQy7HxueN-ZlEtQIk2ZlWQfyeg/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "OK →",
+    "cancel": "No grazie ↺"
+  }
+}
