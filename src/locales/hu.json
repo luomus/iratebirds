@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "ez mi",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "ez mi?",
+    "body1": "Jó kérdés. Háát, lényegében, itt mindenféle rossz érzés nélkül véleményt mondhatsz a madarak kinézetéről.",
+    "body2": "Miért is? Elmagyarázom… Ahogy mindnyájan tudjuk, sok madárra veszélyt jelent az illegális vadállat kereskedelem. De azt már nem tudjuk biztosan, hogy pontosan melyik madárra jelent nagyobb veszélyt és hogy miért? Mi tesz vonzóbbá egy madarat a másiknál? Az egyértelmű, hogy a madarak kinézete egy fontos befolyásoló tényező. De pontosan milyen külső tulajdonságok azok, amik vonzóbbá teszik az adott madarat?",
+    "body3": "Ugye nem is olyan egyszerű? Sőt, még bonyolultabb ezt mérni és számszerűsíteni. Nos, itt jössz te a képbe. Itt az idő hogy elmond mit gondolsz néhány madárról. Válaszod a 😨️️ -tól a 😍-ig skálán adhatod meg. Munkára fel! Tudom, hogy te is akarod. Válaszaid jó célt szolgálnak.",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Fejlesztette a Biodiversity Informatics Unit és a Helsinki Lab of Ornithology a Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Támogatta a Koneen säätiö.",
+    "body3": "Fényképeket szolgáltatta a Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Kattints ide a felhasználói kérdőív kitöltéséhez",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Mit értesz pontosan a megjelenés/vonzóerő alatt?",
+      "answer": "Szándékosan nem használunk egy előre meghatározott definiciót. Valójában te döntöd el, hogy mi teszi vonzóvá a madarat. De próbálj a kinézetére fókuszálni amikor válaszolsz. Ha más érzéseid is vannak egy adott madárral kapcsolatban, amelyek nem függenek a kinézetétől, legyen akár pozitív vagy negatív, próbálj ezektől elvonatkoztatni és csak a fizikai megjelenésre összpontosítani."
+    },
+    "q2": {
+      "question": "2. A fényképről, a madárról vagy a madárfajról mondok véleményt?",
+      "answer": "Azt szeretnénk tudni, hogy mit gondolsz az adott madárról (vagy madarakról, ha a fényképen több is van). Természetesen, néha maga a fénykép milyensége is befolyásolhatja a madár megjelenését. De ne aggódj emiatt, csak értékeld azt, amit látsz. Fókuszálj az adott madárra (vagy madarakra) a képen. Ha ismered az adott madárfajt, és tudod, hogy az adott fajba tartozó madarak általában sokkal szebbek, mint a képen látható madár, próbáld meg ezt egy pillanatra elfelejteni."
+    },
+    "q3": {
+      "question": "3. Mennyi időt szánjak egy kép véleményezésére?",
+      "answer": "Ne gondold túl a dolgokat. Szeretnénk, ha az első megérzésed alapján rögtön válaszolnál. Tehát értékeld azonnal a madarat a képen, és már léphetsz is tovább a következő fényképhez."
+    },
+    "q4": {
+      "question": "4. Az nem befolyásolja az elemzést ha nekem nagyon egyedi elképzelésem van a madarak szépségét illetően?",
+      "answer": "Mi a válaszadók összességének az elképzelésére vagyunk kíváncsiak. Mindannyian különbözőek vagyunk, és mindannyian különböző dolgokat szeretünk. Csakúgy, mint a madarak! Ez így van rendjén."
+    }
+  },
+  "go": {
+    "title": "🥰 ez 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "értékeld a madár kinézetét",
+    "new_bird": "mutasd a következőt! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Kérjük töltsd ki a felhasználói kérdőívünket, hogy jobban megérthessük mi befolyásolja a madarak vonzerejét",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSet_T06bUUcHl7jOt0hv8sz03_0XzKQLuPnT3W4L3UpCyFcZQ/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "Kitöltöm →",
+    "cancel": "Köszönöm nem ↺"
+  }
+}
