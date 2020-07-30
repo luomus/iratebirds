@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "hiyo",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "hii ni nini?",
+    "body1": "Swali nzuri. Eeh… Hapa ni pahali pa kuhukumu kujitokeza hatia ya ndege bure!",
+    "body2": "Vipi hivyo? Ni hivi ona… Vile tunavyojua ndege wako hatarini na kuwinda kwa ajili ya biashara ya wanyamapori kinyume na sheria, Lakini si kwa uhakika kiasi gani baadhi ya ndege wako hatarini zaidi kuliko wengine na kwa nini? Ni nini hufanya ndege kuvutia? Kati ya jibu bila shaka ni mvuto wa ndege. Lakini ni nini hicho kinamfanya ndege avutie?",
+    "body3": "Ni vigumu kusema sio? Na vigumu kabisa kueka kipimo! Hapo sasa ndipo tunapokuhitaji. Ni wakati wa kuangalia ndege na kutoa fikra zako baina 😨️ ya 😍️. Njoo, wajua wataka kufanya hivyo. Na ni kwa nia nzuri!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Imebuniwa na Biodiversity Informatics Unit pamoja na Helsinki Lab of Ornithology kule kwa Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Imedhaminiwa na Koneen säätiö.",
+    "body3": "Picha kutoka kwa Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Bonyeza hapa kujihusisha na utafiti huu kwa hiari yako",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Unamaanisha nini ukisema kuvutiwa na uzuri?",
+      "answer": "Tunakuwa wazi na hii. Ni juu yako uamue ni nini hufanya ndege awe wa kuvutia kwa uzuri. Bali kwa kuamua hilo zingatia namna ndege anakaa. Kama una hisia zingine kuhusu ndege kadhaa ambazo si namna anakaa, ziwe nzuri ama mbaya, zieke kando, na umakinike na muonekano wa ndege."
+    },
+    "q2": {
+      "question": "2. Natathmini nini haswa, picha, ndege, ama aina ya ndege?",
+      "answer": "Tunataka kujua kile unachofikiria kuhusu huyu ndege( ama hawa ndege ikiwa picha ina ndege zaidi ya mmoja). Kweli, wakati mwengine picha inaweza fanya ndege aonekane vizuri au vibaya kuliko alivyo. Usibabaike na hilo, wewe tathmini unayoiona mbele yako. Na ukiwa unajua kuwa aina ya ndege fulani ni wazuri tayari kuliko wale wa picha jaribu kusahau hiyo kwa huo muda."
+    },
+    "q3": {
+      "question": "3. Nachukua muda gani kutathmini hawa ndege?",
+      "answer": "Usifikire sana. Tunataka ukweli wako wa hakika. Tathmini ndege mara moja kisha uende kwa mwengine baada ya kuacha kupendezwa kuangalia."
+    },
+    "q4": {
+      "question": "4. Niko na upendeleo fulani wa ndege. Hio haitadhuru uchambuzi wangu?",
+      "answer": "Tunataka kujua akipendacho mtu kwa ndege. Sisi sote tuko tofauti na tunapenda vitu vingi. Kama vile ndege!"
+    }
+  },
+  "go": {
+    "title": "🥰 hii 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "tafadhali tathmini uonekano wa ndege huyu",
+    "new_bird": "nionyeshe mwengine! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Kutusaidia tuweze kuelewa uvutaji wa ndege tafadhali kubali uchambuzi huu wa huru wa mtumiaji",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSd2CRCzn_sKNLvIXWvGsYnPLCREUA6rDbvwC45BdImJoKIG4w/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "Kukubali →",
+    "cancel": "Hapana asante ↺"
+  }
+}
