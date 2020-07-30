@@ -16,7 +16,7 @@
       <a :href="surveyUrl()">{{ $t('about.survey_request') }}</a>
     </div>
     <div class="text-xl spacer-lg">
-      <a @click="$modal.hide('about')">{{ $t("what.body4") }}</a>
+      <a @click="$modal.hide('about')">{{ $t("about.return") }}</a>
     </div>
   </div>
 </template>

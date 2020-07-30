@@ -20,7 +20,7 @@
       </p>
     </div>
     <div class="text-xl spacer-lg">
-      <a @click="$modal.hide('faq')">{{ $t("what.body4") }}</a>
+      <a @click="$modal.hide('faq')">{{ $t("about.return") }}</a>
     </div>
   </div>
 </template>
