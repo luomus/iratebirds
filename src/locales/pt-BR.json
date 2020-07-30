@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "🥰",
+    "line2": "aquele",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "O que é isto?",
+    "body1": "Boa pergunta. Bem... Basicamente este é o lugar onde você pode julgar sem remorsos a aparência de algumas aves!",
+    "body2": "Como? Bom, vamos explicar... Como todos nós sabemos, muitas aves estão em perigo devido ao tráfico ilegal de animais. Mas não é claro o porquê de certas aves estarem mais ameaçadas ou menos ameaçadas do que outras. O que é que faz uma ave ser mais apelativa ao tráfico? Parte da resposta está, obviamente, na aparência. Mas o quê na aparência de uma ave?",
+    "body3": "Difícil dizer, certo? E super difícil de quantificar! Aqui é onde você entra. Olhe para algumas aves e nos diga o que você pensa delas usando uma escala de 😨️️ até 😍. Qual é, eu sei que você pode fazer isso! É por uma boa causa!!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Desenvolvido pelo Biodiversity Informatics Unit e pelo Helsinki Lab of Ornithology do Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Apoiado pela Koneen säätiö.",
+    "body3": "Fotos provenientes da Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Clique aqui para participar voluntariamente da nossa pesquisa",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. O que querem dizer com aparência/atratividade?",
+      "answer": "Nós estamos sendo deliberadamente vagos em relação à aparência/atratividade. Cabe a você decidir sobre o que faz uma ave ser atrativa. Mas tente se restringir somente à aparência da ave. Se você tiver outros sentimentos, positivos ou negativos, em relação a uma ave em particular e que não tenha que ver com a sua aparência, tente manter isso à parte e foque apenas na aparência física."
+    },
+    "q2": {
+      "question": "2. O que estou avaliando? A foto, a ave, ou a espécie?",
+      "answer": "Nós queremos saber o que você acha da ave (ou aves, se a foto tiver mais do que uma). Claro que às vezes a qualidade da foto vai fazer uma ave parecer mais bonita ou mais feia do que ela realmente é. Não se preocupe com isso e avalie somente o que você vê à sua frente. Avalie a ave (ou aves) que está na fotografia. Se você tem familiaridade com a espécie na foto e sabe que as aves dessa espécie são tipicamente muito mais bonitas do que na foto, não leve isso em consideração nesse momento."
+    },
+    "q3": {
+      "question": "3. Quanto tempo devo demorar para avaliar as aves nas fotos?",
+      "answer": "Não pense muito para responder. Nós queremos uma resposta instintiva. Por isso avalie rapidamente a ave da imagem e passe para a imagem seguinte quando já tiver olhado suficientemente para ela."
+    },
+    "q4": {
+      "question": "4. Eu tenho gostos muito particulares em relação a aves. Isso não vai afetar na análise?",
+      "answer": "Nós queremos saber quais são os diferentes gostos das pessoas em relação a aves. Nós todos somos diferentes e gostamos de coisas diferentes. Tal como aves!"
+    }
+  },
+  "go": {
+    "title": "🥰 este 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "por favor avalie a aparência desta ave",
+    "new_bird": "Mande outra! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Para nos ajudar a entender a atratividade das aves por favor considere responder ao nosso questionário voluntariamente",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdA_vL16KfCgBw6BBbNwUt5PtgrZJmLOCwXojWBt4IYrouRhA/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "OK →",
+    "cancel": "Não, obrigado ↺"
+  }
+}
