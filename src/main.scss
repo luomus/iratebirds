@@ -13,7 +13,7 @@ html, body {
 
 body {
   background-color: #fafafa;
-  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -79,7 +79,7 @@ h1 {
 }
 
 .text-sm {
-  font-weight: 300;
+  font-weight: 400;
   font-size: $font-size * 0.9;
 }
 
@@ -110,6 +110,7 @@ h1 {
     border-right: 1px solid;
     padding-right: .6rem;
     margin-right: .4rem;
+    align-self: center;
 
     &:last-child {
       border-right: 0;
@@ -142,6 +143,7 @@ h1 {
 .justify-content-center {
   justify-content: center;
 }
+
 .justify-content-start {
   justify-content: start;
 }
@@ -158,9 +160,19 @@ h1 {
   text-align: left;
 }
 
+.caption-row {
+  margin-bottom: .2rem;
+}
+
+.common-name {
+  align-self: center;
+  padding-right: .2rem;
+}
+
 .sci-name {
   font-style: italic;
   font-weight: normal;
+  align-self: center;
 }
 
 .two-rows {
@@ -169,8 +181,8 @@ h1 {
 
 .species-name {
   font-size: $font-size;
-  font-weight: 900;
-  margin: 0;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 .bird-image {

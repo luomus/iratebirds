@@ -2,22 +2,21 @@
   <figure v-if="photo" class="text-sm">
     <div class="bird-image" :style="{ backgroundImage: 'url(' + photo.previewUrl + ')' }"></div>
     <figcaption class="mt-2">
-      <div>
-        <h1 class="species-name d-flex flex-row spacer-sm align-left two-rows">
-          <a :href="photo.specimenUrl" target="_blank" rel="noopener">
-            <span class="common-name">{{ photo.commonName }}</span>
+      <div class="spacer-sm">
+        <h1 class="caption-row species-name d-flex flex-row align-left two-rows">
+          <a class="common-name" :href="photo.specimenUrl" target="_blank" rel="noopener">
+            <span >{{ photo.commonName }}</span>
           </a>
-          <div class="spacer-sm"></div>
           <span class="sci-name">{{ photo.sciName }}</span>
         </h1>
-        <div class="d-flex flex-row justify-content-start spacer-sm">©&nbsp;{{ photo.userDisplayName }}</div>
-        <ul class="list-inline list-divided d-flex flex-row justify-content-start spacer-sm align-left">
+        <div class="caption-row d-flex flex-row justify-content-start">©&nbsp;{{ photo.userDisplayName }}</div>
+        <ul class="caption-row list-inline list-divided d-flex flex-row justify-content-start align-left">
           <li><span>{{ photo.locationLine2}}</span></li>
           <li>
             <time :datetime="photo.exifData.create_dt"> {{ photo.obsDttm }}</time>
           </li>
         </ul>
-        <ul class="list-inline list-divided d-flex flex-row justify-content-center two-rows">
+        <ul class="caption-row list-inline list-divided d-flex flex-row justify-content-start align-left two-rows">
           <li class="d-inline-block">
             <a target="_blank" rel="noopener" :href="photo.specimenUrl">Macaulay Library<br/>ML{{ photo.assetId }}</a>
           </li>
