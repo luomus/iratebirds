@@ -1,0 +1,64 @@
+{
+  "landing": {
+    "line1": "¿🥰",
+    "line2": "ese",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "¿de qué va esto?",
+    "body1": "¡Buena pregunta! Pues, básicamente este es un espacio donde podrás juzgar la apariencia de las diferentes especies de aves… ¡sin remordimientos!",
+    "body2": "¿Cómo es posible? Muy fácil, mira… Como todos sabemos, muchas especies de aves están en peligro debido al comercio ilegal de fauna salvaje. Lo que no sabemos es por qué unas especies son más susceptibles de aparecer en el mercado ilegal que otras. ¿Por qué razón unas aves son más atractivas que otras? Está claro que la apariencia del ave influye bastante. Pero, de la apariencia en general, ¿qué aspectos concretos hacen a un ave especialmente atractiva?",
+    "body3": "Difícil, ¿verdad? ¡Y mucho más difícil es intentar cuantificarlo! Pero aquí es donde tú puedes ayudar. Échale un vistazo a algunas fotos y dinos cuan atractivas te parecen en una escala de 😨️️ a 😍. ¡Venga va! ¡Sabes que quieres hacerlo! ¡Y es por una muy buena causa!",
+    "body4": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Desarro llado por Biodiversity Informatics Unit y Helsinki Lab of Ornithology en al Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body2": "Financiado por Koneen säätiö.",
+    "body3": "Fotos obtenidas de Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Clica aquí para completar nuestro cuestionario voluntario",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. ¿A qué te refieres con apariencia o atractivo?",
+      "answer": "En realidad nosotros queremos que tú nos lo digas. El nivel de atractivo de una especie depende única y exclusivamente del observador, pero siempre intenta que sea relacionado con su aspecto. Intenta no incluir en tu calificación otros aspectos (tanto positivos como negativos) que no tienen que ver con su aspecto físico (su canto o comportamiento, por ejemplo)."
+    },
+    "q2": {
+      "question": "2. ¿Qué estoy calificando, la calidad de la foto, el ave que aparece en la foto o la especie en general?",
+      "answer": "Nosotros estamos interesados en saber lo que piensas del individuo que aparece en la foto (o individuos, si hay más de uno). Está claro que una foto puede hacernos ver a un individuo más atractivo o menos atractivo de lo que realmente es. ¡No te preocupes! Simplemente califica al individuo basándote en lo que ves en la foto que te mostramos y ya está. Por ejemplo, si conoces bien a la especie y tú sabes que es mucho más atractiva de lo que la foto muestra, intenta olvidarlo y céntrate en calificara ese individuo de esa foto en particular."
+    },
+    "q3": {
+      "question": "3. ¿Hay tiempo límite para calificar a cada individuo?",
+      "answer": "Intenta no pensar demasiado. Queremos saber tu primera impresión al ver el ave. Por tanto, los resultados serán mejores si calificas al ave inmediatamente después de ver la foto. Luego puedes estar todo el tiempo que quieras contemplándola y disfrutando del ave antes de pasar a la siguiente foto."
+    },
+    "q4": {
+      "question": "4. Tengo un sentimiento especial por las aves, ¿Afectará esto al resultado del experimento?",
+      "answer": "Cada uno de nosotros tenemos un sentimiento diferente respecto a las aves. Nosotros queremos entender lo que siente cada persona al ver estas aves. ¡Las personas somos diferentes y nos gustan cosas diferentes! ¡Como las aves!"
+    }
+  },
+  "go": {
+    "title": "¿🥰 este 🐦?",
+    "labels": {
+      "hate": "😨️️",
+      "love": "😍️️"
+    },
+    "this_bird": "por favor, califica el aspecto físico de este ave",
+    "new_bird": "¡muéstrame otro! →"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕️"
+    },
+    "request": "Por favor, ayúdanos a entender qué características físicas hacen a un ave más o menos atractiva. Completa este cuestionario voluntario. ¡Son sólo unas pocas preguntas!",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdiYCVgtKQ-VM2ejTsVKKj2RdlGVHHOXTYe6_1VClGNyYmffg/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "OK →",
+    "cancel": "No, gracias ↺"
+  }
+}
