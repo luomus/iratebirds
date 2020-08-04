@@ -1,10 +1,10 @@
 <template>
   <div class="justify-content-center">
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row spacer-sm">
       <h1 class="text-bold text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
       <div class="about-links">
-        <a @click="showAbout()" v-html="$t('about.icon')"></a>&nbsp;
+        <a @click="showAbout()" v-html="$t('about.icon')"></a>
         <a @click="showFaq()">{{ $t("faq.title") }}</a>
       </div>
     </div>
