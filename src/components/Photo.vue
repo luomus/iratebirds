@@ -1,10 +1,12 @@
 <template>
   <figure v-if="photo" class="text-sm">
-    <div class="bird-image" :style="{ backgroundImage: 'url(' + photo.previewUrl + ')' }"></div>
+    <a target="_blank" rel="noopener" :href="photo.specimenUrl" :title="'ML' + photo.assetId + ' ' + photo.commonName + ' © ' + photo.userDisplayName">
+      <div class="bird-image" :style="{ backgroundImage: 'url(' + photo.previewUrl + ')' }"></div>
+    </a>
     <figcaption class="mt-2">
       <div class="spacer-sm">
         <h1 class="caption-row species-name d-flex flex-row align-left two-rows">
-          <a class="common-name" :href="photo.specimenUrl" target="_blank" rel="noopener">
+          <a class="common-name" :href="photo.ebirdSpeciesUrl" target="_blank" rel="noopener">
             <span >{{ photo.commonName }}</span>
           </a>
           <span class="sci-name">{{ photo.sciName }}</span>
