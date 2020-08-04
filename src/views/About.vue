@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex text-monospace">
     <h1>{{ $t("about.title") }}</h1>
     <div class="text-sm spacer-lg align-left">
       <p>
