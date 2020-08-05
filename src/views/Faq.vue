@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex text-monospace">
-    <h1 class = "spacer-sm">{{ $t("faq.title") }}</h1>
+    <h1 class="spacer-sm">{{ $t("faq.title") }}</h1>
     <div class="text-sm spacer-lg align-left">
       <p class="question">{{ $t("faq.q1.question") }}</p>
       <p class="answer">{{ $t("faq.q1.answer") }}</p>
@@ -14,5 +14,6 @@
     <div class="text-xl spacer-lg">
       <a @click="$modal.hide('faq')">{{ $t("about.return") }}</a>
     </div>
+    <span class="spacer-lg"></span>
   </div>
 </template>
