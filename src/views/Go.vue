@@ -16,7 +16,7 @@
         <span v-html="$t('go.labels.love')"></span>
       </div>
       <div class="d-flex justify-content-center spacer-sm" id="rating">
-        <heart-rating :max-rating="10" :show-rating="false" :item-size="heartSize" inactive-color="#ffffff"
+        <heart-rating :max-rating="10" :show-rating="false" :item-size="heartSize" inactive-color="#3d3333"
                       active-color="#dc2c44" border-color="#dc2c44" v-model="rating" @></heart-rating>
       </div>
       <div class="text-bold text-monospace d-flex justify-content-center font-weight-bolder">

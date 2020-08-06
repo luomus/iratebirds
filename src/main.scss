@@ -12,13 +12,13 @@ html, body {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #161616;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-size: $font-size;
-  color: #333;
+  color: #afafaf;
 }
 
 img {
@@ -26,7 +26,7 @@ img {
 }
 
 a {
-  color: #2c75c9;
+  color: #85bdfd;
   text-decoration: none;
   cursor: pointer;
 }
@@ -42,7 +42,7 @@ h1 {
 }
 
 #app {
-  background-color: #fafafa;
+  background-color: #161616;
   max-width: 400px;
   width: 100vw;
   position: absolute;
@@ -53,6 +53,10 @@ h1 {
   line-height: 1.2;
   display: flex;
   flex-direction: column;
+}
+
+.modal {
+  background-color: #161616!important;
 }
 
 .lang-logo {
@@ -186,7 +190,7 @@ h1 {
 }
 
 .bird-image {
-  background-color: #333;
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

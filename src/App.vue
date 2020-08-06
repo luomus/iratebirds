@@ -4,10 +4,10 @@
       <router-view/>
     </div>
 
-    <modal name="faq" height="auto" :max-width="500" :scrollable="true" :adaptive="true">
+    <modal name="faq" height="auto" classes="modal" :max-width="500" :scrollable="true" :adaptive="true">
       <Faq></Faq>
     </modal>
-    <modal name="about" height="auto" :max-width="500" :scrollable="true" :adaptive="true">
+    <modal name="about" height="auto" classes="modal" :max-width="500" :scrollable="true" :adaptive="true">
       <About></About>
     </modal>
   </div>
