@@ -2,9 +2,12 @@
 cors <- function(req, res) {
   res$setHeader("Access-Control-Allow-Origin", "*")
   if (req$REQUEST_METHOD == "OPTIONS") {
-    res$setHeader("Access-Control-Allow-Methods","*")
-    res$setHeader("Access-Control-Allow-Headers", req$HTTP_ACCESS_CONTROL_REQUEST_HEADERS)
-    res$status <- 200
+    res$setHeader("Access-Control-Allow-Methods", "*")
+    res$setHeader(
+      "Access-Control-Allow-Headers",
+      req$HTTP_ACCESS_CONTROL_REQUEST_HEADERS
+    )
+    res$status <- 200L
     return(list())
   } else {
     plumber::forward()
@@ -23,7 +26,17 @@ function(req) {
   new_data <- as.data.frame(rbind(unlist(new_data)))
   new_data <- new_data[intersect(names(new_data), names(ratings_df))]
   new_data <- merge(ratings_df, new_data, all.y = TRUE)
-  new_data$iratebirds_timestamp <- as.character(Sys.time())
+
+  new_data$catalogId            <- as.integer(new_data$catalogId)
+  new_data$latitude             <- as.numeric(new_data$latitude)
+  new_data$longitude            <- as.numeric(new_data$longitude)
+  new_data$rating               <- as.numeric(new_data$rating)
+  new_data$assetId              <- as.integer(new_data$assetId)
+  new_data$ratingCount          <- as.integer(new_data$ratingCount)
+  new_data$width                <- as.integer(new_data$width)
+  new_data$height               <- as.integer(new_data$height)
+  new_data$iratebirds_rating    <- as.integer(new_data$iratebirds_rating)
+  new_data$iratebirds_timestamp <- Sys.time()
 
   db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
