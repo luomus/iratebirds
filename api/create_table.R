@@ -27,7 +27,7 @@ ratings_df$ratingCount          <- integer()
 ratings_df$width                <- integer()
 ratings_df$height               <- integer()
 ratings_df$iratebirds_rating    <- integer()
-ratings_df$iratebirds_timestamp <- as.POSIXct(integer())
+ratings_df$iratebirds_timestamp <- as.POSIXct(integer(), origin = "1970-01-01")
 
 db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
