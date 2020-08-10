@@ -15,7 +15,7 @@
     </div>
     <div class="d-flex flex-row spacer-lg">
       <div class="fill-space"></div>
-      <div class="lang-logo"><img class="emoji" draggable="false" alt="🌍" src="https://twemoji.maxcdn.com/v/latest/svg/1f30d.svg"></div>
+      <div class="large-logo"><img class="emoji" draggable="false" alt="🌍" src="https://twemoji.maxcdn.com/v/latest/svg/1f30d.svg"></div>
       <LangSelect></LangSelect>
       <div class="fill-space"></div>
     </div>

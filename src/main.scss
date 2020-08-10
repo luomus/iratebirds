@@ -59,13 +59,17 @@ h1 {
   background-color: #161616!important;
 }
 
-.lang-logo {
+.large-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   img {
     font-size: 1.6rem;
   } 
+}
+
+.rule {
+  width: 80%;
 }
 
 .full-height {
