@@ -6,11 +6,15 @@
         <p v-html="$t('what.body1')"></p>
         <p v-html="$t('what.body2')"></p>
         <p v-html="$t('what.body3')"></p>
+        <hr class="rule">
+        <h3 class="align-center spacer-sm">{{ $t("what.body4") }}</h3>
+        <p v-html="$t('what.body5')"></p>
       </div>
     </div>
     <div class="text-xl spacer-lg">
-      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body4") }}</router-link>
+      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body6") }}</router-link>
     </div>
+    <span class="spacer-lg"></span>
   </div>
 </template>
 
