@@ -8,11 +8,11 @@
         <p v-html="$t('what.body3')"></p>
         <hr class="rule">
         <h3 class="align-center spacer-sm">{{ $t("what.body4") }}</h3>
-        <p v-html="$t('what.body5')"></p>
+        <p>{{ $t("what.body5") }}<a href="https://laji.fi/en/about/848">{{ $t("what.body6") }}</a>{{ $t("what.body7") }}</p>
       </div>
     </div>
     <div class="text-xl spacer-lg">
-      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body6") }}</router-link>
+      <router-link :to="'../' + $i18n.locale + '/go'">{{ $t("what.body8") }}</router-link>
     </div>
     <span class="spacer-lg"></span>
   </div>
