@@ -10,24 +10,23 @@
 import { UtilityService } from '@/service/utility.service'
 
 const langMap = {
-  ar: 'Arabic',
-  de: 'German',
+  ar: 'العربية',
+  de: 'Deutsch',
   en: 'English',
-  es: 'Spanish',
-  fi: 'Finnish',
-  fr: 'French',
-  hu: 'Hungarian',
-  it: 'Italian',
-  ja: 'Japanese',
-  kn: 'Kannada',
-  mr: 'Marathi',
-  nl: 'Dutch',
-  'pt-BR': 'Portuguese (Brazil)',
-  'pt-PT': 'Portuguese (Portugal)',
-  ru: 'Russian',
-  sv: 'Swedish',
-  sw: 'Swahili',
-  zh: 'Chinese'
+  es: 'Español',
+  fi: 'suomi',
+  fr: 'français',
+  hu: 'magyar',
+  it: 'Italiano',
+  ja: '日本語',
+  kn: 'ಕನ್ನಡ',
+  mr: 'मराठी',
+  nl: 'Nederlands',
+  'pt-BR': 'Português brasileiro',
+  'pt-PT': 'Português europeu',
+  ru: 'русский',
+  sw: 'Kiswahili',
+  zh: '中文'
 }
 
 export default {
