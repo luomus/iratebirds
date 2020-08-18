@@ -17,7 +17,7 @@
       </p>
     </div>
     <div class="text-sm spacer-lg">
-      <a :href="surveyUrl">{{ $t('about.survey_request') }}</a>
+      <a :href="surveyUrl" target="_blank">{{ $t('about.survey_request') }}</a>
     </div>
     <div class="text-xl spacer-lg">
       <a @click="$modal.hide('about')">{{ $t("about.return") }}</a>
