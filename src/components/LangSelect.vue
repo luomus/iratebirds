@@ -54,6 +54,7 @@ export default {
       if (newLocale) {
         this.$i18n.locale = newLocale
         localStorage.lang = newLocale
+        this.$emit('change')
       }
     }
   }

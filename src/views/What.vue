@@ -21,7 +21,7 @@
 <script>
 export default {
   created () {
-    localStorage.seenWhat = true
+    localStorage.seenWhat = this.$i18n.locale
   }
 }
 </script>
