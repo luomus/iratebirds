@@ -37,6 +37,11 @@ export default {
   },
   methods: {
     langChange () {
+      if (this.$i18n.locale === 'ar') {
+        document.querySelector('body').classList.add('rtl')
+      } else {
+        document.querySelector('body').classList.remove('rtl')
+      }
       this.to = localStorage.seenWhat === this.$i18n.locale ? this.$i18n.locale + '/go' : this.$i18n.locale + '/what'
     }
   }
