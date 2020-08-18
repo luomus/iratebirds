@@ -3,7 +3,7 @@
   "landing": {
     "line1": "🥰",
     "line2": "ذاك",
-    "line3": "؟🦜",
+    "line3": "🦜؟",
     "line4": "🤷",
     "line5": "←"
   },
@@ -16,7 +16,7 @@
     "body5": "To carry out this scientific study we use a limited amount of your information in addition to the ratings you make. These data include a randomly generated identifier (which we use to consolidate your ratings if you visit the app on separate occasions) and the language you have chosen to use. We store these data along with your ratings. Where applicable these data are covered by ",
     "body6": "the privacy policy of the Finnish Biodiversity Information Facility",
     "body7": ". If you are not comfortable with sharing this information with us then you should not proceed to the next page. If you would like to continue then click the arrow below.",
-    "body8": "→"
+    "body8": "←"
   },
   "about": {
     "title": "iratebirds",
@@ -63,7 +63,7 @@
     },
     "request": "لمساعدتنا على فهم جاذبية الطيور، المرجو إجراء استطلاع المستخدم",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeLkalX9doScgOUOAZA0Qkxl9_kjTbtVOCr9_a4THakfy_Prw/viewform?usp=pp_url&entry.1380368101=%userId%",
-    "confirm": "← حسنًا",
-    "cancel": "↻ لا شكرًا"
+    "confirm": "حسنًا ←",
+    "cancel": "لا شكرًا ↻"
   }
 }

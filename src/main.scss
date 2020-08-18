@@ -230,11 +230,28 @@ h1 {
 .question {
   font-weight: 600;
 }
+
 .rtl {
   .text-long-form, .align-left {
     text-align: right;
   }
   p, h1, h2, h3, .flex-row, .d-flex, span, a {
     direction: rtl;
+  }
+  figcaption {
+    .text-long-form, .align-left {
+      text-align: left;
+    }
+    p, h1, h2, h3, .flex-row, .d-flex, span, a {
+      direction: ltr;
+    }
+  }
+  .about-links {
+    a:last-child {
+      padding-right: .2rem;
+    }
+    a:first-child {
+      padding-right: 0;
+    }
   }
 }
