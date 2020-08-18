@@ -230,3 +230,12 @@ h1 {
 .question {
   font-weight: 600;
 }
+.rtl {
+  .text-long-form, .align-left {
+    text-align: right;
+  }
+  p, h1, h2, h3, .flex-row, .d-flex, span, a {
+    unicode-bidi: bidi-override !important;
+    direction: rtl;
+  }
+}
