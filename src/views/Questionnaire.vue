@@ -8,8 +8,8 @@
     <div class="spacer-lg align-center">
       <p>{{ $t("survey.request") }}</p>
       <div class="spacer-lg">
-         <a class="spacer-lg" :href="surveyUrl()" target="_blank" @click="$modal.hide('questionnaire')">{{ $t("survey.confirm") }}</a>
-         <a class="spacer-lg" @click="$modal.hide('questionnaire')">{{ $t("survey.cancel") }}</a>
+         <a class="spacer-md" :href="surveyUrl()" target="_blank" @click="$modal.hide('questionnaire')">{{ $t("survey.confirm") }}</a>
+         <a class="spacer-md" @click="$modal.hide('questionnaire')">{{ $t("survey.cancel") }}</a>
       </div>
     </div>
   </div>
