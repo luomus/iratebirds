@@ -31,6 +31,17 @@ export default {
     return {
       surveyUrl: this.$t('survey.url').replace('%userId%', localStorage.user)
     }
+  },
+  created () {
+    const unregisterRouterGuard = this.$router.beforeEach((to, from, next) => {
+      this.$modal.hide('about')
+
+      next(false)
+    })
+
+    this.$once('hook:destroyed', () => {
+      unregisterRouterGuard()
+    })
   }
 }
 </script>

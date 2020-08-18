@@ -17,3 +17,19 @@
     <span class="spacer-lg"></span>
   </div>
 </template>
+
+<script>
+export default {
+  created () {
+    const unregisterRouterGuard = this.$router.beforeEach((to, from, next) => {
+      this.$modal.hide('faq')
+
+      next(false)
+    })
+
+    this.$once('hook:destroyed', () => {
+      unregisterRouterGuard()
+    })
+  }
+}
+</script>

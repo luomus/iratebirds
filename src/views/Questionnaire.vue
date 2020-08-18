@@ -17,6 +17,17 @@
 
 <script>
 export default {
+  created () {
+    const unregisterRouterGuard = this.$router.beforeEach((to, from, next) => {
+      this.$modal.hide('questionnaire')
+
+      next(false)
+    })
+
+    this.$once('hook:destroyed', () => {
+      unregisterRouterGuard()
+    })
+  },
   methods: {
     surveyUrl () {
       if (localStorage.seenWhat) {
