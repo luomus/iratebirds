@@ -8,7 +8,7 @@ interface Rating {
 const API_BASE = process.env.API_BASE || 'https://api.iratebirds.app'
 
 class RatingService {
-  private next: object | undefined;
+  private next: object | undefined
 
   constructor () {
     this.fetchNext()
@@ -29,7 +29,6 @@ class RatingService {
       this.fetchNext()
       return result
     }
-    this.fetchNext()
     return this.fetchPicture()
   }
 
@@ -55,6 +54,7 @@ class RatingService {
       .then(res => res.json())
       .then(res => res.results.count === 0 || !res.results?.content?.[0] ? this.fetchPicture(retry + 1) : res)
       .then(res => res.results.content[0])
+      .catch(() => this.fetchPicture(retry + 1))
   }
 }
 
