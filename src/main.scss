@@ -231,6 +231,10 @@ h1 {
   font-weight: 600;
 }
 
+.new-bird-link {
+  font-size: $font-size * 1.8;
+}
+
 .rtl {
   .text-long-form, .align-left {
     text-align: right;

@@ -21,7 +21,7 @@
       </div>
       <div class="text-bold text-monospace d-flex justify-content-center font-weight-bolder">
         <p v-show="rating === 0"> {{ $t("go.this_bird") }} </p>
-        <p v-show="rating > 0"><a href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
+        <p v-show="rating > 0"><a class="new-bird-link" href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
       </div>
     </div>
   </div>
