@@ -10,13 +10,13 @@
         <span v-html="$t('landing.line4')"></span>
       </div>
       <div>
-        <router-link :to="nextPage()" v-html="$t('landing.line5')"></router-link>
+        <router-link :to="to" v-html="$t('landing.line5')"></router-link>
       </div>
     </div>
     <div class="d-flex flex-row spacer-lg">
       <div class="fill-space"></div>
       <div class="large-logo"><img class="emoji" draggable="false" alt="🌍" src="https://twemoji.maxcdn.com/v/latest/svg/1f30d.svg"></div>
-      <LangSelect></LangSelect>
+      <LangSelect v-on:change="langChange"></LangSelect>
       <div class="fill-space"></div>
     </div>
   </div>
@@ -27,12 +27,17 @@ import LangSelect from '@/components/LangSelect'
 
 export default {
   components: { LangSelect },
+  data () {
+    return {
+      to: ''
+    }
+  },
+  mounted () {
+    this.langChange()
+  },
   methods: {
-    nextPage () {
-      if (localStorage.seenWhat) {
-        return this.$i18n.locale + '/go'
-      }
-      return this.$i18n.locale + '/what'
+    langChange () {
+      this.to = localStorage.seenWhat === this.$i18n.locale ? this.$i18n.locale + '/go' : this.$i18n.locale + '/what'
     }
   }
 }
