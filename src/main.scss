@@ -2,6 +2,7 @@
 $spacer: 5px;
 $font-size: 14px;
 
+@import 'vue-select/src/scss/vue-select.scss';
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:100,200,300,400,500,600,700,800,900);
 
 html, body {
@@ -67,6 +68,7 @@ h1 {
   img {
     font-size: 1.6rem;
   }
+  margin: 0.3rem;
 }
 
 .rule {

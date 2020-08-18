@@ -1,10 +1,24 @@
 <template>
   <div class="locale-changer text-monospace">
-    <select v-model="locale">
-      <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ langMap[lang] || lang }}</option>
-    </select>
+    <v-select :value="locale" :clearable="false" :searchable="false" v-model="locale" :options="options" :reduce="country => country.value" label="label"></v-select>
   </div>
 </template>
+
+<style type="text/scss">
+.locale-changer .vs__dropdown-menu,
+.locale-changer .vs__dropdown-toggle {
+  width: 16rem;
+  background: #e3e3e3;
+}
+
+.locale-changer .vs__dropdown-menu {
+  background: #fefefe;
+}
+
+.locale-changer .vs__open-indicator {
+  fill: #161616;
+}
+</style>
 
 <script>
 import { UtilityService } from '@/service/utility.service'
@@ -33,7 +47,7 @@ export default {
   name: 'LangSelect',
   data () {
     return {
-      langs: Object.keys(this.$i18n.messages),
+      options: Object.keys(this.$i18n.messages).map(value => ({ value, label: langMap[value] || value })),
       locale: this.$i18n.locale,
       langMap
     }
