@@ -32,6 +32,9 @@ import { HeartRating } from 'vue-rate-it'
 import Photo from '../components/Photo.vue'
 import RatingService from '@/service/rating.service'
 
+let seen = 0
+const showQuestioner = Math.floor(Math.random() * 6) + 5
+
 export default {
   name: 'Go',
   components: {
@@ -53,9 +56,14 @@ export default {
       this.$modal.show('about')
     },
     next () {
+      seen++
+
       if (!localStorage.user) {
         const s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         localStorage.user = Array(32).fill('').map(() => s.charAt(Math.floor(Math.random() * s.length))).join('')
+      }
+      if (seen === showQuestioner) {
+        this.$modal.show('questionnaire')
       }
       if (this.rating > 0) {
         RatingService.rate({
