@@ -16,9 +16,11 @@
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-property-decorator": "^8.4.2",
     "vue-rate-it": "^2.1.0",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vue-select": "^3.10.8"
   },
   "devDependencies": {
+    "@types/vue-select": "^2.5.0",
     "@types/webpack": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
