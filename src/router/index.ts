@@ -21,6 +21,11 @@ const routes: Array<RouteConfig> = [
     component: Lang,
     children: [
       {
+        path: '',
+        name: 'Home',
+        component: Home
+      },
+      {
         path: 'what',
         name: 'What',
         component: What
@@ -29,19 +34,11 @@ const routes: Array<RouteConfig> = [
         path: 'go',
         name: 'Go',
         component: Go
-      }
-      /*
-      {
-        path: 'faq',
-        name: 'Faq',
-        component: Faq
       },
       {
-        path: 'about',
-        name: 'About',
-        component: About
+        path: '*',
+        redirect: '/'
       }
-       */
     ]
   }
 ]
