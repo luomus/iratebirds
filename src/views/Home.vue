@@ -9,7 +9,7 @@
         </p>
         <span v-html="$t('landing.line4')"></span>
       </div>
-      <div>
+      <div class="start-arrow">
         <router-link :to="to" v-html="$t('landing.line5')"></router-link>
       </div>
     </div>

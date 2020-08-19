@@ -7,16 +7,25 @@
 <style type="text/scss">
 .locale-changer .vs__dropdown-menu,
 .locale-changer .vs__dropdown-toggle {
-  width: 16rem;
-  background: #e3e3e3;
+  width: 11rem;
+  background: #383838;
+}
+
+.locale-changer .vs__dropdown-option {
+  color: #dadada;
+}
+
+.locale-changer .vs__selected {
+  color: #dadada;
+  width: 8rem;
 }
 
 .locale-changer .vs__dropdown-menu {
-  background: #fefefe;
+  background: #383838;
 }
 
 .locale-changer .vs__open-indicator {
-  fill: #161616;
+  fill: #080808;
 }
 </style>
 
@@ -36,8 +45,8 @@ const langMap = {
   kn: 'ಕನ್ನಡ',
   mr: 'मराठी',
   nl: 'Nederlands',
-  'pt-BR': 'Português brasileiro',
-  'pt-PT': 'Português europeu',
+  'pt-BR': 'Português (br)',
+  'pt-PT': 'Português (pt)',
   ru: 'русский',
   sw: 'Kiswahili',
   zh: '中文'
