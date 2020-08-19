@@ -13,11 +13,13 @@
 
 .locale-changer .vs__dropdown-option {
   color: #dadada;
+  font-size: 16px;
 }
 
 .locale-changer .vs__selected {
   color: #dadada;
-  width: 8rem;
+  width: 7rem;
+  font-size: 16px;
 }
 
 .locale-changer .vs__dropdown-menu {
