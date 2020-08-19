@@ -223,12 +223,11 @@ h1 {
 .about-links {
   margin: 0;
   display: flex;
+  font-size: $font-size * 1.2;
   a {
     display: block;
     align-self: center;
-    &:first-child {
-      padding-right: .2rem;
-    }
+    padding-right: .75rem;
   }
 }
 
@@ -260,14 +259,6 @@ h1 {
     }
     p, h1, h2, h3, .flex-row, .d-flex, span, a {
       direction: ltr;
-    }
-  }
-  .about-links {
-    a:last-child {
-      padding-right: .2rem;
-    }
-    a:first-child {
-      padding-right: 0;
     }
   }
 }
