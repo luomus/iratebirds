@@ -28,18 +28,19 @@ function(req) {
   new_data$latitude          <- as.numeric(new_data$latitude)
   new_data$longitude         <- as.numeric(new_data$longitude)
   new_data$rating            <- as.numeric(new_data$rating)
-  new_data$assetId           <- as.integer(new_data$assetId)
   new_data$ratingCount       <- as.integer(new_data$ratingCount)
   new_data$width             <- as.integer(new_data$width)
   new_data$height            <- as.integer(new_data$height)
   new_data$iratebirds_rating <- as.integer(new_data$iratebirds_rating)
 
-  new_data <- as.data.frame(rbind(unlist(new_data)))
-  new_data <- new_data[intersect(names(new_data), names(ratings_df))]
-
   new_data$iratebirds_timestamp <- Sys.time()
 
-  new_data <- merge(ratings_df, new_data, all.y = TRUE)
+  new_data <- new_data[nms]
+  names(new_data) <- nms
+
+  class(new_data) <- "data.frame"
+  attr(new_data, "row.names") <- .set_row_names(1L)
+
 
   db <- DBI::dbConnect(RPostgreSQL::PostgreSQL())
 
