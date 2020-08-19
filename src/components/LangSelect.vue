@@ -5,6 +5,10 @@
 </template>
 
 <style type="text/scss">
+.locale-changer {
+  font-size: 16px;
+}
+
 .locale-changer .vs__dropdown-menu,
 .locale-changer .vs__dropdown-toggle {
   width: 11rem;
@@ -13,13 +17,11 @@
 
 .locale-changer .vs__dropdown-option {
   color: #dadada;
-  font-size: 16px;
 }
 
 .locale-changer .vs__selected {
   color: #dadada;
   width: 7rem;
-  font-size: 16px;
 }
 
 .locale-changer .vs__dropdown-menu {
