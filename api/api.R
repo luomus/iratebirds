@@ -35,8 +35,8 @@ function(req) {
 
   new_data$iratebirds_timestamp <- Sys.time()
 
-  new_data <- new_data[nms]
-  names(new_data) <- nms
+  new_data <- new_data[cnames]
+  names(new_data) <- cnames
 
   class(new_data) <- "data.frame"
   attr(new_data, "row.names") <- .set_row_names(1L)
