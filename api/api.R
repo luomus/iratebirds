@@ -17,7 +17,7 @@ cors <- function(req, res) {
 #* Return random taxon codes
 #* @param n Number of codes to return
 #* @get /taxon
-function(n) function(n = 1L) {
+function(n = 1L) {
   if (n > 10L) n <- 10L
   taxa[sample.int(length(taxa), n, useHash = FALSE)]
 }
