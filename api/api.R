@@ -14,9 +14,13 @@ cors <- function(req, res) {
   }
 }
 
-#* Return a random taxon code
+#* Return random taxon codes
+#* @param n Number of codes to return
 #* @get /taxon
-function() sample(taxa, 1L)
+function(n) function(n = 1L) {
+  if (n > 10L) n <- 10L
+  taxa[sample.int(length(taxa), n, useHash = FALSE)]
+}
 
 #* Send data to the database
 #* @post /submit
