@@ -1,5 +1,15 @@
 <template>
   <div class="justify-content-center">
+    <ShareNetwork
+      network="facebook"
+      url="https://news.vuejs.org/issues/180"
+      title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+      description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+      quote="The hot reload is so fast it\'s near instant. - Evan You"
+      hashtags="vuejs,vite"
+    >
+      Share on Facebook
+    </ShareNetwork>
     <div class="d-flex flex-row spacer-sm">
       <h1 class="text-bold text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
@@ -29,6 +39,7 @@
 
 <script>
 import { HeartRating } from 'vue-rate-it'
+import { ShareNetwork } from 'vue-social-sharing'
 import Photo from '../components/Photo.vue'
 import RatingService from '@/service/rating.service'
 
@@ -39,7 +50,8 @@ export default {
   name: 'Go',
   components: {
     Photo,
-    HeartRating
+    HeartRating,
+    ShareNetwork
   },
   data () {
     return {
