@@ -6,8 +6,14 @@
         <p v-html="$t('what.body1')"></p>
         <p v-html="$t('what.body2')"></p>
         <p v-html="$t('what.body3')"></p>
-        <hr class="rule">
-        <h3 class="align-center spacer-sm">{{ $t("what.body4") }}</h3>
+        <div class="spacer-md"></div>
+        <hr>
+        <div class="align-center spacer-lg">
+          <img class="luomus" alt="Finnish Muesum of Natural History" src="/luomus-logo-white-en.png">
+        </div>
+        <hr>
+        <div class="spacer-md"></div>
+        <h3 class="spacer-sm">{{ $t("what.body4") }}</h3>
         <p>{{ $t("what.body5") }}<a href="https://laji.fi/en/about/848">{{ $t("what.body6") }}</a>{{ $t("what.body7") }}</p>
       </div>
     </div>
