@@ -17,10 +17,22 @@ class RatingService {
   }
 
   rate (rating: Rating) {
+    const data = [
+      'sex', 'catalogId', 'age', 'location', 'userId', 'latitude',
+      'longitude', 'rating', 'userDisplayName', 'sciName', 'speciesCode',
+      'eBirdChecklistId', 'obsDttm', 'ratingCount', 'width', 'height',
+      'commonName', 'source', 'iratebirds_userId', 'iratebirds_rating',
+      'iratebirds_lang'
+    ].reduce((obj, key) => {
+      if (typeof rating[key] !== 'undefined' && rating[key] !== null) {
+        obj[key] = rating[key]
+      }
+      return obj
+    }, {} as Rating)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(rating)
+      body: JSON.stringify(data)
     }
     fetch(`${API_BASE}/submit`, requestOptions)
   }
