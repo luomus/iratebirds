@@ -1,3 +1,5 @@
+import TAXA from '../assets/taxa.json'
+
 interface Rating {
   iratebirds_userId: string;
   iratebirds_rating: number;
@@ -47,10 +49,8 @@ class RatingService {
     if (retry > 3) {
       return new Promise<object>((resolve, reject) => { reject(new Error('Could not fetch image')) })
     }
-    return fetch(`${API_BASE}/taxon`)
-      .then(res => res.json())
-      .then(res => res[0])
-      .then(code => fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&clientapp=BAR&sort=rating_rank_desc&count=1`))
+    const code = TAXA[Math.floor(Math.random() * TAXA.length)]
+    return fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&clientapp=BAR&sort=rating_rank_desc&count=1`)
       .then(res => res.json())
       .then(res => res.results.count === 0 || !res.results?.content?.[0] ? this.fetchPicture(retry + 1) : res)
       .then(res => res.results.content[0])
