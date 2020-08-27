@@ -232,11 +232,12 @@ hr {
 .about-links {
   margin: 0;
   display: flex;
-  font-size: $font-size * 1.2;
+  font-size: $font-size * 1.5;
+  font-weight: 600;
   a {
     display: block;
     align-self: center;
-    padding-right: .75rem;
+    padding-right: 1rem;
   }
 }
 
