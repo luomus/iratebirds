@@ -26,6 +26,7 @@
     <div class="text-xl spacer-lg">
       <a @click="$modal.hide('about')">{{ $t("about.return") }}</a>
     </div>
+    <span class="spacer-lg"></span>
   </div>
 </template>
 
