@@ -2,7 +2,7 @@
   "lang": "suomi",
   "landing": {
     "line1": "🥰",
-    "line2": "tuosta",
+    "line2": "tästä",
     "line3": "🦜?",
     "line4": "🤷",
     "line5": "→"
@@ -53,7 +53,7 @@
       "love": "😍"
     },
     "this_bird": "arvioi tämän linnun ulkonäköä, kiitos!",
-    "new_bird": "näytä minulle seuraava! →"
+    "new_bird": "seuraavaan lintuun! →"
   },
   "survey": {
     "title": {
