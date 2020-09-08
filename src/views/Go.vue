@@ -4,6 +4,7 @@
       <h1 class="text-bold text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
       <div class="about-links">
+        <a href="/"><img class="emoji" draggable="false" alt="🏠" src="https://twemoji.maxcdn.com/v/latest/svg/1f3e0.svg"></a>
         <a @click="showAbout()" v-html="$t('about.icon')"></a>
         <a @click="showFaq()">{{ $t("faq.title") }}</a>
       </div>
