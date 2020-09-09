@@ -14,7 +14,7 @@
       <p class="question">{{ $t("faq.q4.question") }}</p>
       <p class="answer">{{ $t("faq.q4.answer") }}</p>
       <p class="question">{{ $t("what.body4") }}</p>
-      <p class="answer">{{ $t("what.body5") }}<a href="https://laji.fi/en/about/848">{{ $t("what.body6") }}</a>{{ $t("what.body7") }}</p>
+      <p class="answer">{{ $t("what.body5") }}<a href="https://laji.fi/en/about/848">{{ $t("what.body6") }}</a>.</p>
     </div>
     <div class="text-xl spacer-lg">
       <a @click="$modal.hide('faq')">{{ $t("about.return") }}</a>
