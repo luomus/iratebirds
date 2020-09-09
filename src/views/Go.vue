@@ -4,6 +4,7 @@
       <h1 class="text-bold text-monospace" v-html="$t('go.title')"></h1>
       <div class="fill-space"></div>
       <div class="about-links">
+        <a href="/"><img class="emoji" draggable="false" alt="🏠" src="https://twemoji.maxcdn.com/v/latest/svg/1f3e0.svg"></a>
         <a @click="showAbout()" v-html="$t('about.icon')"></a>
         <a @click="showFaq()">{{ $t("faq.title") }}</a>
       </div>
@@ -33,7 +34,7 @@ import Photo from '../components/Photo.vue'
 import RatingService from '@/service/rating.service'
 
 let seen = 0
-const showQuestioner = Math.floor(Math.random() * 6) + 5
+const showQuestionnaire = Math.floor(Math.random() * 10) + 10
 
 export default {
   name: 'Go',
@@ -62,7 +63,7 @@ export default {
         const s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         localStorage.user = Array(32).fill('').map(() => s.charAt(Math.floor(Math.random() * s.length))).join('')
       }
-      if (seen === showQuestioner) {
+      if (seen === showQuestionnaire) {
         this.$modal.show('questionnaire')
       }
       if (this.rating > 0) {

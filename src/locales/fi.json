@@ -2,7 +2,7 @@
   "lang": "suomi",
   "landing": {
     "line1": "🥰",
-    "line2": "tuosta",
+    "line2": "tästä",
     "line3": "🦜?",
     "line4": "🤷",
     "line5": "→"
@@ -12,16 +12,16 @@
     "body1": "Hyvä kysymys. Tämä on sivusto, jolla voit arvostella lintuja niiden ulkonäön perusteella.",
     "body2": "Miksi ihmeessä? Tiedossa on, että monet linnut ovat uhanalaisia laittoman lintukaupan vuoksi. Ei kuitenkaan ole selvää, miksi jotkin lintulajit ovat uhatumpia kuin toiset. Mikä tekee linnusta halutun? Osa syytä on varmasti lintujen erilaisessa ulkonäössä, mutta mikä ulkonäössä on se seikka, joka vetoaa ihmisiin?",
     "body3": "Vaikea sanoa, eikö? Ja vielä vaikeampi mitata! Tässä asiassa voit auttaa meitä. Nyt on sinun vuorosi katsoa kuvia linnuista ja kertoa meille, mitä mieltä olet niiden ulkonäöstä asteikolla 😨 - 😍. Haluat varmasti kokeilla, mitkä linnut viehättävät sinua! Syy viehtysvoiman mittamiseen on tällä kertaa erityisen hyödyllinen!!",
-    "body4": "About your data",
-    "body5": "To carry out this scientific study we use a limited amount of your information in addition to the ratings you make. These data include a randomly generated identifier (which we use to consolidate your ratings if you visit the app on separate occasions) and the language you have chosen to use. We store these data along with your ratings. Where applicable these data are covered by ",
-    "body6": "the privacy policy of the Finnish Biodiversity Information Facility",
-    "body7": ". If you are not comfortable with sharing this information with us then you should not proceed to the next page. If you would like to continue then click the arrow below.",
+    "body4": "Tietojesi tallentaminen",
+    "body5": "Tutkimuksen mahdollistamiseksi keräämme tekemäsi lintujen arvioinnin lisäksi rajallisen määrän muuta tietoa. Keräämämme tiedot ovat: 1) satunnaisesti luotu tunniste, jonka avulla yhdistämme vastauksesi kokonaisuudeksi, jos käytät sovellusta useita kertoja, sekä 2) kieli, jonka olet valinnut vastaustesi tallentamiseen. Nämä tiedot tallennetaan tekemiesi lintujen arvostelujen yhteyteen. Tietoihin sovelletaan ",
+    "body6": "Suomen Lajitietokeskuksen tietosuojaselostetta",
+    "body7": ". Jos et halua jakaa edellä mainittuja tietoja kanssamme, älä jatka sovelluksen seuraavalle sivulle. Jos haluat jatkaa ja hyväksyt vastaustesi tallentamisen, paina alla olevaa nuolta.",
     "body8": "→"
   },
   "about": {
     "title": "iratebirds",
     "icon": "ℹ️",
-    "body1": "Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -LUOMUS, Helsingin yliopisto.",
+    "body1": "Kehittäjät: Lajitietokeskus ja Helsinki Lab of Ornithology -tutkimusryhmä, Luonnontieteellinen keskusmuseo -Luomus, Helsingin yliopisto.",
     "body2": "Työtä on tukenut Koneen säätiö.",
     "body3": "Valokuvat: the Macualay Library, Cornell Lab of Ornithology.",
     "survey_request": "Vastaa vapaaehtoiseen käyttäjäkyselyyn painamalla tästä",
@@ -53,7 +53,7 @@
       "love": "😍"
     },
     "this_bird": "arvioi tämän linnun ulkonäköä, kiitos!",
-    "new_bird": "näytä minulle seuraava! →"
+    "new_bird": "seuraavaan lintuun! →"
   },
   "survey": {
     "title": {

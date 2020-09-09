@@ -62,10 +62,15 @@ class RatingService {
       return new Promise<object>((resolve, reject) => { reject(new Error('Could not fetch image')) })
     }
     const code = TAXA[Math.floor(Math.random() * TAXA.length)]
-    return fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&clientapp=BAR&sort=rating_rank_desc&count=1`)
+    return fetch(`https://proxy.laji.fi/macaulaylibrary/api/v1/search?taxonCode=${code}&mediaType=p&clientapp=BAR&sort=rating_rank_desc&count=5`)
       .then(res => res.json())
-      .then(res => res.results.count === 0 || !res.results?.content?.[0] ? this.fetchPicture(retry + 1) : res)
-      .then(res => res.results.content[0])
+      .then(res => {
+        const imgIdx = Math.floor(Math.random() * Math.min(5, res.results.count))
+        if (res.results.count === 0 || !res.results?.content?.[imgIdx]) {
+          return this.fetchPicture(retry + 1)
+        }
+        return res.results.content[imgIdx]
+      })
       .catch(() => this.fetchPicture(retry + 1))
   }
 }

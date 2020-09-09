@@ -10,18 +10,18 @@
   "what": {
     "title": "qu’est-ce que c’est ?",
     "body1": "Bonne question. Eh bien, basiquement c’est l’endroit où l’on peut juger de l’apparence des oiseaux sans se sentir coupable !",
-    "body2": "Comment ça? Comme nous le savons tous, de nombreux oiseaux sont menacés par le commerce illégal d'espèces sauvages. Mais il n'est pas clair dans quelle mesure certains oiseaux pourraient être plus menacés que d'autres et pourquoi? Qu'est-ce qui rend un oiseau attrayant? Une partie de l'équation est évidemment l'apparence de l'oiseau. Mais qu'est-ce qui est attrayant dans l'apparence d'un oiseau?",
-    "body3": "Difficile à dire, non? Et sacrément difficile à quantifier! C'est là que vous entrez en jeu. Il est temps de regarder certains oiseaux et de nous dire ce que vous en pensez sur une échelle de 😨 à 😍. Allez, tu sais que tu veux. Et c'est pour une bonne cause !!",
-    "body4": "About your data",
-    "body5": "To carry out this scientific study we use a limited amount of your information in addition to the ratings you make. These data include a randomly generated identifier (which we use to consolidate your ratings if you visit the app on separate occasions) and the language you have chosen to use. We store these data along with your ratings. Where applicable these data are covered by ",
-    "body6": "the privacy policy of the Finnish Biodiversity Information Facility",
-    "body7": ". If you are not comfortable with sharing this information with us then you should not proceed to the next page. If you would like to continue then click the arrow below.",
+    "body2": "Comment ça ? Comme nous le savons tous, de nombreux oiseaux sont menacés par le commerce illégal d'espèces sauvages. Mais il n'est pas clair dans quelle mesure certains oiseaux pourraient être plus menacés que d'autres et pourquoi? Qu'est-ce qui rend un oiseau attrayant? Une partie de l'équation est évidemment l'apparence de l'oiseau. Mais qu'est-ce qui est attrayant dans l'apparence d'un oiseau ?",
+    "body3": "Difficile à dire, non? Et sacrément difficile à quantifier ! C'est là que vous entrez en jeu. Il est temps de regarder certains oiseaux et de nous dire ce que vous en pensez sur une échelle de 😨 à 😍. Allez, tu sais que tu veux. Et c'est pour une bonne cause !!",
+    "body4": "À propos de vos données",
+    "body5": "Pour mener à bien cette étude scientifique, nous utilisons une quantité limitée de vos informations en plus des évaluations que vous faites. Ces données incluent un identifiant généré aléatoirement (que nous utilisons pour consolider vos notes si vous visitez l'application à différentes occasions) et la langue que vous avez choisie. Nous stockons ces données avec vos notes. Dans le cas échéant, ces données sont couvertes par ",
+    "body6": "la politique de confidentialité du Centre finlandais d'information sur la biodiversité",
+    "body7": ". Si vous n'êtes pas à l'aise pour partager ces informations avec nous, vous ne devez pas passer à la page suivante. Si vous souhaitez continuer, cliquez sur la flèche ci-dessous.",
     "body8": "→"
   },
   "about": {
     "title": "iratebirds",
     "icon": "ℹ️",
-    "body1": "Développé par Biodiversity Informatics Unit et Helsinki Lab of Ornithology au Finnish Museum of Natural History - LUOMUS, University of Helsinki.",
+    "body1": "Développé par Biodiversity Informatics Unit et Helsinki Lab of Ornithology au Finnish Museum of Natural History - Luomus, University of Helsinki.",
     "body2": "Supporté par Koneen säätiö.",
     "body3": "Photo provenant de Macualay Library, Cornell Lab of Ornithology.",
     "survey_request": "Cliquez ici pour répondre à notre enquête volontaire.",
@@ -53,7 +53,7 @@
       "love": "😍"
     },
     "this_bird": "veuillez évaluer l’apparence de cet oiseau",
-    "new_bird": "montrer moi un autre ! →"
+    "new_bird": "montrez-en moi un autre ! →"
   },
   "survey": {
     "title": {

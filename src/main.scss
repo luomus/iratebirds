@@ -43,6 +43,10 @@ h1 {
   margin: 0;
 }
 
+hr {
+  width: 80%;
+}
+
 #app {
   background-color: #161616;
   max-width: 400px;
@@ -77,8 +81,13 @@ h1 {
   line-height: 2rem;
 }
 
-.rule {
-  width: 80%;
+.luomus {
+  width: 50%;
+  opacity: 0.5;
+}
+
+.laji-logo {
+  width: 50%;
 }
 
 .full-height {
@@ -223,11 +232,12 @@ h1 {
 .about-links {
   margin: 0;
   display: flex;
-  font-size: $font-size * 1.2;
+  font-size: $font-size * 1.5;
+  font-weight: 600;
   a {
     display: block;
     align-self: center;
-    padding-right: .75rem;
+    padding-right: 1rem;
   }
 }
 
