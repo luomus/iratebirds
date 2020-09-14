@@ -103,8 +103,9 @@ export default {
   created () {
     if (!localStorage.seenWhat) {
       this.$router.push(`/${this.$i18n.locale}`)
+    } else {
+      this.next()
     }
-    this.next()
   },
   mounted () {
     window.addEventListener('resize', this.calculateHeartSize)
