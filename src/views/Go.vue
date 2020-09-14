@@ -9,20 +9,28 @@
         <a @click="showFaq()">{{ $t("faq.title") }}</a>
       </div>
     </div>
-    <Photo :photo="photo"></Photo>
-    <div class="d-flex justify-content-center">
-      <div class="d-flex flex-row text-lg spacer-sm">
-        <span v-html="$t('go.labels.hate')"></span>
-        <span class="fill-space"></span>
-        <span v-html="$t('go.labels.love')"></span>
+    <div v-if="!error">
+      <Photo :photo="photo"></Photo>
+      <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row text-lg spacer-sm">
+          <span v-html="$t('go.labels.hate')"></span>
+          <span class="fill-space"></span>
+          <span v-html="$t('go.labels.love')"></span>
+        </div>
+        <div class="d-flex justify-content-center spacer-sm" id="rating">
+          <heart-rating :max-rating="10" :show-rating="false" :item-size="heartSize" inactive-color="#3d3333"
+                        active-color="#dc2c44" border-color="#dc2c44" v-model="rating" @></heart-rating>
+        </div>
+        <div class="text-bold text-monospace d-flex justify-content-center font-weight-bolder">
+          <p v-show="rating === 0"> {{ $t("go.this_bird") }} </p>
+          <p v-show="rating > 0"><a class="new-bird-link" href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
+        </div>
       </div>
-      <div class="d-flex justify-content-center spacer-sm" id="rating">
-        <heart-rating :max-rating="10" :show-rating="false" :item-size="heartSize" inactive-color="#3d3333"
-                      active-color="#dc2c44" border-color="#dc2c44" v-model="rating" @></heart-rating>
-      </div>
-      <div class="text-bold text-monospace d-flex justify-content-center font-weight-bolder">
-        <p v-show="rating === 0"> {{ $t("go.this_bird") }} </p>
-        <p v-show="rating > 0"><a class="new-bird-link" href="#" @click="next">{{ $t("go.new_bird") }}</a></p>
+    </div>
+    <div v-if="error" class="d-flex flex-column spacer-sm">
+      <img src="/photo-library-down.png">
+      <div class="error-message">
+        {{ $t("go.system_down") }}
       </div>
     </div>
   </div>
@@ -44,6 +52,7 @@ export default {
   },
   data () {
     return {
+      error: false,
       rating: 0,
       photo: null,
       heartSize: 10
@@ -78,8 +87,12 @@ export default {
       }
       RatingService.getNextPhoto()
         .then(photo => {
+          this.error = false
           this.photo = photo
           this.rating = 0
+        })
+        .catch(() => {
+          this.error = true
         })
     },
     calculateHeartSize () {

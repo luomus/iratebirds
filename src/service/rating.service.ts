@@ -71,7 +71,11 @@ class RatingService {
         }
         return res.results.content[imgIdx]
       })
-      .catch(() => this.fetchPicture(retry + 1))
+      .catch(() => {
+        const retryNumber = retry + 1
+        return new Promise(resolve => setTimeout(() => resolve(), retryNumber * 300))
+          .then(() => this.fetchPicture(retry + 1))
+      })
   }
 }
 
