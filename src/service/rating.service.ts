@@ -74,7 +74,7 @@ class RatingService {
       .catch(() => {
         const retryNumber = retry + 1
         return new Promise(resolve => setTimeout(() => resolve(), retryNumber * 300))
-          .then(() => this.fetchPicture(retry + 1))
+          .then(() => this.fetchPicture(retryNumber))
       })
   }
 }
