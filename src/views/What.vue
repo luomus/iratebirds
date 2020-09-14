@@ -2,7 +2,7 @@
   <div class="d-flex text-monospace">
     <div class="text-sm spacer-lg">
       <h1>{{ $t("what.title") }}</h1>
-      <div class="text-long-form">
+      <div class="align-left">
         <p v-html="$t('what.body1')"></p>
         <p v-html="$t('what.body2')"></p>
         <p v-html="$t('what.body3')"></p>
