@@ -53,7 +53,8 @@
       "love": "😍"
     },
     "this_bird": "この鳥の外見を判定してください。",
-    "new_bird": "もう一つ写真を見る →"
+    "new_bird": "もう一つ写真を見る →",
+    "system_down": "Due to ongoing maintenance of the Macaulay Library database iratebirds is taking a short hiatus. We should be back online by the end of the day. Please join us again then to rate some more birds!"
   },
   "survey": {
     "title": {
