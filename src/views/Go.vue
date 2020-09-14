@@ -29,8 +29,8 @@
     </div>
     <div v-if="error" class="d-flex flex-column spacer-sm">
       <img src="/photo-library-down.png">
-      <div class="error-message">
-        {{ $t("go.system_down") }}
+      <div class="text-monospace text-lg align-left spacer-sm">
+        <img class="emoji" draggable="false" alt="😭" src="https://twemoji.maxcdn.com/v/latest/svg/1f62D.svg"> {{ $t("go.system_down") }}
       </div>
     </div>
   </div>
