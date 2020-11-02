@@ -42,10 +42,12 @@ class RatingService {
       this.prepareNextPhoto()
       return result
     }
+    this.prepareNextPhoto()
     return this.fetchPicture()
   }
 
   private prepareNextPhoto (): void {
+    this.next = undefined
     this.fetchPicture()
       .then(photo => {
         this.next = photo
