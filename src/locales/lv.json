@@ -1,0 +1,70 @@
+{
+  "lang": "Latvian",
+  "landing": {
+    "line1": "🥰",
+    "line2": "šis",
+    "line3": "🦜?",
+    "line4": "🤷",
+    "line5": "→"
+  },
+  "what": {
+    "title": "kas šī par vietu?",
+    "body1": "Labs jautājums! Šī ir vietne, kurā novērtēt putnu izskatu.",
+    "body2": "Kam tas vajadzīgs?  Ir zināms, ka daudzas putnu sugas apdraud nelegāla tirdzniecība. Pagaidām nav īsti skaidrs, kāpēc vienas putnu sugas cilvēkiem šķiet pievilcīgākas kā citas. Kas padara putnu simpātisku mūsu acīs?",
+    "body3": "Grūti pateikt, vai ne? Vēl grūtāk to izmērīt. Jūs varat mums tajā palīdzēt – aplūkot putnu attēlus un novērtēt to pievilcību skalā 😨 līdz 😍. Tā būs kā spēle, bet ar labu mērķi – palīdzēt izpētīt un aizsargāt.",
+    "body4": "Par jūsu datiem",
+    "body5": "Šim zinātniskajam pētījumam kopā ar jūsu sniegtajiem putnu izskata vērtējumiem mēs izmantosim nedaudz datu par Jums - nejauši izvēlētu lapas apmeklējuma kārtas numuru un ziņas par valodu, kuru izvēlējāties. Jūsu putnu izskata vērtējumi glabājas kopā ar aptaujā sniegtajām atbildēm. Cik iespējams, aptauja atbilst ",
+    "body6": "Somijas Bioloģiskās daudzveidības informācijas agentūras datu privātuma politikai",
+    "body7": ". Ja nepiekrītat šo datu izmantošanai, neturpiniet aptauju nākamajā lappusē! Lai turpinātu, klikšķiniet uz bultiņas!",
+    "body8": "→"
+  },
+  "about": {
+    "title": "iratebirds",
+    "icon": "ℹ️",
+    "body1": "Izstrādāja Biodiversity Informatics Unit un Helsinki Lab of Ornithology, Finnish Museum of Natural History - Luomus, University of Helsinki.",
+    "body2": "Atbalsta Koneen säätiö.",
+    "body3": "Fotogrāfijas no Macualay Library, Cornell Lab of Ornithology.",
+    "survey_request": "Klikšķiniet šeit, lai piedalītos brīvprātīgajā vietnes lietotāju aptaujā!",
+    "return": "↺"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "question": "1. Kas tieši ir domāts ar izskats/pievilcība?",
+      "answer": "Mēs ar nodomu nedodam instrukcijas. Jūsu pašu sajūtām jāvada lēmums, vai putns ir pievilcīgs vai ne. Centieties vadīties tikai pēc fiziskā izskata, mēģinot aizmirst citas savas zināšanas par putnu, kas nav saistītas ar izskatu, un var ietekmēt lēmumu!"
+    },
+    "q2": {
+      "question": "2. Vai jāvērtē fotogrāfija, putna suga vai pats putns?",
+      "answer": "Mēs gribam uzzināt, ko jūs domājat par pašu putnu (putniem, ja fotogrāfijā to ir vairāki). Protams, dažreiz foto var padarīt putnu neglītāku, kā tas būtu dzīvē. Lai šī doma Jūs neuztrauc – vērtējiet to, ko redzat attēlā. Vērtējiet konkrēto putnu/putnus attēlā! Ja pazīstat šo sugu un zināt, ka parasti tās pārstāvji ir daudz glītāki par attēlā redzamo, centieties to uz brīdi aizmirst!"
+    },
+    "q3": {
+      "question": "3. Cik ilgi jāskatās uz attēlu?",
+      "answer": "Nedomājiet par to! Mūs interesē jūsu pirmais iespaids, iekšējā sajūta. Tāpēc izdariet vērtējumu uzreiz un, kad esat beidzis par putnu priecāties, pievērsieties nākamajai fotogrāfijai!"
+    },
+    "q4": {
+      "question": "4. Man ir izsmacināta gaume attiecībā uz putniem. Vai tas neietekmēs jūsu pētījumu?",
+      "answer": "Mēs gribam uzzināt daudzu cilvēku “putnu gaumi”. Mēs visi esam atšķirīgi un mums var patikt dažādas lietas. Tāpat kā putni!"
+    }
+  },
+  "go": {
+    "title": "🥰 šis 🐦?",
+    "labels": {
+      "hate": "😨",
+      "love": "😍"
+    },
+    "this_bird": "lūdzu novērtējiet šī putna izskatu",
+    "new_bird": "lūdzu parādīt vēl vienu putnu! →",
+    "system_down": "Due to unforeseen technical difficulties iratebirds is taking a short hiatus. We should be back online very soon. Please join us again then to rate some more birds!"
+  },
+  "survey": {
+    "title": {
+      "char1": "🥺",
+      "char2": "🙏",
+      "char3": "💕"
+    },
+    "request": "Jūs palīdzētu labāk izprast putnu pievilcības noslēpumus, brīvprātīgi atbildot uz dažiem jautājumiem",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSegQsH6IAeapYKwYBzwVS2vQMgoJ2pJUcycznAn1PjhmwJ28A/viewform?usp=pp_url&entry.1380368101=%userId%",
+    "confirm": "Jā, piekrītu →",
+    "cancel": "Paldies, nē! ↺"
+  }
+}
