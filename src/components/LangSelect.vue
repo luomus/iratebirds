@@ -47,6 +47,7 @@ const langMap = {
   it: 'Italiano',
   ja: '日本語',
   kn: 'ಕನ್ನಡ',
+  lt: 'latviešu valoda',
   mr: 'मराठी',
   nl: 'Nederlands',
   'pt-BR': 'Português (br)',
