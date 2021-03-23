@@ -11,7 +11,7 @@
 
 .locale-changer .vs__dropdown-menu,
 .locale-changer .vs__dropdown-toggle {
-  width: 11rem;
+  width: 12rem;
   background: #383838;
 }
 
