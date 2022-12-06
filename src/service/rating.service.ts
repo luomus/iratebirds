@@ -64,10 +64,15 @@ class RatingService {
     }
     const code = TAXA[Math.floor(Math.random() * TAXA.length)]
     return fetch(PICTURE_API.replace('%code%', code))
-      .then(res => res.json())
-      .then(res => {
-        const imgIdx = Math.floor(Math.random() * Math.min(5, res.results.count))
-        if (res.results.count === 0 || !res.results?.content?.[imgIdx]) {
+      .then((res) => res.json())
+      .then((res) => {
+        const imgIdx = Math.floor(
+          Math.random() * Math.min(5, res.results.content.length)
+        )
+        if (
+          res.results?.content?.length === 0 ||
+          !res.results?.content?.[imgIdx]
+        ) {
           return this.fetchPicture(retry + 1)
         }
         return res.results.content[imgIdx]
